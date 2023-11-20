@@ -39,7 +39,7 @@ namespace PiBox.Plugins.Management.Unleash
             }
             catch (Exception e)
             {
-                _logger.LogError($"{nameof(EvaluateAsync)} has thrown an exception.", e);
+                _logger.LogError(e, $"{nameof(EvaluateAsync)} has thrown an exception.");
                 isEnabled = false;
             }
 
