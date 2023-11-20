@@ -29,7 +29,7 @@ namespace PiBox.Api.OpenApi.Tests
         {
             _environment.ApplicationName.Returns("AwesomeApp");
             var applicationBuilder = Substitute.For<IApplicationBuilder>();
-            var configuration = new OpenApiConfiguration ();
+            var configuration = new OpenApiConfiguration();
             var services = new ServiceCollection();
             var swaggerOptions = Substitute.For<IOptionsSnapshot<SwaggerOptions>>();
             swaggerOptions.Value.Returns(new SwaggerOptions());
@@ -52,7 +52,7 @@ namespace PiBox.Api.OpenApi.Tests
         {
             _environment.ApplicationName.Returns("AwesomeApp");
             var applicationBuilder = Substitute.For<IApplicationBuilder>();
-            var configuration = new OpenApiConfiguration ();
+            var configuration = new OpenApiConfiguration();
             var services = new ServiceCollection();
             var swaggerOptions = Substitute.For<IOptionsSnapshot<SwaggerOptions>>();
             swaggerOptions.Value.Returns(new SwaggerOptions());
@@ -77,7 +77,7 @@ namespace PiBox.Api.OpenApi.Tests
             _environment.ApplicationName.Returns("MyApp");
             var services = new ServiceCollection();
             services.AddSingleton(Substitute.For<IWebHostEnvironment>());
-            var configuration = new OpenApiConfiguration ();
+            var configuration = new OpenApiConfiguration();
             var plugin = GetPlugin(configuration);
             plugin.ConfigureServices(services);
             var sp = services.BuildServiceProvider()!;
