@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>disable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PiBox.Hosting.WebHost.Tests</AssemblyName>
+    <RootNamespace>PiBox.Hosting.WebHost.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\PiBox.Testing\NUnit\src\PiBox.Testing\PiBox.Testing.csproj" />
+    <ProjectReference Include="..\..\src\PiBox.Hosting.WebHost\PiBox.Hosting.WebHost.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.yml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

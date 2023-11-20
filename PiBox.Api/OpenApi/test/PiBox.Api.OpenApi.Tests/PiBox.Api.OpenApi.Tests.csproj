@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+        <DocumentationFile>PiBox.Api.OpenApi.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+      <PackageReference Include="Vogen" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\PiBox.Hosting\Abstractions\test\PiBox.Hosting.Abstractions.Tests\PiBox.Hosting.Abstractions.Tests.csproj" />
+      <ProjectReference Include="..\..\..\..\PiBox.Testing\NUnit\src\PiBox.Testing\PiBox.Testing.csproj" />
+      <ProjectReference Include="..\..\src\PiBox.Api.OpenApi\PiBox.Api.OpenApi.csproj" />
+    </ItemGroup>
+
+
+</Project>

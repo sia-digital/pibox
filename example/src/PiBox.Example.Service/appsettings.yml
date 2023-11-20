@@ -1,0 +1,8 @@
+host:
+  urls: http://+:5300
+
+openapi:
+  auth:
+    enabled: false
+    tokenUrl: https://keycloak.example/realms/myrealm/protocol/openid-connect/token
+    authUrl: https://keycloak.example/realms/myrealm/protocol/openid-connect/auth

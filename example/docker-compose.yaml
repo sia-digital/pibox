@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  terrorapi:
+    build: .
+    ports:
+      - 8080:8080
+#    environment:
+#      ASPNETCORE_ENVIRONMENT: Development
+#      DOTNET_RUNNING_IN_CONTAINER: true
+#  postgres:
+#    image: postgres:15
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: postgres

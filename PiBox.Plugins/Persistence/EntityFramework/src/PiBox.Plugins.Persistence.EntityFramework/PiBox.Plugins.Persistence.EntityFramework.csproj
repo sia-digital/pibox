@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\PiBox.Hosting\Abstractions\src\PiBox.Hosting.Abstractions\PiBox.Hosting.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\Abstractions\src\PiBox.Plugins.Persistence.Abstractions\PiBox.Plugins.Persistence.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

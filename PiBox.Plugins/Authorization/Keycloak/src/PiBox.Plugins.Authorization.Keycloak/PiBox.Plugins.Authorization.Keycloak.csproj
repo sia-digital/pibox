@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\PiBox.Hosting\Abstractions\src\PiBox.Hosting.Abstractions\PiBox.Hosting.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\Abstractions\src\PiBox.Plugins.Authorization.Abstractions\PiBox.Plugins.Authorization.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.Uris" />
+      <PackageReference Include="BouncyCastle.NetCore" />
+      <PackageReference Include="Microsoft.IdentityModel.Tokens" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+      <PackageReference Include="Newtonsoft.Json" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+    </ItemGroup>
+
+</Project>

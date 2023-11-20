@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FluentValidation" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\..\PiBox.Extensions\Abstractions\src\PiBox.Extensions.Abstractions\PiBox.Extensions.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\..\..\..\PiBox.Hosting\Abstractions\src\PiBox.Hosting.Abstractions\PiBox.Hosting.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\..\..\Persistence\Abstractions\src\PiBox.Plugins.Persistence.Abstractions\PiBox.Plugins.Persistence.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

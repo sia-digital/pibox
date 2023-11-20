@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <IsPackable>true</IsPackable>
+    <RootNamespace>PiBox.Plugins.Handlers.Cqrs</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\PiBox.Extensions\Abstractions\src\PiBox.Extensions.Abstractions\PiBox.Extensions.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\..\PiBox.Hosting\Abstractions\src\PiBox.Hosting.Abstractions\PiBox.Hosting.Abstractions.csproj"/>
+    <ProjectReference Include="..\..\..\Abstractions\Cqrs\src\PiBox.Plugins.Handlers.Abstractions.Cqrs\PiBox.Plugins.Handlers.Abstractions.Cqrs.csproj" />
+    
+    
+  </ItemGroup>
+
+</Project>

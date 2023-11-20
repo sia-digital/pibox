@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\PiBox.Hosting\Abstractions\src\PiBox.Hosting.Abstractions\PiBox.Hosting.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.Hangfire" />
+      <PackageReference Include="HangFire" />
+      <PackageReference Include="Hangfire.MemoryStorage" />
+      <PackageReference Include="Hangfire.PostgreSql" />
+      <PackageReference Include="Newtonsoft.Json" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+    </ItemGroup>
+
+</Project>

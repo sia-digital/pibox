@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package SomeStrangeBehaviour;
+option csharp_namespace = "UnitTests2";
+
+message MessageWithCSharpOption {
+  string Message = 1;
+}

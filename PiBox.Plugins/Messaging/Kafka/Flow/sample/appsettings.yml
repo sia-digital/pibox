@@ -1,0 +1,21 @@
+serilog:
+  minimumLevel: Debug
+  override:
+    System: Error
+    Microsoft: Error
+
+kafka:
+  client:
+    bootstrapServers: "localhost:9092"
+#    securityProtocol: "SaslPlaintext"
+#    saslPassword: "asdf"
+#    saslUsername: "asdf"
+#    saslMechanism: "Plain"
+#    sslCaLocation: ""
+  schemaRegistry:
+    url: "localhost:8081"
+#    basicAuthUserInfo: "admin:secret"
+#    sslCaLocation: "/tmp/cert.crt"
+#    enableSslCertificateVerification: "false"
+
+

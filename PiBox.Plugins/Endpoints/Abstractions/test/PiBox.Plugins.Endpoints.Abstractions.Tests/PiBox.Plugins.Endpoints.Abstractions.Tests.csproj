@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\PiBox.Extensions\Abstractions\src\PiBox.Extensions.Abstractions\PiBox.Extensions.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\..\..\PiBox.Testing\NUnit\src\PiBox.Testing\PiBox.Testing.csproj" />
+      <ProjectReference Include="..\..\src\PiBox.Plugins.Endpoints.Abstractions\PiBox.Plugins.Endpoints.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>
