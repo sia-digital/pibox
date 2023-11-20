@@ -15,6 +15,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>pibox-logo-small.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Authors>sia digital</Authors>
+    <Copyright>Copyright (c) sia digital 2022</Copyright>
     <PackageProjectUrl>https://github.com/sia-digital/pibox</PackageProjectUrl>
     <Description>PiBox is a `service hosting framework` that allows `.net devs` to `decorate their services with behaviours or functionality (think of plugins) while only using minimal configuration`.</Description>
     <PackageTags>pibox plugins framework library logging metrics tracing performance security</PackageTags>
