@@ -64,7 +64,7 @@
     <PackageVersion Version="7.0.10" Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" />
     <PackageVersion Version="2.2.0" Include="Microsoft.AspNetCore.Hosting.Abstractions" />
     <PackageVersion Version="7.0.10" Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
-    <PackageVersion Version="7.0.10" Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
+    <PackageVersion Version="8.0.0" Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
     <PackageVersion Version="7.0.10" Include="Microsoft.AspNetCore.Authorization" />
     <PackageVersion Version="2.21.0" Include="MongoDB.Driver" />
     <PackageVersion Version="2.2.0" Include="MongoDBMigrations" />
