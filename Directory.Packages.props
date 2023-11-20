@@ -55,7 +55,7 @@
     <PackageVersion Version="7.0.10" Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" />
     <PackageVersion Version="7.0.10" Include="Microsoft.Extensions.Http.Polly" />
     <PackageVersion Version="7.0.0" Include="Microsoft.Extensions.Caching.Abstractions" />
-    <PackageVersion Version="7.0.0" Include="Microsoft.Extensions.Http" />
+    <PackageVersion Version="8.0.0" Include="Microsoft.Extensions.Http" />
     <PackageVersion Version="3.0.0" Include="Microsoft.FeatureManagement.AspNetCore" />
     <PackageVersion Version="7.0.10" Include="Microsoft.EntityFrameworkCore" />
     <PackageVersion Version="7.0.10" Include="Microsoft.EntityFrameworkCore.Relational" />
