@@ -86,5 +86,5 @@ jobs:
         name: upload artifacts
         path: '**/publish/*'
     - name: Publish nuget packages
-      run: dotnet nuget push "**/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push "**/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
 
