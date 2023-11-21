@@ -46,9 +46,12 @@ PluginWebHostBuilder.RunDefault(PiBox.Generated.PiBoxPluginTypes.All);
 
 4. Install/add your plugins via nuget packages prefixed with `PiBox`
 
-## Configuring PiBox
+## Documentation
 
-To check how a plugin can be configured, search for the Plugin directory and read the README.md
+You can find a comprehensive documentation [here](https://sia-digital.gitbook.io/pibox/)
+
+Or check the individual README files in each plugins directory
+
 
 ## Building PiBox
 
@@ -58,7 +61,7 @@ To build PiBox, follow these steps:
 dotnet build ./PiBox.sln
 ```
 
-To format the solution run:
+To format and style check the solution run:
 
 ```sh
 dotnet format ./PiBox.sln
@@ -84,19 +87,21 @@ To run unit tests for PiBox, follow these steps:
 dotnet test ./PiBox.sln
 ```
 
-## Breaking changes in versions
-
 ## Contributing to PiBox
 
 To contribute to PiBox, follow these steps:
 
-1. Clone this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Check our used tools and frameworks to ensure you are using the same tools which are already in place.
-4. Check if your changes are in line with our style settings from .editorconfig and run `dotnet format`.
-5. Make your changes and commit them: `git commit -m '<commit_message>'`
-6. Push to the original branch: `git push origin PiBox/<branch_name>`
-7. Create the pull request.
+1. Check the issues if your idea or problem already exists
+2. Open a new issue if necessary to explain your idea or problem with as much details as possible
+
+To contribute code along your issue please follow the these steps:
+2. Clone this repository.
+3. Create a branch: `git checkout -b <branch_name>`.
+4. Check our used tools and frameworks to ensure you are using the same tools which are already in place.
+5. Check if your changes are in line with our style settings from .editorconfig and run `dotnet format`.
+6. Make your changes and commit them: `git commit -m '<commit_message>'`
+7. Push to the original branch: `git push origin PiBox/<branch_name>`
+8. Create the pull request.
 
 ## Development decisions
 
