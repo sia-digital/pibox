@@ -78,7 +78,7 @@ jobs:
       run: cat ./coverage-results/Summary.md >> $GITHUB_STEP_SUMMARY
 
     - name: Create package
-      run: dotnet pack --no-restore --nologo --no-build -p:PackageOutputPath='./publish' -c Release -p:PackageVersion=${NBGV_SimpleVersion} -p:PublicRelease=true --include-symbols --include-source
+      run: dotnet pack --no-restore --nologo --no-build -p:PackageOutputPath='./publish' -c Release -p:PackageVersion=${NBGV_SimpleVersion} -p:PublicRelease=true -p:SymbolPackageFormat=snupkg --include-symbols --include-source
 
     - name: Upload publish artifacts
       uses: actions/upload-artifact@v3
@@ -86,5 +86,5 @@ jobs:
         name: upload artifacts
         path: '**/publish/*'
     - name: Publish nuget packages
-      run: dotnet nuget push "**/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
+      run: dotnet nuget push "**/publish/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
 
