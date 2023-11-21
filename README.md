@@ -4,7 +4,8 @@
 
 ![Framework](https://img.shields.io/badge/framework-net7.0-blueviolet?style=flat-square)
 [![MIT License](https://img.shields.io/badge/license-MIT-%230b0?style=flat-square)](https://github.com/sia-digital/pibox/blob/main/LICENSE.txt)
-[![NuGet version (PiBox)](https://img.shields.io/nuget/v/PiBox.svg?style=flat-square)](https://www.nuget.org/packages/PiBox/)
+![Nuget](https://img.shields.io/nuget/v/PiBox.Hosting.Webhost?style=flat-square)
+![Nuget](https://img.shields.io/nuget/dt/PiBox.Hosting.Webhost?style=flat-square)
 
 PiBox is a `service hosting framework` that allows `.net devs` to `decorate their services with behaviours or functionality (think of plugins) while only using minimal configuration`.
 

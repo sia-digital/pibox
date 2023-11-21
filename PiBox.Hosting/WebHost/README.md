@@ -1,6 +1,10 @@
 # PiBox.Hosting.Webhost
 
 [![PiBox framework](https://img.shields.io/badge/powered_by-PiBox-%23000?style=flat-square)](https://github.com/sia-digital/pibox/tree/main#readme)
+![Nuget](https://img.shields.io/nuget/v/PiBox.Hosting.Webhost?style=flat-square)
+![Nuget](https://img.shields.io/nuget/dt/PiBox.Hosting.Webhost?style=flat-square)
+
+
 
 PiBox.Hosting.WebHost is the `core package` that allows `dotnet dev's` to `use the pibox web host and pibox plugins`.
 
@@ -116,7 +120,7 @@ Pibox uses open telemetry for it's metrics capabilities. Further info can be fou
 
 Pibox uses open telemetry for it's tracing capabilities. Further info can be found here&#x20;
 
-{% embed url="https://opentelemetry.io/docs/instrumentation/net/getting-started/" %}
+https://opentelemetry.io/docs/instrumentation/net/getting-started/
 
 If there is a tracing host configured, the service will try to send any traces to this host. it will also enrich the log messages with SpanIds and TraceIds.
 
