@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1c71078c-fad9-4efa-a2ff-f2a633e49171" name="@wkuerzdoelbt01 2023-11-22 15:52:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-11-22T15:52:47.1184734+01:00" queuing="2023-11-22T15:52:47.1184738+01:00" start="2023-11-22T15:52:40.7530651+01:00" finish="2023-11-22T15:52:47.1384692+01:00" />
+  <TestSettings name="default" id="088e255f-40a9-4598-9d7d-e3383c411d30">
+    <Deployment runDeploymentRoot="_wkuerzdoelbt01_2023-11-22_15_52_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="662438d4-e573-434d-8977-4c6bca39da99" testId="5ba9a049-6f48-b53d-a30c-49a58107dda8" testName="CustomPolicyCanBeApplied" computerName="wkuerzdoelbt01" duration="00:00:00.0171140" startTime="2023-11-22T15:52:46.7642559+01:00" endTime="2023-11-22T15:52:46.7813696+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="662438d4-e573-434d-8977-4c6bca39da99" />
+    <UnitTestResult executionId="3a8cc3f5-cdc1-4e45-9e6b-9303859d144e" testId="dcfab3c0-6bb5-b930-ee97-63c4312d87ef" testName="CanCreateRestClientWithBaseAddressAndAuthenticationConfig" computerName="wkuerzdoelbt01" duration="00:00:00.0163890" startTime="2023-11-22T15:52:46.7478359+01:00" endTime="2023-11-22T15:52:46.7642242+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a8cc3f5-cdc1-4e45-9e6b-9303859d144e" />
+    <UnitTestResult executionId="ffb8e691-1486-4d9a-9344-17cccbe5ebf8" testId="e4955954-d99b-c679-64c2-560a4d0e2d07" testName="ExceptionsGetsThrownOnFailedRequests" computerName="wkuerzdoelbt01" duration="00:00:00.0235420" startTime="2023-11-22T15:52:46.7891210+01:00" endTime="2023-11-22T15:52:46.8126629+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ffb8e691-1486-4d9a-9344-17cccbe5ebf8" />
+    <UnitTestResult executionId="a6c23a13-da36-4382-8d57-f617f150c5a0" testId="41a79d64-06d7-1c6c-9751-6f07b4424100" testName="DefaultRetryPolicyReruns" computerName="wkuerzdoelbt01" duration="00:00:00.0076890" startTime="2023-11-22T15:52:46.7813965+01:00" endTime="2023-11-22T15:52:46.7890855+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6c23a13-da36-4382-8d57-f617f150c5a0" />
+    <UnitTestResult executionId="eeb621c6-c868-42b8-a421-966ead39b28b" testId="5ec71d69-2afb-dafe-d37a-e5a8ff52708f" testName="CanCreateRestClientWithBaseAddress" computerName="wkuerzdoelbt01" duration="00:00:00.0232080" startTime="2023-11-22T15:52:46.7245892+01:00" endTime="2023-11-22T15:52:46.7477969+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eeb621c6-c868-42b8-a421-966ead39b28b" />
+    <UnitTestResult executionId="f18949fa-f52a-491d-9767-52d767cbd6d8" testId="9ec4c15e-8e90-bc23-368a-310672647406" testName="AuthHandlerRefreshesTheAccessToken" computerName="wkuerzdoelbt01" duration="00:00:01.2089190" startTime="2023-11-22T15:52:45.5143880+01:00" endTime="2023-11-22T15:52:46.7232552+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f18949fa-f52a-491d-9767-52d767cbd6d8" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="AuthHandlerRefreshesTheAccessToken" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="9ec4c15e-8e90-bc23-368a-310672647406">
+      <Execution id="f18949fa-f52a-491d-9767-52d767cbd6d8" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="AuthHandlerRefreshesTheAccessToken" />
+    </UnitTest>
+    <UnitTest name="CustomPolicyCanBeApplied" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="5ba9a049-6f48-b53d-a30c-49a58107dda8">
+      <Execution id="662438d4-e573-434d-8977-4c6bca39da99" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="CustomPolicyCanBeApplied" />
+    </UnitTest>
+    <UnitTest name="ExceptionsGetsThrownOnFailedRequests" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="e4955954-d99b-c679-64c2-560a4d0e2d07">
+      <Execution id="ffb8e691-1486-4d9a-9344-17cccbe5ebf8" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="ExceptionsGetsThrownOnFailedRequests" />
+    </UnitTest>
+    <UnitTest name="CanCreateRestClientWithBaseAddress" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="5ec71d69-2afb-dafe-d37a-e5a8ff52708f">
+      <Execution id="eeb621c6-c868-42b8-a421-966ead39b28b" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="CanCreateRestClientWithBaseAddress" />
+    </UnitTest>
+    <UnitTest name="DefaultRetryPolicyReruns" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="41a79d64-06d7-1c6c-9751-6f07b4424100">
+      <Execution id="a6c23a13-da36-4382-8d57-f617f150c5a0" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="DefaultRetryPolicyReruns" />
+    </UnitTest>
+    <UnitTest name="CanCreateRestClientWithBaseAddressAndAuthenticationConfig" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.extensions/restease/test/pibox.extensions.restease.tests/bin/release/net8.0/pibox.extensions.restease.tests.dll" id="dcfab3c0-6bb5-b930-ee97-63c4312d87ef">
+      <Execution id="3a8cc3f5-cdc1-4e45-9e6b-9303859d144e" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Extensions.RestEase.Tests.RestClientFactoryTests" name="CanCreateRestClientWithBaseAddressAndAuthenticationConfig" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5ba9a049-6f48-b53d-a30c-49a58107dda8" executionId="662438d4-e573-434d-8977-4c6bca39da99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dcfab3c0-6bb5-b930-ee97-63c4312d87ef" executionId="3a8cc3f5-cdc1-4e45-9e6b-9303859d144e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e4955954-d99b-c679-64c2-560a4d0e2d07" executionId="ffb8e691-1486-4d9a-9344-17cccbe5ebf8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="41a79d64-06d7-1c6c-9751-6f07b4424100" executionId="a6c23a13-da36-4382-8d57-f617f150c5a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ec71d69-2afb-dafe-d37a-e5a8ff52708f" executionId="eeb621c6-c868-42b8-a421-966ead39b28b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ec4c15e-8e90-bc23-368a-310672647406" executionId="f18949fa-f52a-491d-9767-52d767cbd6d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /home/lukas/Development/github.com/sia-digital/pibox/PiBox.Extensions/RestEase/test/PiBox.Extensions.RestEase.Tests/bin/Release/net8.0/PiBox.Extensions.RestEase.Tests.dll
+   NUnit3TestExecutor discovered 6 of 6 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.5.0.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

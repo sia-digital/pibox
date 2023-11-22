@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="0210cd3e-ed56-4651-aff8-d03ee06d4550" name="@wkuerzdoelbt01 2023-11-22 15:52:46" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-11-22T15:52:46.6337467+01:00" queuing="2023-11-22T15:52:46.6337469+01:00" start="2023-11-22T15:52:42.2796043+01:00" finish="2023-11-22T15:52:46.9583780+01:00" />
+  <TestSettings name="default" id="6e5cfad8-7a8c-47d3-9a30-1c0e62cc4096">
+    <Deployment runDeploymentRoot="_wkuerzdoelbt01_2023-11-22_15_52_46" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="4bc2a763-c1ea-4a58-9898-75809e71bf51" testId="ecad7f3c-1bae-57f2-ad4d-4c122e1cc56d" testName="RemoveAsyncIsSuccessful" computerName="wkuerzdoelbt01" duration="00:00:00.0033190" startTime="2023-11-22T15:52:46.5537110+01:00" endTime="2023-11-22T15:52:46.5570288+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4bc2a763-c1ea-4a58-9898-75809e71bf51" />
+    <UnitTestResult executionId="8a17fbdf-7d8e-4a46-a7c9-5a9858cfd24d" testId="7a105ef7-55dd-153f-e7c2-f8f9e08870fc" testName="ConfigureHealthChecksWorks" computerName="wkuerzdoelbt01" duration="00:00:00.4521690" startTime="2023-11-22T15:52:45.9257769+01:00" endTime="2023-11-22T15:52:46.3779458+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a17fbdf-7d8e-4a46-a7c9-5a9858cfd24d" />
+    <UnitTestResult executionId="fd185ea1-000a-4208-a280-58b8f8569ee2" testId="87dac30e-9776-f3b7-6cbc-bbb71c647bf2" testName="UpdateAsyncReturnsUpdatedEntity" computerName="wkuerzdoelbt01" duration="00:00:00.0068130" startTime="2023-11-22T15:52:46.5671832+01:00" endTime="2023-11-22T15:52:46.5739956+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd185ea1-000a-4208-a280-58b8f8569ee2" />
+    <UnitTestResult executionId="a95894af-a77e-440e-972f-2ecfc975319a" testId="cbe5864a-34a9-3fe4-2546-0c5b5650f54e" testName="FindByIdAsyncReturnsSingleResult" computerName="wkuerzdoelbt01" duration="00:00:00.0093710" startTime="2023-11-22T15:52:46.5443148+01:00" endTime="2023-11-22T15:52:46.5536848+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a95894af-a77e-440e-972f-2ecfc975319a" />
+    <UnitTestResult executionId="090d71d6-d9bc-4801-aba4-58a0b93c1b5f" testId="a6a47dbc-1e42-5ed4-6778-54baa3d76fee" testName="AddAsyncReturnsCreatedEntity" computerName="wkuerzdoelbt01" duration="00:00:00.4817930" startTime="2023-11-22T15:52:45.9706022+01:00" endTime="2023-11-22T15:52:46.4523964+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="090d71d6-d9bc-4801-aba4-58a0b93c1b5f" />
+    <UnitTestResult executionId="026a5c1f-90c3-4c67-8704-13ce3e44fb7a" testId="180aca37-ce57-8234-d6c2-2a9b803957c6" testName="FindAsyncWithFilterReturnsListResult" computerName="wkuerzdoelbt01" duration="00:00:00.0759050" startTime="2023-11-22T15:52:46.4648077+01:00" endTime="2023-11-22T15:52:46.5407121+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="026a5c1f-90c3-4c67-8704-13ce3e44fb7a" />
+    <UnitTestResult executionId="5e2a62c4-36b3-4da8-ac5e-a9a147090891" testId="05118325-1de2-1970-99a1-9120fbe283a1" testName="TestGetCollectionFor" computerName="wkuerzdoelbt01" duration="00:00:00.0335430" startTime="2023-11-22T15:52:46.5278145+01:00" endTime="2023-11-22T15:52:46.5613568+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e2a62c4-36b3-4da8-ac5e-a9a147090891" />
+    <UnitTestResult executionId="3fcb8355-a897-4a19-91ea-dfb9c285d16d" testId="c8d36e2f-c228-75b8-9aec-69c4e450346b" testName="ConfigureServicesWorks" computerName="wkuerzdoelbt01" duration="00:00:00.1833680" startTime="2023-11-22T15:52:46.3779896+01:00" endTime="2023-11-22T15:52:46.5613567+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3fcb8355-a897-4a19-91ea-dfb9c285d16d" />
+    <UnitTestResult executionId="ff412daa-3903-4147-963e-3f917663b619" testId="46f4b88d-6abb-32ce-8f95-0e76c6b69c50" testName="RemoveCanReturnAnError" computerName="wkuerzdoelbt01" duration="00:00:00.0100920" startTime="2023-11-22T15:52:46.5570610+01:00" endTime="2023-11-22T15:52:46.5671526+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff412daa-3903-4147-963e-3f917663b619" />
+    <UnitTestResult executionId="61b3646a-59cb-4ff5-bcba-100cfab8ffaa" testId="b4114db6-d929-58c5-f230-d6951e3a704e" testName="CountAsyncReturnsAmountOfEntries" computerName="wkuerzdoelbt01" duration="00:00:00.0123319" startTime="2023-11-22T15:52:46.4524383+01:00" endTime="2023-11-22T15:52:46.4647694+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61b3646a-59cb-4ff5-bcba-100cfab8ffaa" />
+    <UnitTestResult executionId="da39ec80-c7e1-479a-b680-b5952817a518" testId="a8e5c9a3-842b-d561-f1b3-4184b4a7c63c" testName="MongoDbInstanceConstructor" computerName="wkuerzdoelbt01" duration="00:00:00.2162270" startTime="2023-11-22T15:52:46.3115375+01:00" endTime="2023-11-22T15:52:46.5277649+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da39ec80-c7e1-479a-b680-b5952817a518" />
+    <UnitTestResult executionId="301c80aa-22e1-411d-a00d-a9d1082a39ee" testId="36c77a4d-18b8-d5fc-d4ff-10a7c69f5b0e" testName="ToSnakeCaseWorks" computerName="wkuerzdoelbt01" duration="00:00:00.0003370" startTime="2023-11-22T15:52:46.5613889+01:00" endTime="2023-11-22T15:52:46.5617259+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="301c80aa-22e1-411d-a00d-a9d1082a39ee" />
+    <UnitTestResult executionId="7698ad53-0183-4b24-82da-f040f4dc4d18" testId="712642a1-94a0-d0e7-82ee-f98851dfd322" testName="FindAsyncWithoutFilterReturnsListResult" computerName="wkuerzdoelbt01" duration="00:00:00.0035060" startTime="2023-11-22T15:52:46.5407631+01:00" endTime="2023-11-22T15:52:46.5442684+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7698ad53-0183-4b24-82da-f040f4dc4d18" />
+    <UnitTestResult executionId="75701e84-288d-4ce6-a916-6957bbb0b0a4" testId="1e81e2c6-6f8c-08b9-5c15-edf6a55536d7" testName="MetricCounterGetsIncremented" computerName="wkuerzdoelbt01" duration="00:00:00.3679790" startTime="2023-11-22T15:52:45.9259944+01:00" endTime="2023-11-22T15:52:46.2938957+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="75701e84-288d-4ce6-a916-6957bbb0b0a4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="FindAsyncWithFilterReturnsListResult" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="180aca37-ce57-8234-d6c2-2a9b803957c6">
+      <Execution id="026a5c1f-90c3-4c67-8704-13ce3e44fb7a" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="FindAsyncWithFilterReturnsListResult" />
+    </UnitTest>
+    <UnitTest name="AddAsyncReturnsCreatedEntity" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="a6a47dbc-1e42-5ed4-6778-54baa3d76fee">
+      <Execution id="090d71d6-d9bc-4801-aba4-58a0b93c1b5f" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="AddAsyncReturnsCreatedEntity" />
+    </UnitTest>
+    <UnitTest name="UpdateAsyncReturnsUpdatedEntity" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="87dac30e-9776-f3b7-6cbc-bbb71c647bf2">
+      <Execution id="fd185ea1-000a-4208-a280-58b8f8569ee2" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="UpdateAsyncReturnsUpdatedEntity" />
+    </UnitTest>
+    <UnitTest name="CountAsyncReturnsAmountOfEntries" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="b4114db6-d929-58c5-f230-d6951e3a704e">
+      <Execution id="61b3646a-59cb-4ff5-bcba-100cfab8ffaa" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="CountAsyncReturnsAmountOfEntries" />
+    </UnitTest>
+    <UnitTest name="MongoDbInstanceConstructor" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="a8e5c9a3-842b-d561-f1b3-4184b4a7c63c">
+      <Execution id="da39ec80-c7e1-479a-b680-b5952817a518" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbInstanceTests" name="MongoDbInstanceConstructor" />
+    </UnitTest>
+    <UnitTest name="ConfigureHealthChecksWorks" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="7a105ef7-55dd-153f-e7c2-f8f9e08870fc">
+      <Execution id="8a17fbdf-7d8e-4a46-a7c9-5a9858cfd24d" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbPluginTests" name="ConfigureHealthChecksWorks" />
+    </UnitTest>
+    <UnitTest name="RemoveAsyncIsSuccessful" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="ecad7f3c-1bae-57f2-ad4d-4c122e1cc56d">
+      <Execution id="4bc2a763-c1ea-4a58-9898-75809e71bf51" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="RemoveAsyncIsSuccessful" />
+    </UnitTest>
+    <UnitTest name="ConfigureServicesWorks" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="c8d36e2f-c228-75b8-9aec-69c4e450346b">
+      <Execution id="3fcb8355-a897-4a19-91ea-dfb9c285d16d" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbPluginTests" name="ConfigureServicesWorks" />
+    </UnitTest>
+    <UnitTest name="FindByIdAsyncReturnsSingleResult" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="cbe5864a-34a9-3fe4-2546-0c5b5650f54e">
+      <Execution id="a95894af-a77e-440e-972f-2ecfc975319a" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="FindByIdAsyncReturnsSingleResult" />
+    </UnitTest>
+    <UnitTest name="RemoveCanReturnAnError" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="46f4b88d-6abb-32ce-8f95-0e76c6b69c50">
+      <Execution id="ff412daa-3903-4147-963e-3f917663b619" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="RemoveCanReturnAnError" />
+    </UnitTest>
+    <UnitTest name="MetricCounterGetsIncremented" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="1e81e2c6-6f8c-08b9-5c15-edf6a55536d7">
+      <Execution id="75701e84-288d-4ce6-a916-6957bbb0b0a4" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbInstanceTests" name="MetricCounterGetsIncremented" />
+    </UnitTest>
+    <UnitTest name="FindAsyncWithoutFilterReturnsListResult" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="712642a1-94a0-d0e7-82ee-f98851dfd322">
+      <Execution id="7698ad53-0183-4b24-82da-f040f4dc4d18" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbRepositoryTests" name="FindAsyncWithoutFilterReturnsListResult" />
+    </UnitTest>
+    <UnitTest name="TestGetCollectionFor" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="05118325-1de2-1970-99a1-9120fbe283a1">
+      <Execution id="5e2a62c4-36b3-4da8-ac5e-a9a147090891" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbInstanceTests" name="TestGetCollectionFor" />
+    </UnitTest>
+    <UnitTest name="ToSnakeCaseWorks" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/persistence/mongodb/test/pibox.plugins.persistence.mongodb.tests/bin/release/net8.0/pibox.plugins.persistence.mongodb.tests.dll" id="36c77a4d-18b8-d5fc-d4ff-10a7c69f5b0e">
+      <Execution id="301c80aa-22e1-411d-a00d-a9d1082a39ee" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Persistence.MongoDb.MongoDbInstanceTests" name="ToSnakeCaseWorks" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ecad7f3c-1bae-57f2-ad4d-4c122e1cc56d" executionId="4bc2a763-c1ea-4a58-9898-75809e71bf51" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a105ef7-55dd-153f-e7c2-f8f9e08870fc" executionId="8a17fbdf-7d8e-4a46-a7c9-5a9858cfd24d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87dac30e-9776-f3b7-6cbc-bbb71c647bf2" executionId="fd185ea1-000a-4208-a280-58b8f8569ee2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cbe5864a-34a9-3fe4-2546-0c5b5650f54e" executionId="a95894af-a77e-440e-972f-2ecfc975319a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6a47dbc-1e42-5ed4-6778-54baa3d76fee" executionId="090d71d6-d9bc-4801-aba4-58a0b93c1b5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="180aca37-ce57-8234-d6c2-2a9b803957c6" executionId="026a5c1f-90c3-4c67-8704-13ce3e44fb7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05118325-1de2-1970-99a1-9120fbe283a1" executionId="5e2a62c4-36b3-4da8-ac5e-a9a147090891" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8d36e2f-c228-75b8-9aec-69c4e450346b" executionId="3fcb8355-a897-4a19-91ea-dfb9c285d16d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="46f4b88d-6abb-32ce-8f95-0e76c6b69c50" executionId="ff412daa-3903-4147-963e-3f917663b619" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4114db6-d929-58c5-f230-d6951e3a704e" executionId="61b3646a-59cb-4ff5-bcba-100cfab8ffaa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8e5c9a3-842b-d561-f1b3-4184b4a7c63c" executionId="da39ec80-c7e1-479a-b680-b5952817a518" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="36c77a4d-18b8-d5fc-d4ff-10a7c69f5b0e" executionId="301c80aa-22e1-411d-a00d-a9d1082a39ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="712642a1-94a0-d0e7-82ee-f98851dfd322" executionId="7698ad53-0183-4b24-82da-f040f4dc4d18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e81e2c6-6f8c-08b9-5c15-edf6a55536d7" executionId="75701e84-288d-4ce6-a916-6957bbb0b0a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="14" executed="14" passed="14" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Persistence/MongoDb/test/PiBox.Plugins.Persistence.MongoDb.Tests/bin/Release/net8.0/PiBox.Plugins.Persistence.MongoDb.Tests.dll
+   NUnit3TestExecutor discovered 14 of 14 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.5.0.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

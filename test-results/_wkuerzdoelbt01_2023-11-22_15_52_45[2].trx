@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ce6f4424-545b-4c83-bdee-587618d39956" name="@wkuerzdoelbt01 2023-11-22 15:52:45" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-11-22T15:52:46.0059987+01:00" queuing="2023-11-22T15:52:46.0059989+01:00" start="2023-11-22T15:52:40.3146258+01:00" finish="2023-11-22T15:52:46.5251682+01:00" />
+  <TestSettings name="default" id="01fed1bc-dfff-4e99-b4b1-570884afb55e">
+    <Deployment runDeploymentRoot="_wkuerzdoelbt01_2023-11-22_15_52_45" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9b9734d0-20bc-4517-a13c-7d45062bdbcc" testId="2987ccc6-8154-b6ec-3a1c-bb5675ddbb8a" testName="AsyncJobThrowsException" computerName="wkuerzdoelbt01" duration="00:00:00.0295940" startTime="2023-11-22T15:52:45.8791787+01:00" endTime="2023-11-22T15:52:45.9087720+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b9734d0-20bc-4517-a13c-7d45062bdbcc" />
+    <UnitTestResult executionId="d5a13280-4b7a-438b-b657-43b9766caf9b" testId="6455f37a-4f9e-4361-ad44-7d15711788e8" testName="ParameterizedAsyncJobWillBeCancelledAfterTimeout" computerName="wkuerzdoelbt01" duration="00:00:00.3141240" startTime="2023-11-22T15:52:45.9324749+01:00" endTime="2023-11-22T15:52:46.2465982+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d5a13280-4b7a-438b-b657-43b9766caf9b" />
+    <UnitTestResult executionId="2ba75667-3720-4adb-b15c-fb765ca862dc" testId="6353c6af-bb0a-4518-ba9e-022399c7fd4c" testName="ConfigureApplicationTest" computerName="wkuerzdoelbt01" duration="00:00:00.2653710" startTime="2023-11-22T15:52:45.9088298+01:00" endTime="2023-11-22T15:52:46.1742004+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ba75667-3720-4adb-b15c-fb765ca862dc" />
+    <UnitTestResult executionId="4e57b144-7848-45f8-9a42-a8ec8e637171" testId="4dc55233-1403-c348-ca99-0e4bd9411792" testName="AsyncJobTest" computerName="wkuerzdoelbt01" duration="00:00:00.1654509" startTime="2023-11-22T15:52:45.7136882+01:00" endTime="2023-11-22T15:52:45.8791393+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e57b144-7848-45f8-9a42-a8ec8e637171" />
+    <UnitTestResult executionId="607768e9-307f-4e00-8366-bad894a869f1" testId="e82f02a6-59dc-da30-312f-d6957d3018ef" testName="JobOptionTest" computerName="wkuerzdoelbt01" duration="00:00:00.0026710" startTime="2023-11-22T15:52:45.9259035+01:00" endTime="2023-11-22T15:52:45.9285749+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="607768e9-307f-4e00-8366-bad894a869f1" />
+    <UnitTestResult executionId="41f03a75-f43d-4d58-8ae0-c86e71f25e80" testId="f10dc806-3f46-b032-ce22-d57cd32f25f1" testName="CollectDataSetsLogsException" computerName="wkuerzdoelbt01" duration="00:00:00.2805000" startTime="2023-11-22T15:52:45.4947244+01:00" endTime="2023-11-22T15:52:45.7752251+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="41f03a75-f43d-4d58-8ae0-c86e71f25e80" />
+    <UnitTestResult executionId="abbc3ef7-9f35-4116-a936-67b249fe8dd2" testId="9902eb03-1d12-c60c-df88-42224f11b76c" testName="HangfireConfigureHealthChecksWorks" computerName="wkuerzdoelbt01" duration="00:00:00.0492379" startTime="2023-11-22T15:52:46.1775319+01:00" endTime="2023-11-22T15:52:46.2267697+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="abbc3ef7-9f35-4116-a936-67b249fe8dd2" />
+    <UnitTestResult executionId="cd46f881-c973-4e56-9275-8249f2a02652" testId="ff6538bd-002f-df78-f088-797bbaa7d65b" testName="CollectDataSetsTheCurrentGaugeValue" computerName="wkuerzdoelbt01" duration="00:00:00.4356560" startTime="2023-11-22T15:52:45.7752861+01:00" endTime="2023-11-22T15:52:46.2109411+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd46f881-c973-4e56-9275-8249f2a02652" />
+    <UnitTestResult executionId="df931007-3422-432d-88c9-131eab65c35e" testId="de110f08-9b05-c463-0509-cfce4525ce76" testName="ConfigureServiceTest" computerName="wkuerzdoelbt01" duration="00:00:00.0005180" startTime="2023-11-22T15:52:46.1769787+01:00" endTime="2023-11-22T15:52:46.1774971+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df931007-3422-432d-88c9-131eab65c35e" />
+    <UnitTestResult executionId="484a00c4-6225-4581-aca7-d61886e812a0" testId="d2d72412-3562-10d2-db26-57b1f8186490" testName="ParameterizedAsyncJobTest" computerName="wkuerzdoelbt01" duration="00:00:00.0038320" startTime="2023-11-22T15:52:45.9286119+01:00" endTime="2023-11-22T15:52:45.9324434+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="484a00c4-6225-4581-aca7-d61886e812a0" />
+    <UnitTestResult executionId="5a3ab10a-eb04-40df-bafa-9b8772e33b4f" testId="992f646c-1097-de38-7695-0f08b6fe22b7" testName="CanSetupJobsWithAServiceCollection" computerName="wkuerzdoelbt01" duration="00:00:00.0548200" startTime="2023-11-22T15:52:45.5065477+01:00" endTime="2023-11-22T15:52:45.5612368+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a3ab10a-eb04-40df-bafa-9b8772e33b4f" />
+    <UnitTestResult executionId="4b0cca6e-4ab4-4c4d-a336-793451ecc87c" testId="6c0171e2-33f4-8384-d3fb-1201b764530b" testName="AsyncJobWillBeCancelledAfterTimeout" computerName="wkuerzdoelbt01" duration="00:00:00.0068160" startTime="2023-11-22T15:52:45.9107063+01:00" endTime="2023-11-22T15:52:45.9175221+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b0cca6e-4ab4-4c4d-a336-793451ecc87c" />
+    <UnitTestResult executionId="0cc178a8-8fb3-4c43-b7b9-b0b40c9b1270" testId="10a0b8e2-fe1c-ef31-0a0b-2ab5cd5037fa" testName="CanSpecifyServerOptions" computerName="wkuerzdoelbt01" duration="00:00:00.1912080" startTime="2023-11-22T15:52:45.7073541+01:00" endTime="2023-11-22T15:52:45.8985616+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0cc178a8-8fb3-4c43-b7b9-b0b40c9b1270" />
+    <UnitTestResult executionId="f61a5a3d-2401-4785-8f20-a83b983066b4" testId="234de800-492f-48ef-34f2-294a67c2593a" testName="DisposeShouldWorkWithInitializedTimerObject" computerName="wkuerzdoelbt01" duration="00:00:00.0096750" startTime="2023-11-22T15:52:46.2273090+01:00" endTime="2023-11-22T15:52:46.2369836+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f61a5a3d-2401-4785-8f20-a83b983066b4" />
+    <UnitTestResult executionId="d0aeb05b-8e27-461f-9abc-2d547d1484a5" testId="854c24d3-bd06-052d-0a4a-fccab884febf" testName="RemovesTheDuplicateFromProcessingOnes" computerName="wkuerzdoelbt01" duration="00:00:00.0028690" startTime="2023-11-22T15:52:45.8350384+01:00" endTime="2023-11-22T15:52:45.8379068+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0aeb05b-8e27-461f-9abc-2d547d1484a5" />
+    <UnitTestResult executionId="de80d58d-c632-476f-834c-ec4e19f85b01" testId="85583a19-a6de-a01e-f52c-517f1b93fcaf" testName="DoesNotRemoveItself" computerName="wkuerzdoelbt01" duration="00:00:00.0222180" startTime="2023-11-22T15:52:45.8107962+01:00" endTime="2023-11-22T15:52:45.8330131+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de80d58d-c632-476f-834c-ec4e19f85b01" />
+    <UnitTestResult executionId="b8cc6c4d-abeb-4811-a452-a59d8a4bf945" testId="453df34a-5269-bf36-f33b-dfac29e6ec14" testName="RemovesTheDuplicateFromEnqueuedOnes" computerName="wkuerzdoelbt01" duration="00:00:00.0019290" startTime="2023-11-22T15:52:45.8330632+01:00" endTime="2023-11-22T15:52:45.8349922+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b8cc6c4d-abeb-4811-a452-a59d8a4bf945" />
+    <UnitTestResult executionId="291aa2c0-ba45-41ed-b292-9f9f49877878" testId="56aa238f-de3b-5289-0625-a24ac5e0961f" testName="RemovesTheDuplicateFromScheduledOnes" computerName="wkuerzdoelbt01" duration="00:00:00.0134090" startTime="2023-11-22T15:52:45.8547147+01:00" endTime="2023-11-22T15:52:45.8681239+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="291aa2c0-ba45-41ed-b292-9f9f49877878" />
+    <UnitTestResult executionId="76d38e49-4ca3-4fae-a1b0-8cdd7406905d" testId="96f1a91b-3b83-ab2c-b15e-9def6e476983" testName="DoesNothingOnWrongState" computerName="wkuerzdoelbt01" duration="00:00:00.3108909" startTime="2023-11-22T15:52:45.4989675+01:00" endTime="2023-11-22T15:52:45.8098578+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76d38e49-4ca3-4fae-a1b0-8cdd7406905d" />
+    <UnitTestResult executionId="42722033-6167-4705-a83f-0300503b3972" testId="670e4c66-30e9-f709-fd76-5b4000f216ee" testName="DisposeShouldWorkWithNullTimerObject" computerName="wkuerzdoelbt01" duration="00:00:00.0010050" startTime="2023-11-22T15:52:46.2370330+01:00" endTime="2023-11-22T15:52:46.2380384+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="42722033-6167-4705-a83f-0300503b3972" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="DoesNothingOnWrongState" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="96f1a91b-3b83-ab2c-b15e-9def6e476983">
+      <Execution id="76d38e49-4ca3-4fae-a1b0-8cdd7406905d" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.UniquePerQueueAttributeTests" name="DoesNothingOnWrongState" />
+    </UnitTest>
+    <UnitTest name="RemovesTheDuplicateFromProcessingOnes" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="854c24d3-bd06-052d-0a4a-fccab884febf">
+      <Execution id="d0aeb05b-8e27-461f-9abc-2d547d1484a5" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.UniquePerQueueAttributeTests" name="RemovesTheDuplicateFromProcessingOnes" />
+    </UnitTest>
+    <UnitTest name="DisposeShouldWorkWithNullTimerObject" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="670e4c66-30e9-f709-fd76-5b4000f216ee">
+      <Execution id="42722033-6167-4705-a83f-0300503b3972" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfireStatisticsMetricsReporterTest" name="DisposeShouldWorkWithNullTimerObject" />
+    </UnitTest>
+    <UnitTest name="ConfigureApplicationTest" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="6353c6af-bb0a-4518-ba9e-022399c7fd4c">
+      <Execution id="2ba75667-3720-4adb-b15c-fb765ca862dc" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfirePluginTests" name="ConfigureApplicationTest" />
+    </UnitTest>
+    <UnitTest name="DisposeShouldWorkWithInitializedTimerObject" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="234de800-492f-48ef-34f2-294a67c2593a">
+      <Execution id="f61a5a3d-2401-4785-8f20-a83b983066b4" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfireStatisticsMetricsReporterTest" name="DisposeShouldWorkWithInitializedTimerObject" />
+    </UnitTest>
+    <UnitTest name="ParameterizedAsyncJobWillBeCancelledAfterTimeout" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="6455f37a-4f9e-4361-ad44-7d15711788e8">
+      <Execution id="d5a13280-4b7a-438b-b657-43b9766caf9b" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="ParameterizedAsyncJobWillBeCancelledAfterTimeout" />
+    </UnitTest>
+    <UnitTest name="CanSpecifyServerOptions" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="10a0b8e2-fe1c-ef31-0a0b-2ab5cd5037fa">
+      <Execution id="0cc178a8-8fb3-4c43-b7b9-b0b40c9b1270" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfirePluginTests" name="CanSpecifyServerOptions" />
+    </UnitTest>
+    <UnitTest name="RemovesTheDuplicateFromScheduledOnes" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="56aa238f-de3b-5289-0625-a24ac5e0961f">
+      <Execution id="291aa2c0-ba45-41ed-b292-9f9f49877878" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.UniquePerQueueAttributeTests" name="RemovesTheDuplicateFromScheduledOnes" />
+    </UnitTest>
+    <UnitTest name="RemovesTheDuplicateFromEnqueuedOnes" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="453df34a-5269-bf36-f33b-dfac29e6ec14">
+      <Execution id="b8cc6c4d-abeb-4811-a452-a59d8a4bf945" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.UniquePerQueueAttributeTests" name="RemovesTheDuplicateFromEnqueuedOnes" />
+    </UnitTest>
+    <UnitTest name="CollectDataSetsTheCurrentGaugeValue" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="ff6538bd-002f-df78-f088-797bbaa7d65b">
+      <Execution id="cd46f881-c973-4e56-9275-8249f2a02652" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfireStatisticsMetricsReporterTest" name="CollectDataSetsTheCurrentGaugeValue" />
+    </UnitTest>
+    <UnitTest name="JobOptionTest" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="e82f02a6-59dc-da30-312f-d6957d3018ef">
+      <Execution id="607768e9-307f-4e00-8366-bad894a869f1" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="JobOptionTest" />
+    </UnitTest>
+    <UnitTest name="DoesNotRemoveItself" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="85583a19-a6de-a01e-f52c-517f1b93fcaf">
+      <Execution id="de80d58d-c632-476f-834c-ec4e19f85b01" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.UniquePerQueueAttributeTests" name="DoesNotRemoveItself" />
+    </UnitTest>
+    <UnitTest name="AsyncJobThrowsException" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="2987ccc6-8154-b6ec-3a1c-bb5675ddbb8a">
+      <Execution id="9b9734d0-20bc-4517-a13c-7d45062bdbcc" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="AsyncJobThrowsException" />
+    </UnitTest>
+    <UnitTest name="AsyncJobWillBeCancelledAfterTimeout" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="6c0171e2-33f4-8384-d3fb-1201b764530b">
+      <Execution id="4b0cca6e-4ab4-4c4d-a336-793451ecc87c" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="AsyncJobWillBeCancelledAfterTimeout" />
+    </UnitTest>
+    <UnitTest name="HangfireConfigureHealthChecksWorks" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="9902eb03-1d12-c60c-df88-42224f11b76c">
+      <Execution id="abbc3ef7-9f35-4116-a936-67b249fe8dd2" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfirePluginTests" name="HangfireConfigureHealthChecksWorks" />
+    </UnitTest>
+    <UnitTest name="ParameterizedAsyncJobTest" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="d2d72412-3562-10d2-db26-57b1f8186490">
+      <Execution id="484a00c4-6225-4581-aca7-d61886e812a0" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="ParameterizedAsyncJobTest" />
+    </UnitTest>
+    <UnitTest name="CollectDataSetsLogsException" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="f10dc806-3f46-b032-ce22-d57cd32f25f1">
+      <Execution id="41f03a75-f43d-4d58-8ae0-c86e71f25e80" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfireStatisticsMetricsReporterTest" name="CollectDataSetsLogsException" />
+    </UnitTest>
+    <UnitTest name="ConfigureServiceTest" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="de110f08-9b05-c463-0509-cfce4525ce76">
+      <Execution id="df931007-3422-432d-88c9-131eab65c35e" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfirePluginTests" name="ConfigureServiceTest" />
+    </UnitTest>
+    <UnitTest name="CanSetupJobsWithAServiceCollection" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="992f646c-1097-de38-7695-0f08b6fe22b7">
+      <Execution id="5a3ab10a-eb04-40df-bafa-9b8772e33b4f" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.HangfireExtensionsTests" name="CanSetupJobsWithAServiceCollection" />
+    </UnitTest>
+    <UnitTest name="AsyncJobTest" storage="/home/lukas/development/github.com/sia-digital/pibox/pibox.plugins/jobs/hangfire/test/pibox.plugins.jobs.hangfire.tests/bin/release/net8.0/pibox.plugins.jobs.hangfire.tests.dll" id="4dc55233-1403-c348-ca99-0e4bd9411792">
+      <Execution id="4e57b144-7848-45f8-9a42-a8ec8e637171" />
+      <TestMethod codeBase="/home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="PiBox.Plugins.Jobs.Hangfire.Tests.JobTest" name="AsyncJobTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="2987ccc6-8154-b6ec-3a1c-bb5675ddbb8a" executionId="9b9734d0-20bc-4517-a13c-7d45062bdbcc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6455f37a-4f9e-4361-ad44-7d15711788e8" executionId="d5a13280-4b7a-438b-b657-43b9766caf9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6353c6af-bb0a-4518-ba9e-022399c7fd4c" executionId="2ba75667-3720-4adb-b15c-fb765ca862dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4dc55233-1403-c348-ca99-0e4bd9411792" executionId="4e57b144-7848-45f8-9a42-a8ec8e637171" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e82f02a6-59dc-da30-312f-d6957d3018ef" executionId="607768e9-307f-4e00-8366-bad894a869f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f10dc806-3f46-b032-ce22-d57cd32f25f1" executionId="41f03a75-f43d-4d58-8ae0-c86e71f25e80" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9902eb03-1d12-c60c-df88-42224f11b76c" executionId="abbc3ef7-9f35-4116-a936-67b249fe8dd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff6538bd-002f-df78-f088-797bbaa7d65b" executionId="cd46f881-c973-4e56-9275-8249f2a02652" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de110f08-9b05-c463-0509-cfce4525ce76" executionId="df931007-3422-432d-88c9-131eab65c35e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d2d72412-3562-10d2-db26-57b1f8186490" executionId="484a00c4-6225-4581-aca7-d61886e812a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="992f646c-1097-de38-7695-0f08b6fe22b7" executionId="5a3ab10a-eb04-40df-bafa-9b8772e33b4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c0171e2-33f4-8384-d3fb-1201b764530b" executionId="4b0cca6e-4ab4-4c4d-a336-793451ecc87c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="10a0b8e2-fe1c-ef31-0a0b-2ab5cd5037fa" executionId="0cc178a8-8fb3-4c43-b7b9-b0b40c9b1270" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="234de800-492f-48ef-34f2-294a67c2593a" executionId="f61a5a3d-2401-4785-8f20-a83b983066b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="854c24d3-bd06-052d-0a4a-fccab884febf" executionId="d0aeb05b-8e27-461f-9abc-2d547d1484a5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85583a19-a6de-a01e-f52c-517f1b93fcaf" executionId="de80d58d-c632-476f-834c-ec4e19f85b01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="453df34a-5269-bf36-f33b-dfac29e6ec14" executionId="b8cc6c4d-abeb-4811-a452-a59d8a4bf945" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="56aa238f-de3b-5289-0625-a24ac5e0961f" executionId="291aa2c0-ba45-41ed-b292-9f9f49877878" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96f1a91b-3b83-ab2c-b15e-9def6e476983" executionId="76d38e49-4ca3-4fae-a1b0-8cdd7406905d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="670e4c66-30e9-f709-fd76-5b4000f216ee" executionId="42722033-6167-4705-a83f-0300503b3972" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="20" executed="20" passed="20" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started
+Running all tests in /home/lukas/Development/github.com/sia-digital/pibox/PiBox.Plugins/Jobs/Hangfire/test/PiBox.Plugins.Jobs.Hangfire.Tests/bin/Release/net8.0/PiBox.Plugins.Jobs.Hangfire.Tests.dll
+   NUnit3TestExecutor discovered 20 of 20 NUnit test cases using Current Discovery mode, Non-Explicit run
+NUnit Adapter 4.5.0.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

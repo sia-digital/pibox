@@ -34,10 +34,7 @@ jobs:
       run: dotnet format "./PiBox.sln" --verify-no-changes --no-restore
 
     - name: build
-      run: dotnet build --no-restore --nologo -c Release
-
-    - name: test & cover
-      run: dotnet dotcover test ./PiBox.sln --no-restore --nologo -c Release --dcReportType=DetailedXML --logger trx --results-directory "./test-results"
+      run: dotnet dotcover test ./PiBox.sln -p UseSharedCompilation=false --no-restore --nologo -c Release --dcReportType=DetailedXML --logger trx --results-directory "./test-results"
 
     - name: publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
