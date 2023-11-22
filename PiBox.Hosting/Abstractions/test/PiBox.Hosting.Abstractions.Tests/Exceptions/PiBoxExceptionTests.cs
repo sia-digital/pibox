@@ -1,4 +1,3 @@
-using System.Runtime.Serialization.Formatters.Binary;
 using FluentAssertions;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions.Exceptions;
@@ -56,19 +55,6 @@ namespace PiBox.Hosting.Abstractions.Tests.Exceptions
             exception.Message.Should().Be("test");
             exception.HttpStatus.Should().Be(400);
             exception.InnerException!.Message.Should().Be("inner");
-        }
-
-        [Test]
-        public void CanSerializeException()
-        {
-            var exception = new PiBoxException("The Message", 301);
-            using var serStream = new MemoryStream();
-            var binFormatter = new BinaryFormatter();
-            binFormatter.Serialize(serStream, exception);
-            var bytes = serStream.GetBuffer();
-            using var desStream = new MemoryStream(bytes);
-            var newException = binFormatter.Deserialize(desStream) as PiBoxException;
-            newException.Should().BeEquivalentTo(exception);
         }
     }
 }

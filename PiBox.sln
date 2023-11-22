@@ -262,6 +262,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B720A919-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiBox.Plugins.Management.Unleash.Tests", "PiBox.Plugins\Management\Unleash\test\PiBox.Plugins.Management.Unleash.Tests\PiBox.Plugins.Management.Unleash.Tests.csproj", "{6607713E-8465-43BB-A6FE-9FBBCB1FD61C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1EF474DB-42A7-4271-B1A2-EFDD286216F4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\dependabot.yml = .github\dependabot.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{5636585A-D19D-4463-A838-2D8FBF4BCDC6}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet-main.yml = .github\workflows\dotnet-main.yml
+		.github\workflows\dotnet-pr.yml = .github\workflows\dotnet-pr.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -380,6 +391,8 @@ Global
 		{5BE0A574-FFB7-41F0-84C8-0DFF13B3EBBC} = {DC7B72D9-0D50-48C8-89FB-705F96859475}
 		{B720A919-B3BF-44F4-908D-147750F4A2BE} = {0A61A585-CFDD-43C6-8E93-EB9D79B902EF}
 		{6607713E-8465-43BB-A6FE-9FBBCB1FD61C} = {B720A919-B3BF-44F4-908D-147750F4A2BE}
+		{1EF474DB-42A7-4271-B1A2-EFDD286216F4} = {3F883F3B-A2EA-4957-B1E7-0A86A575A346}
+		{5636585A-D19D-4463-A838-2D8FBF4BCDC6} = {1EF474DB-42A7-4271-B1A2-EFDD286216F4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{92F5E1E5-0269-4378-BE3B-CDDC1864C0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

@@ -29,13 +29,11 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
             IPublicKeyService publicKeyService,
             IOptionsMonitor<AuthenticationSchemeOptions> options,
             ILogger<KeycloakAuthenticationHandler> logger,
-            UrlEncoder encoder,
-            ISystemClock clock
+            UrlEncoder encoder
         ) :
-            base(options, NullLoggerFactory.Instance, encoder, clock)
+            base(options, NullLoggerFactory.Instance, encoder)
         {
             _logger = logger;
-
             _publicKeyService = publicKeyService;
         }
 

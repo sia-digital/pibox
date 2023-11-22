@@ -6,7 +6,6 @@ using NSubstitute;
 using NUnit.Framework;
 using PiBox.Plugins.Persistence.Abstractions;
 using PiBox.Testing;
-using PiBox.Testing.Extensions;
 
 namespace PiBox.Plugins.Persistence.S3.Tests
 {
@@ -36,21 +35,21 @@ namespace PiBox.Plugins.Persistence.S3.Tests
             _plugin.ConfigureServices(sc);
             var sp = sc.BuildServiceProvider();
 
-            var client = sp.GetRequiredService<MinioClient>();
+            var client = sp.GetRequiredService<IMinioClient>();
             client.Should().NotBeNull();
-            var baseUrl = client.GetInaccessibleValue<string>("BaseUrl");
+            var baseUrl = client.Config.BaseUrl;
             baseUrl.Should().NotBeNull();
             baseUrl.Should().Be(_configuration.Endpoint);
-            var accessKey = client.GetInaccessibleValue<string>("AccessKey");
+            var accessKey = client.Config.AccessKey;
             accessKey.Should().NotBeNull();
             accessKey.Should().Be(_configuration.AccessKey);
-            var secretKey = client.GetInaccessibleValue<string>("SecretKey");
+            var secretKey = client.Config.SecretKey;
             secretKey.Should().NotBeNull();
             secretKey.Should().Be(_configuration.SecretKey);
-            var region = client.GetInaccessibleValue<string>("Region");
+            var region = client.Config.Region;
             region.Should().NotBeNull();
             region.Should().Be(_configuration.Region);
-            var secure = client.GetInaccessibleValue<bool>("Secure");
+            var secure = client.Config.Secure;
             secure.Should().Be(_configuration.UseSsl);
 
             var blobStorage = sp.GetRequiredService<IBlobStorage>();
@@ -62,6 +61,7 @@ namespace PiBox.Plugins.Persistence.S3.Tests
         public void PluginConfiguresHealthChecks()
         {
             var healthChecksBuilder = Substitute.For<IHealthChecksBuilder>();
+            healthChecksBuilder.Services.Returns(new ServiceCollection());
             _plugin.ConfigureHealthChecks(healthChecksBuilder);
             healthChecksBuilder.Received(1)
                 .Add(Arg.Is<HealthCheckRegistration>(h => h.Name == "s3"));

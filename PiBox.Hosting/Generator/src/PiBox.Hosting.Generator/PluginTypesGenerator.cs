@@ -27,7 +27,7 @@ namespace PiBox.Hosting.Generator
         {
             var assembly = typeof(PluginTypesGenerator).Assembly.GetName();
             var name = assembly.Name;
-            var version = assembly.Version.ToString();
+            var version = assembly.Version!.ToString();
             var classes = GetPluginClasses(compilation);
             var sourceBuilder = new StringBuilder();
             sourceBuilder.Clear();
@@ -60,7 +60,6 @@ namespace PiBox.Hosting.Generator
 
         private static IList<PluginClass> GetPluginClasses(Compilation compilation)
         {
-            var pluginClasses = new List<PluginClass>();
             var mainTypes = GetAssemblySymbolTypes(compilation.SourceModule.ContainingAssembly);
             var referencedTypes = compilation.SourceModule.ReferencedAssemblySymbols.SelectMany(GetAssemblySymbolTypes);
             var typeSymbols = mainTypes.Concat(referencedTypes).Where(t =>
@@ -70,20 +69,15 @@ namespace PiBox.Hosting.Generator
                 && ImplementsPiBoxClasses(t)
             ).ToList();
 
-            foreach (var typeSymbol in typeSymbols)
+            return typeSymbols.Select(typeSymbol => new PluginClass
             {
-                pluginClasses.Add(new PluginClass
-                {
-                    Name = typeSymbol.Name,
-                    Namespace = typeSymbol.ContainingNamespace.ToDisplayString(),
-                    Interfaces =
-                        typeSymbol.AllInterfaces
-                            .Where(x => x.AllInterfaces.Any(t => t.Name == "IPluginActivateable"))
-                            .Select(s => s.Name).ToList()
-                });
-            }
-
-            return pluginClasses;
+                Name = typeSymbol.Name,
+                Namespace = typeSymbol.ContainingNamespace.ToDisplayString(),
+                Interfaces = typeSymbol.AllInterfaces.Where(x => x.AllInterfaces.Any(t => t.Name == "IPluginActivateable"))
+                        .Select(s => s.Name)
+                        .ToList()
+            })
+                .ToList();
         }
 
         private static bool ImplementsPiBoxClasses(ITypeSymbol t)

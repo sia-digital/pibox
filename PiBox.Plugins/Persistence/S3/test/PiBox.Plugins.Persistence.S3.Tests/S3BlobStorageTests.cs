@@ -1,8 +1,10 @@
 using System.Net;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using Minio;
+using Minio.ApiEndpoints;
 using Minio.DataModel;
+using Minio.DataModel.Args;
+using Minio.DataModel.Response;
 using NSubstitute;
 using NSubstitute.ExceptionExtensions;
 using NUnit.Framework;
@@ -39,8 +41,6 @@ namespace PiBox.Plugins.Persistence.S3.Tests
         {
             await using var stream = SampleDataBlobObject.GenerateStreamFromString("my-fancy-file-content");
             stream.Seek(0, SeekOrigin.Begin);
-            var selectResponseStream = Substitute.For<SelectResponseStream>();
-            selectResponseStream.Payload = stream;
 
             var objectStat = ObjectStat.FromResponseHeaders(Key, new Dictionary<string, string> { { BlobMetaData.ContentType, ContentType } });
 
@@ -63,11 +63,6 @@ namespace PiBox.Plugins.Persistence.S3.Tests
         [Test]
         public async Task GetObjectAsyncSuccessShouldNotWork()
         {
-            await using var stream = SampleDataBlobObject.GenerateStreamFromString("my-fancy-file-content");
-            stream.Seek(0, SeekOrigin.Begin);
-            var selectResponseStream = Substitute.For<SelectResponseStream>();
-            selectResponseStream.Payload = stream;
-
             _s3Client.GetObjectAsync(Arg.Is<GetObjectArgs>(s => IsCorrectRequest(s)))
                 .Throws(new Exception("test"));
 
@@ -89,11 +84,6 @@ namespace PiBox.Plugins.Persistence.S3.Tests
         [Test]
         public async Task DeleteObjectAsyncSuccessShouldNotWork()
         {
-            await using var stream = SampleDataBlobObject.GenerateStreamFromString("my-fancy-file-content");
-            stream.Seek(0, SeekOrigin.Begin);
-            var selectResponseStream = Substitute.For<SelectResponseStream>();
-            selectResponseStream.Payload = stream;
-
             _s3Client.RemoveObjectAsync(Arg.Any<RemoveObjectArgs>(), Arg.Any<CancellationToken>())
                 .Throws(new Exception("test"));
 
@@ -120,18 +110,15 @@ namespace PiBox.Plugins.Persistence.S3.Tests
         [Test]
         public async Task PutObjectAsyncSuccessShouldNotWork()
         {
-            await using var stream = SampleDataBlobObject.GenerateStreamFromString("my-fancy-file-content");
-            stream.Seek(0, SeekOrigin.Begin);
-            var selectResponseStream = Substitute.For<SelectResponseStream>();
-            selectResponseStream.Payload = stream;
-
             _s3Client.PutObjectAsync(Arg.Any<PutObjectArgs>(), Arg.Any<CancellationToken>())
                 .Throws(new Exception("test"));
-            var blobObject = new SampleDataBlobObject();
-            blobObject.Bucket = BucketName;
-            blobObject.Key = Key;
-            blobObject.MetaData = new() { { BlobMetaData.ContentType, ContentType } };
-            blobObject.Data = new MemoryStream();
+            var blobObject = new SampleDataBlobObject
+            {
+                Bucket = BucketName,
+                Key = Key,
+                MetaData = new() { { BlobMetaData.ContentType, ContentType } },
+                Data = new MemoryStream()
+            };
             await _blobStorage.Invoking(async x => await x.PutObjectAsync(blobObject, CancellationToken.None))
                 .Should().ThrowAsync<Exception>();
         }

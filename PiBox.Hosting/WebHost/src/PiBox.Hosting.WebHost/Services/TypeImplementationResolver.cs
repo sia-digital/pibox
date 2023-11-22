@@ -71,7 +71,7 @@ namespace PiBox.Hosting.WebHost.Services
             var constructor = type.GetConstructors().FirstOrDefault();
             var parameters = constructor?.GetParameters() ?? Array.Empty<ParameterInfo>();
             if (constructor is null || parameters.Length == 0)
-                return TrackInstance(Activator.CreateInstance(type));
+                return TrackInstance(Activator.CreateInstance(type, Array.Empty<object>()));
             var arguments = parameters.Select(parameter => GetArgument(type, parameter.ParameterType)).ToArray();
             return TrackInstance(constructor.Invoke(arguments));
         }

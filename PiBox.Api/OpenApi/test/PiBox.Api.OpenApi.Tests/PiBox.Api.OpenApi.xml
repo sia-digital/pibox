@@ -26,6 +26,33 @@
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
+            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
+            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int32@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
+            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Int32@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
             <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
             <summary>
@@ -146,6 +173,33 @@
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
+            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
+            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int16@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
+            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Int16@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
             <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
             <summary>
@@ -215,6 +269,33 @@
             </summary>
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
+            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
+            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int64@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
+            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Int64@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
             <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
@@ -286,6 +367,33 @@
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
+            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Byte@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
+            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
+            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Byte@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
             <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.Byte@)"/>
             <summary>
@@ -355,6 +463,33 @@
             </summary>
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
+            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
+            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Single@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
+            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Single@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
             <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
@@ -426,6 +561,33 @@
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
+            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Decimal@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
+            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
+            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Decimal@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
             <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.Decimal@)"/>
             <summary>
@@ -495,6 +657,33 @@
             </summary>
             <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
+            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Double@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
+            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
+            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Double@)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            </returns>
+            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
             <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.Double@)"/>

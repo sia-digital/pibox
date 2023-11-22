@@ -70,6 +70,7 @@ namespace PiBox.Plugins.Management.Unleash.Tests
         public void PluginConfiguresHealthChecks()
         {
             var healthChecksBuilder = Substitute.For<IHealthChecksBuilder>();
+            healthChecksBuilder.Services.Returns(new ServiceCollection());
             _plugin.ConfigureHealthChecks(healthChecksBuilder);
             healthChecksBuilder.Received(1)
                 .Add(Arg.Is<HealthCheckRegistration>(h => h.Name == "unleash"));

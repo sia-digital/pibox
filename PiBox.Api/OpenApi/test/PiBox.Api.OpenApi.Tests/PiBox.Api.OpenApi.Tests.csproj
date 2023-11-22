@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <Nullable>disable</Nullable><ImplicitUsings>enable</ImplicitUsings>
-        <DocumentationFile>PiBox.Api.OpenApi.xml</DocumentationFile>
+      <Nullable>disable</Nullable>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <DocumentationFile>PiBox.Api.OpenApi.xml</DocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>
