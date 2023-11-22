@@ -1,4 +1,3 @@
-using System.Runtime.Serialization.Formatters.Binary;
 using FluentAssertions;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions.Exceptions;
@@ -24,17 +23,5 @@ namespace PiBox.Hosting.Abstractions.Tests.Exceptions
             validationException.Message.Should().Be("Could not find test with id '123'");
         }
 
-        [Test]
-        public void CanSerializeException()
-        {
-            var exception = new NotFoundPiBoxException("the message");
-            using var serStream = new MemoryStream();
-            var binFormatter = new BinaryFormatter();
-            binFormatter.Serialize(serStream, exception);
-            var bytes = serStream.GetBuffer();
-            using var desStream = new MemoryStream(bytes);
-            var newException = binFormatter.Deserialize(desStream) as NotFoundPiBoxException;
-            newException.Should().BeEquivalentTo(exception);
-        }
     }
 }

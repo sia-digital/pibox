@@ -21,7 +21,6 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests.Scheme
     public class KeycloakAuthenticationHandlerTests
     {
         private readonly IPublicKeyService _publicKeyService = Substitute.For<IPublicKeyService>();
-        private readonly ISystemClock _systemClock = Substitute.For<ISystemClock>();
         private readonly UrlEncoder _urlEncoder = new UrlTestEncoder();
 
         private readonly IOptionsMonitor<AuthenticationSchemeOptions> _authSchemeOptions =
@@ -42,7 +41,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests.Scheme
         {
             _authSchemeOptions.Get(KeycloakDefaults.Scheme).Returns(new AuthenticationSchemeOptions());
             var handler = new KeycloakAuthenticationHandler(_publicKeyService, _authSchemeOptions,
-                NullLogger<KeycloakAuthenticationHandler>.Instance, _urlEncoder, _systemClock);
+                NullLogger<KeycloakAuthenticationHandler>.Instance, _urlEncoder);
             await handler.InitializeAsync(
                 new AuthenticationScheme(KeycloakDefaults.Scheme, KeycloakDefaults.Scheme,
                     typeof(KeycloakAuthenticationHandler)), context);

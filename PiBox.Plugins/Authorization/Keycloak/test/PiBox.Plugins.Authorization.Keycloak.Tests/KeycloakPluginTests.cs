@@ -15,6 +15,7 @@ using NSubstitute.Core;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions;
 using PiBox.Plugins.Authorization.Keycloak.Scheme;
+using PiBox.Testing.Extensions;
 
 namespace PiBox.Plugins.Authorization.Keycloak.Tests
 {
@@ -93,6 +94,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
         public void ConfigureHealthChecksWorks()
         {
             var hcBuilder = Substitute.For<IHealthChecksBuilder>();
+            hcBuilder.Services.Returns(new ServiceCollection());
             var config = new KeycloakPluginConfiguration { Enabled = true, Host = "example.com", Insecure = false };
             GetPlugin(config).ConfigureHealthChecks(hcBuilder);
             hcBuilder.Received()
@@ -110,14 +112,10 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
         {
             var func = (call.GetOriginalArguments()[0] as Func<RequestDelegate, RequestDelegate>)?.Target;
             func.Should().NotBeNull();
-            var middlewareStateField = func!.GetType().GetField("state");
-            middlewareStateField.Should().NotBeNull();
-            var extensionMethod = middlewareStateField!.GetValue(func);
-            var middlewareProperty = extensionMethod!.GetType().GetProperty("Middleware");
-
-            var propertyValue = middlewareProperty!.GetValue(extensionMethod);
-            propertyValue.Should().NotBeNull();
-            propertyValue.Should().Be(typeof(TMiddleware));
+            var registeredMiddleware = func!.GetInaccessibleValue<Type>("_middleware");
+            if (registeredMiddleware.BaseType == typeof(TMiddleware))
+                return;
+            registeredMiddleware.Should().Be(typeof(TMiddleware));
         }
     }
 }

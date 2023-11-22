@@ -14,7 +14,7 @@ namespace PiBox.Plugins.Messaging.Kafka.Flow.Tests
         [Test]
         public void Works()
         {
-            IServiceCollection serviceCollection = new ServiceCollection();
+            IServiceCollection serviceCollection = TestingDefaults.ServiceCollection();
             var configuration = CustomConfiguration.Create()
                     .Add("kafka:client:bootstrapServers", "localhost:9092")
                     .Add("kafka:client:saslMechanism", "plain")

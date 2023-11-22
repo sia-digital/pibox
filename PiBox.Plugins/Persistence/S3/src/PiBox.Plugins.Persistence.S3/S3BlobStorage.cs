@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Logging;
-using Minio;
+using Minio.ApiEndpoints;
+using Minio.DataModel.Args;
 using PiBox.Plugins.Persistence.Abstractions;
 
 namespace PiBox.Plugins.Persistence.S3

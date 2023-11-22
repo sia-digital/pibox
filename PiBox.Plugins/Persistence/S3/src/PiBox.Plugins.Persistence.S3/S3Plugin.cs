@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Minio;
+using Minio.ApiEndpoints;
 using PiBox.Hosting.Abstractions;
 using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Plugins.Persistence.Abstractions;
@@ -16,7 +17,7 @@ namespace PiBox.Plugins.Persistence.S3
             _configuration = configuration;
         }
 
-        private MinioClient GetMinioClient()
+        private IMinioClient GetMinioClient()
         {
             var minioClient = new MinioClient().WithEndpoint(_configuration.Endpoint);
             if (!string.IsNullOrEmpty(_configuration.AccessKey))
@@ -31,7 +32,7 @@ namespace PiBox.Plugins.Persistence.S3
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddSingleton(GetMinioClient());
-            serviceCollection.AddSingleton<IObjectOperations>(sp => sp.GetRequiredService<MinioClient>());
+            serviceCollection.AddSingleton<IObjectOperations>(sp => sp.GetRequiredService<IMinioClient>());
             serviceCollection.AddSingleton<IBlobStorage, S3BlobStorage>();
         }
 
@@ -39,7 +40,7 @@ namespace PiBox.Plugins.Persistence.S3
         {
             var urlScheme = _configuration.UseSsl ? "https" : "http";
             var url = $"{urlScheme}://{_configuration.Endpoint}";
-            healthChecksBuilder.AddUrlGroup(new Uri(url), "s3", HealthStatus.Unhealthy, tags: new[] { HealthCheckTag.Readiness.Value });
+            healthChecksBuilder.AddUrlGroup(new Uri(url), "s3", HealthStatus.Unhealthy, new[] { HealthCheckTag.Readiness.Value });
         }
     }
 }

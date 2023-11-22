@@ -37,7 +37,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
                     }
                     else
                     {
-                        conf.UsePostgreSqlStorage(_hangfireConfig.ConnectionString);
+                        conf.UsePostgreSqlStorage(opts => opts.UseNpgsqlConnection(_hangfireConfig.ConnectionString));
                     }
 
                     conf.UseSimpleAssemblyNameTypeSerializer();
