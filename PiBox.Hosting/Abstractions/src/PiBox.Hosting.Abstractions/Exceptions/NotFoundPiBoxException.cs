@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Http;
 
 namespace PiBox.Hosting.Abstractions.Exceptions
 {
-    [Serializable]
     public class NotFoundPiBoxException : PiBoxException
     {
         public NotFoundPiBoxException(string message) : base(message)

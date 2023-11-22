@@ -3,7 +3,6 @@ using PiBox.Hosting.Abstractions.Middlewares.Models;
 
 namespace PiBox.Hosting.Abstractions.Exceptions
 {
-    [Serializable]
     public class ValidationPiBoxException : PiBoxException
     {
         public ValidationPiBoxException(string message) : base(message)

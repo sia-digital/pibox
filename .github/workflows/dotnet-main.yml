@@ -72,7 +72,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Coverage Report
-        path:  coverage-results/**
+        path: coverage-results/**
 
     - name: Write to Job Summary
       run: cat ./coverage-results/Summary.md >> $GITHUB_STEP_SUMMARY
