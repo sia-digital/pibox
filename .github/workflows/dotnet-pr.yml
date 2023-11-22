@@ -37,7 +37,7 @@ jobs:
       run: dotnet build
 
     - name: test & cover
-      run: dotnet test --collect "Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory "./test-results" --no-build --no-restore --nologo -c Release --logger trx
+      run: dotnet test --collect "Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory "./test-results" --no-restore --nologo -c Release --logger trx
 
     - name: publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
