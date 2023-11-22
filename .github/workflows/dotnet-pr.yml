@@ -43,7 +43,6 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       with:
         files: |
-          test-results/**/*.xml
           test-results/**/*.trx
 
     - name: publish coverage results
