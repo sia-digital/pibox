@@ -34,21 +34,27 @@ jobs:
       run: dotnet format "./PiBox.sln" --verify-no-changes --no-restore
 
     - name: build
-      run: dotnet dotcover test ./PiBox.sln -p UseSharedCompilation=false --no-restore --nologo -c Release --dcReportType=DetailedXML --logger trx --results-directory "./test-results"
+      run: dotnet build
+
+    - name: test & cover
+      run: dotnet test --collect:"Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory ./test-results --no-build --no-restore --nologo -c Release --logger trx
 
     - name: publish test results
       uses: EnricoMi/publish-unit-test-result-action@v2
       with:
-        files: test-results/**/*.trx
+        files: |
+          test-results/**/*.xml
+          test-results/**/*.trx
 
     - name: publish coverage results
       uses: im-open/code-coverage-report-generator@4
       with:
-        reports: 'dotCover.Output.xml'
+        reports: 'coverage.xml'
         targetdir: './coverage-results'
         title: dotnet code coverage
         reporttypes: 'MarkdownSummary;'
         assemblyfilters: +PiBox*
+
     - name: Create a status check for the code coverage results
       id: dotnet-coverage-check
       #You may also reference just the major or major.minor version
@@ -65,6 +71,7 @@ jobs:
         ignore-threshold-failures: false              # Default: false
         line-threshold: 80                            # Default: 0, which means thresholds are not applied
         branch-threshold: 0                         # Default: 0, which means thresholds are not applied
+
     - name: Upload coverage report artifact
       uses: actions/upload-artifact@v3
       with:
