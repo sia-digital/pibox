@@ -90,5 +90,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         commit: main
-        tag: v${NBGV_SimpleVersion}
+        tag: "v${{ NBGV_SimpleVersion }}"
         generateReleaseNotes: true
