@@ -24,7 +24,7 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: version
-      run: echo "PKG_VERSION=$(echo GitBuildVersionSimple)" >> $GITHUB_ENV
+      run: echo "PKG_VERSION=$(echo $GitBuildVersionSimple)" >> $GITHUB_ENV
 
     - name: create release
       uses: ncipollo/release-action@v1
