@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main" ]
 permissions:
-  contents: read
+  contents: write
   issues: read
   checks: write
   pull-requests: write
@@ -23,17 +23,19 @@ jobs:
       with:
         dotnet-version: '8.0.x'
 
+    - name: create release
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${GitBuildVersionSimple}
+        generateReleaseNotes: true
+
     - name: install
       run: dotnet restore
 
     - name: Create package
       run: dotnet pack --no-restore --nologo -p:PackageOutputPath='./publish' -c Release -p:PackageVersion="${GitBuildVersionSimple}" -p:PublicRelease=true -p:SymbolPackageFormat=snupkg --include-symbols --include-source
 
-    - name: create release
-      uses: ncipollo/release-action@v1
-      with:
-        tag: ${GitBuildVersionSimple}
-        generateReleaseNotes: true
+
 
     - name: format
       run: dotnet format --verify-no-changes --no-restore
