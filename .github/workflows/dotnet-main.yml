@@ -86,16 +86,9 @@ jobs:
     - name: Publish nuget packages
       run: dotnet nuget push "**/publish/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
 
-    - name: Tag commit
-      uses: tvdias/github-tagger@v0.0.1
+    - name: tag and release
+      uses: ncipollo/release-action@v1
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        tag: v${NBGV_SimpleVersion}
-
-    - uses: ncipollo/release-action@v1
-      with:
+        commit: main
         tag: v${NBGV_SimpleVersion}
         generateReleaseNotes: true
-
-
-
