@@ -25,7 +25,8 @@ jobs:
 
     - name: retrieve version
       uses: dotnet/nbgv@master
-      id: nbgv
+      with:
+        setAllVars: true
 
     - name: tag and release
       uses: ncipollo/release-action@v1
