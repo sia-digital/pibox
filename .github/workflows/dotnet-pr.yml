@@ -27,12 +27,13 @@ jobs:
       uses: dotnet/nbgv@master
       with:
         setAllVars: true
+      id: nbgv
 
     - name: tag and release
       uses: ncipollo/release-action@v1
       with:
         commit: main
-        tag: "v$NBGV_NuGetPackageVersion"
+        tag: 'v${{ steps.nbgv.outputs.NuGetPackageVersion }}'
         generateReleaseNotes: true
 
 #
