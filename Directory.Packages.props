@@ -92,7 +92,7 @@
     <PackageVersion Version="4.5.0" Include="NUnit3TestAdapter" />
     <PackageVersion Version="5.1.0" Include="NSubstitute" />
     <PackageVersion Version="1.0.16" Include="NSubstitute.Analyzers.CSharp" />
-    <PackageVersion Version="3.14.0" Include="NUnit" />
+    <PackageVersion Version="4.0.1" Include="NUnit" />
     <PackageVersion Version="1.2.1.1" Include="NUnit.Allure" />
     <PackageVersion Version="4.0.0" Include="Unleash.Client" />
     <PackageVersion Version="3.0.23" Include="Vogen" />
