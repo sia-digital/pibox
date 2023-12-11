@@ -2,7 +2,7 @@
 
 <figure><img src=".gitbook/assets/pibox-logo.png" alt=""><figcaption></figcaption></figure>
 
-![Framework](https://img.shields.io/badge/framework-net7.0-blueviolet?style=flat-square)
+![Framework](https://img.shields.io/badge/framework-net8.0-blueviolet?style=flat-square)
 [![MIT License](https://img.shields.io/badge/license-MIT-%230b0?style=flat-square)](https://github.com/sia-digital/pibox/blob/main/LICENSE.txt)
 ![Nuget](https://img.shields.io/nuget/v/PiBox.Hosting.Webhost?style=flat-square)
 ![Nuget](https://img.shields.io/nuget/dt/PiBox.Hosting.Webhost?style=flat-square)
@@ -28,7 +28,7 @@ PiBox is a `service hosting framework` that allows `.net devs` to `decorate thei
 
 Before you begin, ensure you have met the following requirements:
 
-* You have installed the latest version of `.net7 sdk`
+* You have installed the latest version of `.net8 sdk`
 
 
 ## Get started
