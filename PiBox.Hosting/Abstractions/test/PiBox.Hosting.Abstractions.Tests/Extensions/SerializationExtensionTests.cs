@@ -32,9 +32,12 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
         {
             var sample = new Sample { HealthCheckTag = HealthCheckTag.Liveness, Name = "test" };
             var serialized = sample.Serialize(SerializationMethod.Yaml);
+            var withSchema = "$schema: bla.json" + Environment.NewLine + serialized;
             var deserialized = serialized.Deserialize<Sample>(SerializationMethod.Yaml);
+            var deserializedWithSchema = withSchema.Deserialize<Sample>(SerializationMethod.Yaml);
 
             deserialized.Should().BeEquivalentTo(sample);
+            deserializedWithSchema.Should().BeEquivalentTo(sample);
 
             var obj = serialized.Deserialize(typeof(Sample), SerializationMethod.Yaml);
             obj.Should().BeOfType<Sample>();
