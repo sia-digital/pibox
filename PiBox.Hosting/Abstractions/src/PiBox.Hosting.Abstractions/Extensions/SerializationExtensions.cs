@@ -25,6 +25,7 @@ namespace PiBox.Hosting.Abstractions.Extensions
 
         private static readonly IDeserializer _deserializer = new DeserializerBuilder()
             .WithNamingConvention(CamelCaseNamingConvention.Instance)
+            .IgnoreUnmatchedProperties()
             .WithDuplicateKeyChecking()
             .WithTypeConverter(new ValueObjectYamlTypeConverter())
             .Build();
