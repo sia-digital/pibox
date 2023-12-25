@@ -19,7 +19,7 @@
     <PackageVersion Version="11.8.1" Include="FluentValidation" />
     <PackageVersion Version="3.25.1" Include="Google.Protobuf" />
     <PackageVersion Version="2.46.6" Include="Grpc" />
-    <PackageVersion Version="2.59.0" Include="Grpc.Tools">
+    <PackageVersion Version="2.60.0" Include="Grpc.Tools">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
