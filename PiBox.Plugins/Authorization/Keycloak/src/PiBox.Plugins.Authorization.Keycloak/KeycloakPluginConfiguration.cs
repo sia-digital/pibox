@@ -9,6 +9,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
     {
         public bool Enabled { get; set; }
         public string Host { get; set; }
+        public int? Port { get; set; }
         public bool Insecure { get; set; }
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
@@ -19,7 +20,9 @@ namespace PiBox.Plugins.Authorization.Keycloak
         {
             if (string.IsNullOrEmpty(Host)) throw new ArgumentException("Keycloak.Host was not specified but authentication is enabled!");
             var httpScheme = (Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
-            return new UriBuilder(httpScheme, Host).Uri;
+            return Port.HasValue
+                ? new UriBuilder(httpScheme, Host, Port.Value).Uri
+                : new UriBuilder(httpScheme, Host).Uri;
         }
     }
     public class RealmsConfig
