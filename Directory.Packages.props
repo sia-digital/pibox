@@ -97,6 +97,6 @@
     <PackageVersion Version="4.1.5" Include="Unleash.Client" />
     <PackageVersion Version="3.0.24" Include="Vogen" />
     <PackageVersion Version="1.5.47" Include="WireMock.Net" />
-    <PackageVersion Version="13.7.1" Include="YamlDotNet" />
+    <PackageVersion Version="15.1.0" Include="YamlDotNet" />
   </ItemGroup>
 </Project>
