@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using PiBox.Hosting.WebHost.Logging;
@@ -17,7 +18,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
                 StructuredLoggingExtensions.DetermineRequestLogLevel(new[] { "/metrics-text" })(httpContext, 0,
                     null);
 
-            Assert.AreEqual(LogEventLevel.Error, logLevel);
+            LogEventLevel.Error.Should().Be(logLevel);
         }
 
         [Test]
@@ -31,7 +32,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
                 StructuredLoggingExtensions.DetermineRequestLogLevel(new[] { "/metrics-text" })(httpContext, 0,
                     new Exception("test"));
 
-            Assert.AreEqual(LogEventLevel.Error, logLevel);
+            LogEventLevel.Error.Should().Be(logLevel);
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
                 StructuredLoggingExtensions.DetermineRequestLogLevel(new[] { "/MeTRICS", "/metrics" })(httpContext,
                     0, null);
 
-            Assert.AreEqual(LogEventLevel.Verbose, logLevel);
+            LogEventLevel.Verbose.Should().Be(logLevel);
         }
 
         [Test]
@@ -58,7 +59,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
                 StructuredLoggingExtensions.DetermineRequestLogLevel(new[] { "/MeTRICS", "/metrics*" })(
                     httpContext, 0, null);
 
-            Assert.AreEqual(LogEventLevel.Verbose, logLevel);
+            LogEventLevel.Verbose.Should().Be(logLevel);
         }
 
         [Test]
@@ -71,7 +72,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
             var logLevel =
                 StructuredLoggingExtensions.DetermineRequestLogLevel(new[] { "/hangfire*" })(httpContext, 0, null);
 
-            Assert.AreEqual(LogEventLevel.Information, logLevel);
+            LogEventLevel.Information.Should().Be(logLevel);
         }
 
         [TestCase("/metrics-text", new[] { "/MeTRICS", "/metrics" }, 499, null)]
@@ -86,7 +87,7 @@ namespace PiBox.Hosting.WebHost.Tests.Logging
             var logLevel =
                 StructuredLoggingExtensions.DetermineRequestLogLevel(paths)(httpContext, 0, exception);
 
-            Assert.AreEqual(LogEventLevel.Information, logLevel);
+            LogEventLevel.Information.Should().Be(logLevel);
         }
     }
 }
