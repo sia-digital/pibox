@@ -8,9 +8,9 @@
     <PackageVersion Version="4.3.0" Include="App.Metrics.Abstractions" />
     <PackageVersion Version="4.3.0" Include="App.Metrics.AspNetCore.All" />
     <PackageVersion Version="4.3.0" Include="App.Metrics.Formatters.Prometheus" />
-    <PackageVersion Version="7.0.0" Include="AspNetCore.HealthChecks.System" />
+    <PackageVersion Version="8.0.0" Include="AspNetCore.HealthChecks.System" />
     <PackageVersion Version="8.0.0" Include="AspNetCore.HealthChecks.Uris" />
-    <PackageVersion Version="7.0.0" Include="AspNetCore.HealthChecks.Hangfire" />
+    <PackageVersion Version="8.0.0" Include="AspNetCore.HealthChecks.Hangfire" />
     <PackageVersion Version="8.0.0" Include="AspNetCore.HealthChecks.MongoDb" />
     <PackageVersion Version="5.0.0" Include="AspNetCoreRateLimit" />
     <PackageVersion Version="2.2.1" Include="BouncyCastle.NetCore" />
