@@ -7,7 +7,6 @@ using Chronos;
 using Chronos.Abstractions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -126,14 +125,7 @@ namespace PiBox.Hosting.WebHost.Configurators
                             resource.AddService(serviceName,
                                 serviceVersion: entryAssembly.GetName().Version?.ToString() ?? "unknown", serviceInstanceId: Environment.MachineName);
                         })
-                        .AddAspNetCoreInstrumentation(options =>
-                        {
-                            options.Enrich = (string metricName, HttpContext context, ref TagList tags) =>
-                            {
-                                var authorizedParty = context.User.Claims.SingleOrDefault(x => x.Type == "azp")?.Value;
-                                tags.Add("azp", authorizedParty);
-                            };
-                        })
+                        .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
                         .AddRuntimeInstrumentation()
                         .AddProcessInstrumentation()
