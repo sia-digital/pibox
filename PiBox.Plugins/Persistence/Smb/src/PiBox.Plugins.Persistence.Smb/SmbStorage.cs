@@ -1,8 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Metrics;
 using System.Text;
 using EzSmb;
 using EzSmb.Params;
+using Microsoft.Extensions.Logging;
 using PiBox.Hosting.Abstractions.Exceptions;
+using PiBox.Hosting.Abstractions.Metrics;
 using PiBox.Plugins.Persistence.Abstractions;
 
 namespace PiBox.Plugins.Persistence.Smb
@@ -10,10 +13,20 @@ namespace PiBox.Plugins.Persistence.Smb
     [ExcludeFromCodeCoverage(Justification = "Has no suitable way to test it")]
     internal class SmbStorage : ISmbStorage
     {
+        private readonly Counter<long> _writeCounter = Metrics.CreateCounter<long>("pibox_persistence_smb_writes_total",
+            "calls", "amount of total write calls");
+
+        private readonly Counter<long> _readCounter = Metrics.CreateCounter<long>("pibox_persistence_smb_reads_total",
+            "calls", "amount of total read calls");
+
+        private readonly Counter<long> _deleteCounter = Metrics.CreateCounter<long>("pibox_persistence_smb_deletes_total",
+            "calls", "amount of total delete calls");
+
         private readonly ParamSet _smbParamSet;
         private readonly SmbStorageConfiguration _smbStorageConfiguration;
+        private readonly ILogger<SmbStorage> _logger;
 
-        public SmbStorage(SmbStorageConfiguration smbStorageConfiguration)
+        public SmbStorage(SmbStorageConfiguration smbStorageConfiguration, ILogger<SmbStorage> logger)
         {
             _smbParamSet = new ParamSet
             {
@@ -22,6 +35,7 @@ namespace PiBox.Plugins.Persistence.Smb
                 DomainName = smbStorageConfiguration.Domain
             };
             _smbStorageConfiguration = smbStorageConfiguration;
+            _logger = logger;
         }
 
         private static string CorrectDelimiters(string path) =>
@@ -74,9 +88,17 @@ namespace PiBox.Plugins.Persistence.Smb
 
         private async Task<Node> GetNode(string path = null)
         {
-            var node = await Node.GetNode(path, _smbParamSet)
-                       ?? throw new FileNotFoundException(
-                           $"Could not find file on smb associated to relative path '{path}'", path);
+            Node node;
+            try
+            {
+                node = await Node.GetNode(path, _smbParamSet, true);
+            }
+            catch (Exception e)
+            {
+                _logger.LogWarning(e, "Smb exception occured");
+                throw new FileNotFoundException(
+                    $"Could not find file on smb associated to relative path '{path}'", path);
+            }
             return node;
         }
 
@@ -127,6 +149,10 @@ namespace PiBox.Plugins.Persistence.Smb
         public async Task<Stream> ReadStreamAsync(string filePath, CancellationToken cancellationToken = default)
         {
             var file = await GetNode(await GetSmbPath(filePath));
+            _readCounter.Add(1,
+                new KeyValuePair<string, object>("share", file.PathSet.Share),
+                new KeyValuePair<string, object>("size", file.Size)
+            );
             return await file.Read();
         }
 
@@ -152,6 +178,10 @@ namespace PiBox.Plugins.Persistence.Smb
                     var isDeleted = !await node.Delete();
                     if (!isDeleted)
                         throw new PiBoxException($"Could not delete SMB Node: '{filePath}'");
+                    _deleteCounter.Add(1,
+                        new KeyValuePair<string, object>("share", node.PathSet.Share),
+                        new KeyValuePair<string, object>("size", node.Size)
+                    );
                 }
             }
             catch (FileNotFoundException)
@@ -169,6 +199,10 @@ namespace PiBox.Plugins.Persistence.Smb
             using var memStream = new MemoryStream(content);
             var isWritten = await folder.Write(memStream, fileName);
             if (!isWritten) throw new InvalidOperationException("Could not write file");
+            _writeCounter.Add(1,
+                new KeyValuePair<string, object>("share", folder.PathSet.Share),
+                new KeyValuePair<string, object>("size", memStream.Length)
+            );
         }
     }
 }

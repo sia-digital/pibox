@@ -1,5 +1,6 @@
 using FluentAssertions;
 using NUnit.Framework;
+using PiBox.Testing.Assertions;
 
 namespace PiBox.Plugins.Persistence.Smb.Tests
 {
@@ -24,7 +25,7 @@ namespace PiBox.Plugins.Persistence.Smb.Tests
                 ShareMappings = new List<SmbStorageConfiguration.PathMapping>(),
                 DriveMappings = new List<SmbStorageConfiguration.DriveMapping>()
             };
-            _smbStorage = new SmbStorage(_smbStorageConfiguration);
+            _smbStorage = new SmbStorage(_smbStorageConfiguration, new FakeLogger<SmbStorage>());
         }
 
         [Test]

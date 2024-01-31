@@ -1,6 +1,7 @@
 using FluentAssertions;
 using NUnit.Framework;
 using PiBox.Plugins.Persistence.Abstractions;
+using PiBox.Testing.Assertions;
 
 namespace PiBox.Plugins.Persistence.Smb.Tests
 {
@@ -27,7 +28,7 @@ namespace PiBox.Plugins.Persistence.Smb.Tests
                 {
                     new("<drive>", "<share>")
                 }
-            });
+            }, new FakeLogger<SmbStorage>());
         }
 
         [Test]

@@ -4,7 +4,7 @@ using PiBox.Plugins.Persistence.Abstractions;
 
 namespace PiBox.Plugins.Persistence.Smb
 {
-    public class SmbFilePlugin : IPluginServiceConfiguration
+    public class SmbStoragePlugin : IPluginServiceConfiguration
     {
         public void ConfigureServices(IServiceCollection serviceCollection)
         {

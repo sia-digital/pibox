@@ -98,5 +98,6 @@
     <PackageVersion Version="3.0.24" Include="Vogen" />
     <PackageVersion Version="1.5.47" Include="WireMock.Net" />
     <PackageVersion Version="15.1.0" Include="YamlDotNet" />
+    <PackageVersion Version="1.3.10" Include="EzSmb" />
   </ItemGroup>
 </Project>
