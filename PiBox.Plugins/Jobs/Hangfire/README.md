@@ -176,6 +176,10 @@ should be kept until it gets deleted
 
 ### Filters
 
+#### LogJobExecutionFilter
+
+This filter logs the start and finish of an job execution.
+
 #### EnabledByFeatureFilter
 
 This filter works in conjunction with the [microsoft feature management system](https://github.com/microsoft/FeatureManagement-Dotnet).

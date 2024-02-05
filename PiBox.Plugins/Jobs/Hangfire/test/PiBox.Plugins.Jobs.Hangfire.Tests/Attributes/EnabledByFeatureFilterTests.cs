@@ -3,6 +3,7 @@ using Hangfire;
 using Hangfire.MemoryStorage;
 using Hangfire.Server;
 using Hangfire.Storage;
+using Microsoft.Extensions.Logging;
 using Microsoft.FeatureManagement;
 using NSubstitute;
 using NUnit.Framework;
@@ -11,6 +12,40 @@ using PiBox.Testing.Assertions;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
 {
+
+    public class LogJobExecutionFilterTests
+    {
+        [Test]
+        public void JobIsNotCancelledWhenMatchingFeatureIsEnabled()
+        {
+            JobStorage.Current = new MemoryStorage();
+            var loggerFactory = Substitute.For<ILoggerFactory>();
+            var fakeLogger = new FakeLogger<TestJobAsync>();
+            loggerFactory.CreateLogger(default!).ReturnsForAnyArgs(fakeLogger);
+            var filter = new LogJobExecutionFilter(loggerFactory);
+
+            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
+                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var performContext = new PerformContext(JobStorage.Current,
+                Substitute.For<IStorageConnection>(),
+                new BackgroundJob("id1", job, DateTime.Now),
+                new JobCancellationToken(false)
+            );
+            var context = new PerformingContext(
+                performContext
+            );
+            filter.OnPerforming(
+                context
+            );
+
+            fakeLogger.Entries.Should().Contain(x => x.Message == "Job with id id1 started executing");
+
+            filter.OnPerformed(new PerformedContext(performContext, null, false, null));
+
+            fakeLogger.Entries.Should().Contain(x => x.Message == "Job with id id1 finished executing");
+        }
+    }
+
     public class EnabledByFeatureFilterTests
     {
         [Test]

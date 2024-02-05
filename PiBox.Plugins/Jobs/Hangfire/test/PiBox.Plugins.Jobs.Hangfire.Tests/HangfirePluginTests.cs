@@ -116,6 +116,7 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             collection[3].JobType.Should().Be(typeof(TestJobAsync));
 
             GlobalJobFilters.Filters.Should().Contain(x => x.Instance.GetType() == typeof(EnabledByFeatureFilter));
+            GlobalJobFilters.Filters.Should().Contain(x => x.Instance.GetType() == typeof(LogJobExecutionFilter));
         }
 
         [Test]

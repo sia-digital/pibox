@@ -16,7 +16,8 @@ using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire
 {
-    public class HangFirePlugin : IPluginServiceConfiguration, IPluginApplicationConfiguration, IPluginHealthChecksConfiguration
+    public class HangFirePlugin : IPluginServiceConfiguration, IPluginApplicationConfiguration,
+        IPluginHealthChecksConfiguration
     {
         private readonly IImplementationResolver _implementationResolver;
         private readonly HangfireConfiguration _hangfireConfig;
@@ -50,7 +51,8 @@ namespace PiBox.Plugins.Jobs.Hangfire
             serviceCollection.AddHangfireServer(options =>
             {
                 if (_hangfireConfig.PollingIntervalInMs.HasValue)
-                    options.SchedulePollingInterval = TimeSpan.FromMilliseconds(_hangfireConfig.PollingIntervalInMs.Value);
+                    options.SchedulePollingInterval =
+                        TimeSpan.FromMilliseconds(_hangfireConfig.PollingIntervalInMs.Value);
 
                 if (_hangfireConfig.WorkerCount.HasValue)
                     options.WorkerCount = _hangfireConfig.WorkerCount.Value;
@@ -60,20 +62,26 @@ namespace PiBox.Plugins.Jobs.Hangfire
 
         public void ConfigureApplication(IApplicationBuilder applicationBuilder)
         {
+            GlobalJobFilters.Filters.Add(
+                new LogJobExecutionFilter(applicationBuilder.ApplicationServices.GetRequiredService<ILoggerFactory>()));
             if (_hangfireConfig.EnableJobsByFeatureManagementConfig)
             {
                 GlobalJobFilters.Filters.Add(new EnabledByFeatureFilter(
                     applicationBuilder.ApplicationServices.GetRequiredService<IFeatureManager>(),
-                    applicationBuilder.ApplicationServices.GetService<ILogger<EnabledByFeatureFilter>>()));
+                    applicationBuilder.ApplicationServices.GetRequiredService<ILogger<EnabledByFeatureFilter>>()));
             }
 
             var urlAuthFilter = new HostAuthorizationFilter(_hangfireConfig.AllowedDashboardHost);
-            applicationBuilder.UseHangfireDashboard(options: new() { Authorization = new List<IDashboardAuthorizationFilter> { urlAuthFilter } });
+            applicationBuilder.UseHangfireDashboard(options: new()
+            {
+                Authorization = new List<IDashboardAuthorizationFilter> { urlAuthFilter }
+            });
             var jobRegister = applicationBuilder.ApplicationServices.GetRequiredService<IJobRegister>();
             var jobOptions = applicationBuilder.ApplicationServices.GetService<JobOptions>();
             jobOptions?.ConfigureJobs.Invoke(jobRegister, applicationBuilder.ApplicationServices);
             var registerJobMethod = jobRegister.GetType().GetMethod(nameof(IJobRegister.RegisterRecurringAsyncJob))!;
-            foreach (var job in _implementationResolver.FindTypes(f => f.HasAttribute<RecurringJobAttribute>() && f.Implements<IAsyncJob>()))
+            foreach (var job in _implementationResolver.FindTypes(f =>
+                         f.HasAttribute<RecurringJobAttribute>() && f.Implements<IAsyncJob>()))
             {
                 var recurringJobDetails = job.GetAttribute<RecurringJobAttribute>()!;
                 var genericMethod = registerJobMethod.MakeGenericMethod(job);
