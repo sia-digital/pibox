@@ -4,11 +4,14 @@ using Hangfire.MemoryStorage;
 using Hangfire.PostgreSql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using Newtonsoft.Json;
 using PiBox.Hosting.Abstractions;
 using PiBox.Hosting.Abstractions.Extensions;
 using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Hosting.Abstractions.Services;
+using PiBox.Plugins.Jobs.Hangfire.Attributes;
 using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire
@@ -26,6 +29,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
 
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddFeatureManagement();
             serviceCollection.AddSingleton<JobDetailCollection>();
             serviceCollection.AddSingleton<IJobRegister>(sp => sp.GetRequiredService<JobDetailCollection>());
             serviceCollection.AddHangfire(conf =>
@@ -56,6 +60,13 @@ namespace PiBox.Plugins.Jobs.Hangfire
 
         public void ConfigureApplication(IApplicationBuilder applicationBuilder)
         {
+            if (_hangfireConfig.EnableJobsByFeatureManagementConfig)
+            {
+                GlobalJobFilters.Filters.Add(new EnabledByFeatureFilter(
+                    applicationBuilder.ApplicationServices.GetRequiredService<IFeatureManager>(),
+                    applicationBuilder.ApplicationServices.GetService<ILogger<EnabledByFeatureFilter>>()));
+            }
+
             var urlAuthFilter = new HostAuthorizationFilter(_hangfireConfig.AllowedDashboardHost);
             applicationBuilder.UseHangfireDashboard(options: new() { Authorization = new List<IDashboardAuthorizationFilter> { urlAuthFilter } });
             var jobRegister = applicationBuilder.ApplicationServices.GetRequiredService<IJobRegister>();
@@ -78,7 +89,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
                 tags: new[] { HealthCheckTag.Readiness.Value });
         }
 
-        private class HostAuthorizationFilter : IDashboardAuthorizationFilter
+        internal class HostAuthorizationFilter : IDashboardAuthorizationFilter
         {
             private readonly string _allowedHost;
 

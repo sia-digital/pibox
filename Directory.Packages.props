@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Version="8.0.1" Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageVersion Version="3.1.1" Include="Microsoft.FeatureManagement" />
     <PackageVersion Version="3.6.133" Include="Nerdbank.GitVersioning" />
     <PackageVersion Version="4.3.0" Include="App.Metrics.Abstractions" />
     <PackageVersion Version="4.3.0" Include="App.Metrics.AspNetCore.All" />

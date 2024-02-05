@@ -8,18 +8,20 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.FeatureManagement;
 using NSubstitute;
 using NSubstitute.ReceivedExtensions;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions;
 using PiBox.Hosting.Abstractions.Services;
+using PiBox.Plugins.Jobs.Hangfire.Attributes;
 using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
 {
     public class HangfirePluginTests
     {
-        private readonly HangfireConfiguration _hangfireConfiguration = new()
+        internal static HangfireConfiguration HangfireConfiguration = new()
         {
             Database = "testDatabase",
             Host = "testHost",
@@ -28,12 +30,14 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             AllowedDashboardHost = "localhost",
             InMemory = true,
             PollingIntervalInMs = 1000,
-            WorkerCount = 200
+            WorkerCount = 200,
+            EnableJobsByFeatureManagementConfig = true,
+            User = "testUser"
         };
 
         private readonly IImplementationResolver _implementationResolver = Substitute.For<IImplementationResolver>();
 
-        private HangFirePlugin GetPlugin() => new(_hangfireConfiguration, _implementationResolver);
+        private HangFirePlugin GetPlugin() => new(HangfireConfiguration, _implementationResolver);
 
         [Test]
         public void ConfigureServiceTest()
@@ -56,9 +60,12 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             JobStorage.Current = new MemoryStorage();
             var sc = new ServiceCollection();
             sc.AddSingleton<ILoggerFactory>(NullLoggerFactory.Instance);
-            var plugin = GetPlugin();
-            plugin.ConfigureServices(sc);
 
+            var plugin = GetPlugin();
+            var featureManager = Substitute.For<IFeatureManager>();
+
+            plugin.ConfigureServices(sc);
+            sc.AddSingleton<IFeatureManager>(featureManager);
             var serviceProvider = sc.BuildServiceProvider();
             var applicationBuilder = new ApplicationBuilder(serviceProvider); // need a real application builder here because of UseRouting()
             var jobRegister = serviceProvider.GetRequiredService<IJobRegister>();
@@ -107,13 +114,15 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             collection[3].TimeZoneInfo.Should().Be(TimeZoneInfo.Utc);
             collection[3].JobParameter.Should().Be(null);
             collection[3].JobType.Should().Be(typeof(TestJobAsync));
+
+            GlobalJobFilters.Filters.Should().Contain(x => x.Instance.GetType() == typeof(EnabledByFeatureFilter));
         }
 
         [Test]
         public void HangfireConfigureHealthChecksWorks()
         {
             var hcBuilder = Substitute.For<IHealthChecksBuilder>();
-            var plugin = new HangFirePlugin(_hangfireConfiguration, _implementationResolver);
+            var plugin = new HangFirePlugin(HangfireConfiguration, _implementationResolver);
             plugin.ConfigureHealthChecks(hcBuilder);
             hcBuilder.Add(Arg.Is<HealthCheckRegistration>(h => h.Name == "hangfire" && h.Tags.Contains(HealthCheckTag.Readiness.Value)))
                 .Received(Quantity.Exactly(1));
@@ -132,8 +141,9 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             property.Should().NotBeNull();
             var options = (property.GetValue(hangfireHostedService) as BackgroundJobServerOptions)!;
             options.Should().NotBeNull();
-            options.SchedulePollingInterval.Should().Be(TimeSpan.FromMilliseconds(_hangfireConfiguration.PollingIntervalInMs!.Value));
-            options.WorkerCount.Should().Be(_hangfireConfiguration.WorkerCount!.Value);
+            options.SchedulePollingInterval.Should().Be(TimeSpan.FromMilliseconds(HangfireConfiguration.PollingIntervalInMs!.Value));
+            options.WorkerCount.Should().Be(HangfireConfiguration.WorkerCount!.Value);
+
         }
     }
 }

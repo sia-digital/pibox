@@ -13,7 +13,8 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
         public void CanSetupJobsWithAServiceCollection()
         {
             var sc = TestingDefaults.ServiceCollection();
-            Action<IJobRegister, IServiceProvider> setup = (register, _) => register.RegisterRecurringAsyncJob<TestJobAsync>(Cron.Daily());
+            Action<IJobRegister, IServiceProvider> setup = (register, _) =>
+                register.RegisterRecurringAsyncJob<TestJobAsync>(Cron.Daily());
             sc.ConfigureJobs(setup);
             var sp = sc.BuildServiceProvider();
             var options = sp.GetRequiredService<JobOptions>();

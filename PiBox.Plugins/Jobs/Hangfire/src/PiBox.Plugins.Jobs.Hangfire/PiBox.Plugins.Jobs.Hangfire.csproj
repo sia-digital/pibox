@@ -14,6 +14,7 @@
       <PackageReference Include="HangFire" />
       <PackageReference Include="Hangfire.MemoryStorage" />
       <PackageReference Include="Hangfire.PostgreSql" />
+      <PackageReference Include="Microsoft.FeatureManagement" />
       <PackageReference Include="Newtonsoft.Json" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
     </ItemGroup>

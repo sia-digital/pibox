@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using PiBox.Plugins.Jobs.Hangfire.Attributes;
 using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
