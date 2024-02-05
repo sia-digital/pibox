@@ -26,10 +26,10 @@
     <PackageVersion Version="1.8.9" Include="HangFire" />
     <PackageVersion Version="1.8.0" Include="Hangfire.MemoryStorage" />
     <PackageVersion Version="1.20.5" Include="Hangfire.PostgreSql" />
-    <PackageVersion Version="2.5.0" Include="KafkaFlow" />
+    <PackageVersion Version="3.0.3" Include="KafkaFlow" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Extensions.Hosting" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.LogHandler.Microsoft" />
-    <PackageVersion Version="2.5.0" Include="KafkaFlow.Microsoft.DependencyInjection" />
+    <PackageVersion Version="3.0.3" Include="KafkaFlow.Microsoft.DependencyInjection" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.SchemaRegistry" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Serializer" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Serializer.ProtobufNet" />
