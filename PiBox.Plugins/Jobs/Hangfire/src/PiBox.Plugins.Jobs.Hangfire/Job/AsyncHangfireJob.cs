@@ -21,8 +21,6 @@ namespace PiBox.Plugins.Jobs.Hangfire.Job
                 throw;
             }
 
-            Logger.LogInformation("Job executed with {JobResult}", result);
-
             return result;
         }
     }

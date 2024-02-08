@@ -1,4 +1,4 @@
-namespace PiBox.Plugins.Jobs.Hangfire
+namespace PiBox.Plugins.Jobs.Hangfire.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class RecurringJobAttribute : Attribute

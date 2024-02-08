@@ -32,8 +32,11 @@ hangfire:
   User: postgres
   Password: postgres
   InMemory: true
-  DashboardUser: awesome-user #if you don't set this, you can't access the hangfire dashboard
-  DashboardPassword: awesome-pw #if you don't set this, you can't access the hangfire dashboard
+  enableJobsByFeatureManagementConfig: false
+  allowedDashboardHost: localhost # you need to set this configuration to be able to access the dashboard from the specified host
+
+featureManagement: # we can conveniently can use the microsoft feature management system to enable jobs based on configuration
+  hangfireTestJob: true # if you have enabled the 'enableJobsByFeatureManagementConfig: true' then you can configure here if your jobs should run on execution or not, useful for multiple environments etc.
 ```
 
 HangfireConfiguration.cs
@@ -47,9 +50,9 @@ public class HangfireConfiguration
     public string? Database { get; set; }
     public string? User { get; set; }
     public string? Password { get; set; }
-    public string? DashboardUser { get; set; }
-    public string? DashboardPassword { get; set; }
     public bool InMemory { get; set; }
+    public string AllowedDashboardHost { get; set; }
+    public bool EnableJobsByFeatureManagementConfig { get; set; }
     public int? PollingIntervalInMs { get; set; }
     public int? WorkerCount { get; set; }
     public string ConnectionString => $"Host={Host};Port={Port};Database={Database};Username={User};Password={Password};";
@@ -151,10 +154,73 @@ BackgroundJob.Enqueue<IEmailSender>(x => x.Send("hangfire@example.com"));
 BackgroundJob.Enqueue(() => Console.WriteLine("Hello, world!"));
 ```
 
-### Execution modes
+### Attributes
 
+#### UniquePerQueueAttribute
 If you want the job only to be executed as one instance at any given point in time use the
+```csharp
+[UniquePerQueueAttribute("high")]
+```
 
-UniquePerQueueAttribute
+This ensures that there is only one job of the same type/name
+and method parameters in processing or queued at any given point
 
-this ensures that there is only one job of the same type/name in processing or queued at any given point!
+#### JobCleanupExpirationTimeAttribute
+
+With this you can specify how many days the results of a job
+should be kept until it gets deleted
+
+```csharp
+[JobCleanupExpirationTimeAttribute(14)]
+```
+
+### Filters
+
+#### LogJobExecutionFilter
+
+This filter logs the start and finish of an job execution.
+
+#### EnabledByFeatureFilter
+
+This filter works in conjunction with the [microsoft feature management system](https://github.com/microsoft/FeatureManagement-Dotnet).
+If you would like to be able to enable or disable the execution of your
+jobs based on configuration this is the right tool for it.
+
+**Default Feature management with file based configuration**
+```yaml
+hangfire:
+  enableJobsByFeatureManagementConfig: true
+
+featureManagement:
+  hangfireTestJob: true
+  neverRunThisJob: false
+```
+
+This allows you to enable jobs based on configuration files.
+If you have enabled the setting
+
+```yaml
+enableJobsByFeatureManagementConfig: true
+```
+then you can configure here, if your jobs should run
+on execution or not, useful for multiple environments etc.
+
+If your service supports hot reloading of configuration files,
+you can enable/disable jobs at run time.
+
+**Feature management with the [pibox unleash plugin](https://sia-digital.gitbook.io/pibox/plugins/management/unleash)**
+
+This works in conjunction with the plugin PiBox.Plugins.Management.Unleash.
+This replaces the ability of setting the features via files.
+Instead one can use the unleash api/service
+and use feature flags for enabling the jobs.
+Just make sure that the name of the job matches the name of the
+feature flag you are creating in unleash.
+
+The pibox unleash plugin then should do the rest of the heavy lifting.
+
+Since the attribute resolves the feature on before executing the job,
+changes to the configuration can be done at runtime with a maximal delay
+based on how often the pibox unleash plugin refreshes its cache.
+You can find more information in the documentation of the
+[pibox unleash plugin](https://sia-digital.gitbook.io/pibox/plugins/management/unleash).
