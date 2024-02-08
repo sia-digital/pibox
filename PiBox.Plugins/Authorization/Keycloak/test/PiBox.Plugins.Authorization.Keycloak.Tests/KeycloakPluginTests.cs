@@ -43,7 +43,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
         [Test]
         public void AuthenticationCanBeSetup()
         {
-            var config = new KeycloakPluginConfiguration { Enabled = true, Host = "example.com", Insecure = false };
+            var config = new KeycloakPluginConfiguration { Enabled = true, Host = "example.com", Insecure = false, Port = 8080 };
             var sc = new ServiceCollection();
             GetPlugin(config).ConfigureServices(sc);
             var sp = sc.BuildServiceProvider();
@@ -58,7 +58,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient(nameof(PublicKeyService));
             httpClient.Should().NotBeNull();
             httpClient.BaseAddress.Should().NotBeNull();
+            httpClient.BaseAddress!.Scheme.Should().Be("https");
             httpClient.BaseAddress!.Host.Should().Be("example.com");
+            httpClient.BaseAddress!.Port.Should().Be(8080);
         }
 
         [Test]
