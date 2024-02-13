@@ -10,18 +10,21 @@ namespace PiBox.Hosting.WebHost.Tests
         [Test]
         public void SetSanityDefaults()
         {
-            CorsPolicy corsPolicy = new CorsPolicy();
+            var corsPolicy = new CorsPolicy();
             corsPolicy.Origins.Any().Should().BeFalse();
             corsPolicy.AllowAnyOrigin.Should().BeFalse();
             corsPolicy.Headers.Any().Should().BeFalse();
             corsPolicy.AllowAnyHeader.Should().BeFalse();
             corsPolicy.Methods.Any().Should().BeFalse();
             corsPolicy.AllowAnyMethod.Should().BeFalse();
+            corsPolicy.ExposedHeaders.Should().HaveCount(0);
 
             corsPolicy.SetSanityDefaults();
             corsPolicy.AllowAnyOrigin.Should().BeTrue();
             corsPolicy.AllowAnyHeader.Should().BeTrue();
             corsPolicy.AllowAnyMethod.Should().BeTrue();
+            corsPolicy.ExposedHeaders.Should().HaveCount(1);
+            corsPolicy.ExposedHeaders.Should().Contain("*");
         }
     }
 }
