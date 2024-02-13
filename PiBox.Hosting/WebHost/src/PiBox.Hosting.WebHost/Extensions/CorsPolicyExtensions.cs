@@ -12,6 +12,8 @@ namespace PiBox.Hosting.WebHost.Extensions
                 corsPolicy.Methods.Add("*");
             if (!corsPolicy.Origins.Any())
                 corsPolicy.Origins.Add("*");
+            if (!corsPolicy.ExposedHeaders.Any())
+                corsPolicy.ExposedHeaders.Add("*");
         }
     }
 }
