@@ -47,9 +47,9 @@ namespace PiBox.Plugins.Persistence.S3.Tests
             _s3Client.GetObjectAsync(Arg.Is<GetObjectArgs>(s => IsCorrectRequest(s)))
                 .Returns((getObjectArgs) =>
                 {
-                    var callback = getObjectArgs.Arg<GetObjectArgs>().GetInaccessibleValue<Action<Stream>>("CallBack");
+                    var callback = getObjectArgs.Arg<GetObjectArgs>().GetInaccessibleValue<Func<Stream, CancellationToken, Task>>("CallBack");
                     // ReSharper disable once AccessToDisposedClosure
-                    callback.Invoke(stream);
+                    callback.Invoke(stream, CancellationToken.None).Wait();
                     return Task.FromResult(objectStat);
                 });
 
