@@ -38,13 +38,29 @@ PluginWebHostBuilder.RunDefault(PiBox.Generated.PiBoxPluginTypes.All);
 
 PiBox will try to load config files and values in the following order
 
-1. `appsettings*.json`
-2. `appsettings*.yaml`
-3. `appsettings*.yml`
-4. `appsettings.json`
-5. `appsettings.yaml`
-6. `appsettings.yml`
-7. ENV variables
+1. `appsettings.json`
+2. `appsettings.yaml`
+3. `appsettings.yml`
+4. `appsettings.*.json`
+5. `appsettings.*.yaml`
+6. `appsettings.*.yml`
+7. `appsettings.secrets.yml`
+8. `appsettings.*.secrets.yml`
+9`ENV variables`
+
+**NOTE:**
+All settings (does not matter which file extension) will be ordered by node length. And the secret files will be loaded as last (except the environment variables).
+
+Example:
+
+1. appsettings.yaml
+2. appsettings.api.yaml
+3. appsettings.api.host.yaml
+4. appsettings.secrets.yaml
+5. apssettings.api.secrets.yaml
+6. appsettings.api.host.secrets.yaml
+7. ENV Variables
+
 
 File names must always start with `appsettings` or they will be ignored!
 

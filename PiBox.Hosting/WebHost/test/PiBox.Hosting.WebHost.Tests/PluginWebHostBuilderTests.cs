@@ -48,18 +48,19 @@ namespace PiBox.Hosting.WebHost.Tests
             webApplication.Logger.GetType().Name.Should().Be("SerilogLogger");
             var configurationProviders = webApplication.Configuration.As<IConfigurationRoot>().Providers.ToList();
 
-            configurationProviders[0].Should().BeOfType<JsonConfigurationProvider>();
-            configurationProviders[0].As<JsonConfigurationProvider>().Source.Path.Should().Be("appsettings.json");
+            configurationProviders[0].Should().BeOfType<YamlConfigurationProvider>();
+            configurationProviders[0].As<YamlConfigurationProvider>().Source.Path.Should().Be("appsettings.yml");
 
             configurationProviders[1].Should().BeOfType<YamlConfigurationProvider>();
-            configurationProviders[1].As<YamlConfigurationProvider>().Source.Path.Should().Be("appsettings.yaml");
+            configurationProviders[1].As<YamlConfigurationProvider>().Source.Path.Should().Be("appsettings.test.yml");
 
-            configurationProviders[2].Should().BeOfType<YamlConfigurationProvider>();
-            configurationProviders[2].As<YamlConfigurationProvider>().Source.Path.Should().Be("appsettings.yml");
-            configurationProviders[2].TryGet("serilog:minimumLevel", out var loglevel);
-            loglevel.Should().Be("Debug");
+            configurationProviders[2].Should().BeOfType<JsonConfigurationProvider>();
+            configurationProviders[2].As<JsonConfigurationProvider>().Source.Path.Should().Be("appsettings.test.secrets.json");
 
             configurationProviders[3].Should().BeOfType<EnvConfigurationProvider>();
+
+            var logLevel = webApplication.Configuration.GetValue<string>("serilog:minimumLevel");
+            logLevel.Should().Be("Information"); // overriden from appsettings.test.secrets.json
 
             var ipRateLimitOptions = webApplication.Configuration.BindToSection<IpRateLimitOptions>("IpRateLimiting");
             ipRateLimitOptions.EnableEndpointRateLimiting.Should().BeFalse();
@@ -124,7 +125,7 @@ namespace PiBox.Hosting.WebHost.Tests
             apiBehaviourOptions.InvalidModelStateResponseFactory.Should().Be(modelStateResponseFactory);
 
             var sampleConfig = webApplication.Configuration.BindToSection<TypeImplementationResolverTests.UnitTestPluginConfig>("sampleConfig");
-            sampleConfig.Name.Should().Be("example");
+            sampleConfig.Name.Should().Be("example1"); // overridden from appsettings.test.yml
             var unitTestPluginConfig = host.Services.GetRequiredService<TypeImplementationResolverTests.UnitTestPluginConfig>();
             unitTestPluginConfig.Should().NotBeNull();
 
