@@ -17,30 +17,17 @@ namespace PiBox.Plugins.Persistence.Abstractions
             return queryOptions.FilterExpression is not null ? source.Where(queryOptions.FilterExpression!) : source;
         }
 
-        private static IQueryable<T> OrderByExpressions<T>(this IQueryable<T> source, IEnumerable<(OrderByDirectionType Direction, Expression<Func<T, object>> Expression)> orderByNodes)
+        private static IQueryable<T> OrderByExpressions<T>(this IQueryable<T> source, IList<(OrderByDirectionType Direction, Expression<Func<T, object>> Expression)> orderByNodes)
         {
-            return orderByNodes.Aggregate(source, (current, orderBy) => orderBy.Direction is OrderByDirectionType.Ascending
-                ? current.SmartOrderBy(orderBy.Expression)
-                : current.SmartOrderByDescending(orderBy.Expression));
-        }
-
-        private static bool IsOrdered<T>(this IQueryable<T> queryable)
-        {
-            return queryable.Expression.Type == typeof(IOrderedQueryable<T>);
-        }
-
-        private static IQueryable<T> SmartOrderBy<T, TKey>(this IQueryable<T> queryable, Expression<Func<T, TKey>> keySelector)
-        {
-            if (!queryable.IsOrdered()) return queryable.OrderBy(keySelector);
-            var orderedQuery = queryable as IOrderedQueryable<T>;
-            return orderedQuery!.ThenBy(keySelector);
-        }
-
-        private static IQueryable<T> SmartOrderByDescending<T, TKey>(this IQueryable<T> queryable, Expression<Func<T, TKey>> keySelector)
-        {
-            if (!queryable.IsOrdered()) return queryable.OrderByDescending(keySelector);
-            var orderedQuery = queryable as IOrderedQueryable<T>;
-            return orderedQuery!.ThenByDescending(keySelector);
+            if (!orderByNodes.Any()) return source;
+            var query = orderByNodes[0].Direction == OrderByDirectionType.Ascending
+                ? source.OrderBy(orderByNodes[0].Expression) : source.OrderByDescending(orderByNodes[0].Expression);
+            for (var i = 1; i < orderByNodes.Count; i++)
+            {
+                query = orderByNodes[i].Direction == OrderByDirectionType.Ascending
+                    ? query.ThenBy(orderByNodes[i].Expression) : query.ThenByDescending(orderByNodes[i].Expression);
+            }
+            return query;
         }
     }
 }
