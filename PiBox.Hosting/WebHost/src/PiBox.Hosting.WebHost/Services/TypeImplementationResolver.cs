@@ -81,6 +81,11 @@ namespace PiBox.Hosting.WebHost.Services
             return _resolvedTypes.ToList();
         }
 
+        public List<Assembly> FindAssemblies()
+        {
+            return _resolvedTypes.Select(x => x.Assembly).Distinct().ToList();
+        }
+
         public void ClearInstances()
         {
             foreach (var disposable in _instances.OfType<IDisposable>())
