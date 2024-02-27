@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace PiBox.Hosting.Abstractions.Services
 {
     public interface IImplementationResolver
@@ -5,5 +7,6 @@ namespace PiBox.Hosting.Abstractions.Services
         void ClearInstances();
         object ResolveInstance(Type type);
         List<Type> FindTypes();
+        List<Assembly> FindAssemblies();
     }
 }

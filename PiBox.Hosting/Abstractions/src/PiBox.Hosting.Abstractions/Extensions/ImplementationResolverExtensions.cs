@@ -1,3 +1,4 @@
+using System.Reflection;
 using PiBox.Hosting.Abstractions.Services;
 
 namespace PiBox.Hosting.Abstractions.Extensions
@@ -16,5 +17,7 @@ namespace PiBox.Hosting.Abstractions.Extensions
                 .Where(x => x is not null)
                 .OfType<T>().ToList();
 
+        public static List<Assembly> FindAssemblies(this IImplementationResolver implementationResolver,
+            Predicate<Assembly> filter) => implementationResolver.FindAssemblies().Where(f => filter(f)).ToList();
     }
 }

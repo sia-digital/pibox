@@ -25,6 +25,20 @@ namespace PiBox.Hosting.WebHost.Tests
         }
 
         [Test]
+        public void CanFindAssembliesForPlugins()
+        {
+            var typeService = new TypeImplementationResolver(_configuration, _resolvedTypes, new Dictionary<Type, object>());
+            var assemblies = typeService.FindAssemblies();
+            assemblies.Should().HaveCount(1);
+            var assembly = assemblies.Single();
+            assembly.Should().BeSameAs(typeof(TypeImplementationResolverTests).Assembly);
+            assemblies = typeService.FindAssemblies(f => f.HasType(t => t.HasAttribute<ConfigurationAttribute>()));
+            assemblies.Should().HaveCount(1);
+            assembly = assemblies.Single();
+            assembly.Should().BeSameAs(typeof(TypeImplementationResolverTests).Assembly);
+        }
+
+        [Test]
         public void InstancesWillBeReused()
         {
             var config = CustomConfiguration.Empty;
