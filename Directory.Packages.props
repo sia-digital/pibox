@@ -33,7 +33,7 @@
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Microsoft.DependencyInjection" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.SchemaRegistry" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Serializer" />
-    <PackageVersion Version="2.5.0" Include="KafkaFlow.Serializer.ProtobufNet" />
+    <PackageVersion Version="3.0.5" Include="KafkaFlow.Serializer.ProtobufNet" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.Serializer.SchemaRegistry.ConfluentProtobuf" />
     <PackageVersion Version="2.5.0" Include="KafkaFlow.TypedHandler" />
     <PackageVersion Version="3.1.0" Include="NetEscapades.Configuration.Yaml" />
