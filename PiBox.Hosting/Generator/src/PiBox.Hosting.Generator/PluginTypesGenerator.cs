@@ -27,7 +27,7 @@ namespace PiBox.Hosting.Generator
         {
             var assembly = typeof(PluginTypesGenerator).Assembly.GetName();
             var name = assembly.Name;
-            var version = assembly.Version!.ToString();
+            var version = assembly.Version.ToString();
             var classes = GetPluginClasses(compilation);
             var sourceBuilder = new StringBuilder();
             sourceBuilder.Clear();
