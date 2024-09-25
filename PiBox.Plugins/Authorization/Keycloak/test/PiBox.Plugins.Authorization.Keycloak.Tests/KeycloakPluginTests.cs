@@ -14,6 +14,7 @@ using NSubstitute;
 using NSubstitute.Core;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions;
+using PiBox.Hosting.Abstractions.Attributes;
 using PiBox.Plugins.Authorization.Keycloak.Scheme;
 using PiBox.Testing.Extensions;
 
@@ -61,6 +62,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             httpClient.BaseAddress!.Scheme.Should().Be("https");
             httpClient.BaseAddress!.Host.Should().Be("example.com");
             httpClient.BaseAddress!.Port.Should().Be(8080);
+          
+            
+
         }
 
         [Test]
@@ -118,6 +122,25 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             if (registeredMiddleware.BaseType == typeof(TMiddleware))
                 return;
             registeredMiddleware.Should().Be(typeof(TMiddleware));
+        }
+        [Test]
+        public void ConfigureHealtChecks_Use9000ForHealth()
+        {
+            var hcBuilder = Substitute.For<IHealthChecksBuilder>();
+            var serviceCollection = new ServiceCollection();
+
+            hcBuilder.Services.Returns(serviceCollection);
+
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "example.com",
+                Insecure = false,
+                Port = 8080,
+            };
+
+            var plugin = GetPlugin(config);
+
         }
     }
 }

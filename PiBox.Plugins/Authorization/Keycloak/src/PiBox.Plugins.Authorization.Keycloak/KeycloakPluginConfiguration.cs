@@ -10,12 +10,21 @@ namespace PiBox.Plugins.Authorization.Keycloak
         public bool Enabled { get; set; }
         public string Host { get; set; }
         public int? Port { get; set; }
-        public int? HealthPort { get; set; }
         public bool Insecure { get; set; }
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
         public RealmsConfig Realms { get; set; } = new RealmsConfig();
         public IList<AuthPolicy> Policies { get; set; } = new List<AuthPolicy>();
+        public HealthCheckConfig HealthCheckConfig { get; set; } = new HealthCheckConfig();
+
+        public Uri GetHealthCheck()
+        {
+            if (string.IsNullOrEmpty(HealthCheckConfig.Host)) throw new ArgumentException("Keycloak.Uri was not specified but health check is enabled!");
+            var httpScheme = (Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
+            return Port.HasValue
+                ? new UriBuilder(httpScheme, HealthCheckConfig.Host, HealthCheckConfig.Port.Value).Uri
+                : new UriBuilder(httpScheme, HealthCheckConfig.Host).Uri;
+        }
 
         public Uri GetAuthority()
         {
@@ -25,18 +34,18 @@ namespace PiBox.Plugins.Authorization.Keycloak
                 ? new UriBuilder(httpScheme, Host, Port.Value).Uri
                 : new UriBuilder(httpScheme, Host).Uri;
         }
-        public Uri GetHelthUri()
-        {
-            if (string.IsNullOrEmpty(Host)) throw new ArgumentException("Keycloak.Host was not specified but authentication is enabled!");
-            var httpScheme = (Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
-            return HealthPort.HasValue
-                ? new UriBuilder(httpScheme, Host, HealthPort.Value).Uri
-                : new UriBuilder(httpScheme, Host).Uri;
-        }
     }
     public class RealmsConfig
     {
         public string Prefix { get; set; } = "/auth/realms";
         public string Default { get; set; } = "master";
     }
+
+    public class HealthCheckConfig
+    {
+        public string Host { get; set; }
+        public int? Port { get; set; } = 9000;
+        public string Prefix { get; set; } = "/health/ready";
+    }
 }
+
