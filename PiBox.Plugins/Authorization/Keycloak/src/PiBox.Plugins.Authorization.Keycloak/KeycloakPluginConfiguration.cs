@@ -43,7 +43,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
 
     public class HealthCheckConfig
     {
-        public string Host { get; set; }
+        public string Host { get; set; } = "example.com";
         public int? Port { get; set; } = 9000;
         public string Prefix { get; set; } = "/health/ready";
     }
