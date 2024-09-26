@@ -14,7 +14,6 @@ using NSubstitute;
 using NSubstitute.Core;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions;
-using PiBox.Hosting.Abstractions.Attributes;
 using PiBox.Plugins.Authorization.Keycloak.Scheme;
 using PiBox.Testing.Extensions;
 
@@ -62,8 +61,6 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             httpClient.BaseAddress!.Scheme.Should().Be("https");
             httpClient.BaseAddress!.Host.Should().Be("example.com");
             httpClient.BaseAddress!.Port.Should().Be(8080);
-
-
 
         }
 
@@ -134,7 +131,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Port = 8080,
                 HealthCheckConfig = new HealthCheckConfig
                 {
-                Host = "example.com", Port = 9100, Prefix = "/health/ready"
+                    Host = "example.com",
+                    Port = 9100,
+                    Prefix = "/health/ready"
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
@@ -164,7 +163,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Port = 8080,
                 HealthCheckConfig = new HealthCheckConfig
                 {
-                    Host = "health.com", Port = 9999, Prefix = "/something/notready"
+                    Host = "health.com",
+                    Port = 9999,
+                    Prefix = "/something/notready"
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
