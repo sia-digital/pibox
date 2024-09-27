@@ -61,7 +61,6 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             httpClient.BaseAddress!.Scheme.Should().Be("https");
             httpClient.BaseAddress!.Host.Should().Be("example.com");
             httpClient.BaseAddress!.Port.Should().Be(8080);
-
         }
 
         [Test]
@@ -111,17 +110,8 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             KeycloakDefaults.BuildCorrectRedirectUri(uri).Should().Be(expected);
         }
 
-        private static void AssertMiddleware<TMiddleware>(ICall call)
-        {
-            var func = (call.GetOriginalArguments()[0] as Func<RequestDelegate, RequestDelegate>)?.Target;
-            func.Should().NotBeNull();
-            var registeredMiddleware = func!.GetInaccessibleValue<Type>("_middleware");
-            if (registeredMiddleware.BaseType == typeof(TMiddleware))
-                return;
-            registeredMiddleware.Should().Be(typeof(TMiddleware));
-        }
         [Test]
-        public void ConfigureHealtChecks_Use9000ForHealth()
+        public void ConfigureHealthChecks_Use9000ForHealth()
         {
             var config = new KeycloakPluginConfiguration
             {
@@ -132,15 +122,16 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 HealthCheckConfig = new HealthCheckConfig
                 {
                     Host = "example.com",
-                    Port = 9100,
+                    Port = 9000,
                     Prefix = "/health/ready"
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
-            uriBuilder.Uri.Should().Be("https://example.com:9100/health/ready");
+            uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
         }
+
         [Test]
-        public void ConfigureHealtChecks_WithoutSettingHealthCheckConfig()
+        public void ConfigureHealthChecks_WithoutSettingHealthCheckConfig()
         {
             var config = new KeycloakPluginConfiguration
             {
@@ -152,8 +143,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
             uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
         }
+
         [Test]
-        public void ConfigureHealtChecks_DifferentPrefixAndPort()
+        public void ConfigureHealthChecks_DifferentPrefixAndPort()
         {
             var config = new KeycloakPluginConfiguration
             {
@@ -170,6 +162,35 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
             uriBuilder.Uri.Should().Be("https://health.com:9999/something/notready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_DefaultHealthHost()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "newhost.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheckConfig = new HealthCheckConfig
+                {
+                    Port = 9999,
+                    Prefix = "/something/notready"
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            uriBuilder.Uri.Should().Be("https://example.com:9999/something/notready");
+        }
+
+        private static void AssertMiddleware<TMiddleware>(ICall call)
+        {
+            var func = (call.GetOriginalArguments()[0] as Func<RequestDelegate, RequestDelegate>)?.Target;
+            func.Should().NotBeNull();
+            var registeredMiddleware = func!.GetInaccessibleValue<Type>("_middleware");
+            if (registeredMiddleware.BaseType == typeof(TMiddleware))
+                return;
+            registeredMiddleware.Should().Be(typeof(TMiddleware));
         }
     }
 }
