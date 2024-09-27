@@ -110,6 +110,79 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             KeycloakDefaults.BuildCorrectRedirectUri(uri).Should().Be(expected);
         }
 
+        [Test]
+        public void ConfigureHealthChecks_Use9000ForHealth()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "example.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheckConfig = new HealthCheckConfig
+                {
+                    Host = "example.com",
+                    Port = 9000,
+                    Prefix = "/health/ready"
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_WithoutSettingHealthCheckConfig()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "example.com",
+                Insecure = false,
+                Port = 8080,
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_DifferentPrefixAndPort()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "newhost.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheckConfig = new HealthCheckConfig
+                {
+                    Host = "health.com",
+                    Port = 9999,
+                    Prefix = "/something/notready"
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            uriBuilder.Uri.Should().Be("https://health.com:9999/something/notready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_DefaultHealthHost()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "newhost.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheckConfig = new HealthCheckConfig
+                {
+                    Port = 9999,
+                    Prefix = "/something/notready"
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            uriBuilder.Uri.Should().Be("https://example.com:9999/something/notready");
+        }
+
         private static void AssertMiddleware<TMiddleware>(ICall call)
         {
             var func = (call.GetOriginalArguments()[0] as Func<RequestDelegate, RequestDelegate>)?.Target;
