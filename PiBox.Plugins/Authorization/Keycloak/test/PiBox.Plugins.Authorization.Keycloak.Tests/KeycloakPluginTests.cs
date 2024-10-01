@@ -97,7 +97,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
         {
             var hcBuilder = Substitute.For<IHealthChecksBuilder>();
             hcBuilder.Services.Returns(new ServiceCollection());
-            var config = new KeycloakPluginConfiguration { Enabled = true, Host = "example.com", Insecure = false };
+            var config = new KeycloakPluginConfiguration { Enabled = true, Host = "example.com", Insecure = false, HealthCheck = new HealthCheckConfig { Host = "example.com" } };
             GetPlugin(config).ConfigureHealthChecks(hcBuilder);
             hcBuilder.Received()
                 .Add(Arg.Is<HealthCheckRegistration>(h =>
@@ -119,19 +119,19 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Host = "example.com",
                 Insecure = false,
                 Port = 8080,
-                HealthCheckConfig = new HealthCheckConfig
+                HealthCheck = new HealthCheckConfig
                 {
                     Host = "example.com",
                     Port = 9000,
                     Prefix = "/health/ready"
                 }
             };
-            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
             uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
         }
 
         [Test]
-        public void ConfigureHealthChecks_WithoutSettingHealthCheckConfig()
+        public void ConfigureHealthChecks_WithSettingHealthCheckHost()
         {
             var config = new KeycloakPluginConfiguration
             {
@@ -139,8 +139,13 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Host = "example.com",
                 Insecure = false,
                 Port = 8080,
+                HealthCheck = new HealthCheckConfig
+                {
+                    Host = "example.com"
+                }
             };
-            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
             uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
         }
 
@@ -153,14 +158,14 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Host = "newhost.com",
                 Insecure = false,
                 Port = 8080,
-                HealthCheckConfig = new HealthCheckConfig
+                HealthCheck = new HealthCheckConfig
                 {
                     Host = "health.com",
                     Port = 9999,
                     Prefix = "/something/notready"
                 }
             };
-            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
             uriBuilder.Uri.Should().Be("https://health.com:9999/something/notready");
         }
 
@@ -173,13 +178,14 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 Host = "newhost.com",
                 Insecure = false,
                 Port = 8080,
-                HealthCheckConfig = new HealthCheckConfig
+                HealthCheck = new HealthCheckConfig
                 {
                     Port = 9999,
-                    Prefix = "/something/notready"
+                    Prefix = "/something/notready",
+                    Host = "example.com"
                 }
             };
-            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheckConfig.Prefix };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
             uriBuilder.Uri.Should().Be("https://example.com:9999/something/notready");
         }
 

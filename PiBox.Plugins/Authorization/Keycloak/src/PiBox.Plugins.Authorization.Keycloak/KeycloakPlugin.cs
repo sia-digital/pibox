@@ -59,7 +59,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
 
         public void ConfigureHealthChecks(IHealthChecksBuilder healthChecksBuilder)
         {
-            var uriBuilder = new UriBuilder(_keycloakPluginConfiguration.GetHealthCheck()) { Path = _keycloakPluginConfiguration.HealthCheckConfig.Prefix };
+            var uriBuilder = new UriBuilder(_keycloakPluginConfiguration.GetHealthCheck()) { Path = _keycloakPluginConfiguration.HealthCheck.Prefix };
             var uri = uriBuilder.Uri;
             healthChecksBuilder.AddUrlGroup(uri, "keycloak", HealthStatus.Unhealthy, new[] { HealthCheckTag.Readiness.Value });
         }

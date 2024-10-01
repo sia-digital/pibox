@@ -15,15 +15,15 @@ namespace PiBox.Plugins.Authorization.Keycloak
         public string ClientSecret { get; set; }
         public RealmsConfig Realms { get; set; } = new RealmsConfig();
         public IList<AuthPolicy> Policies { get; set; } = new List<AuthPolicy>();
-        public HealthCheckConfig HealthCheckConfig { get; set; } = new HealthCheckConfig();
+        public HealthCheckConfig HealthCheck { get; set; } = new HealthCheckConfig();
 
         public Uri GetHealthCheck()
         {
-            if (string.IsNullOrEmpty(HealthCheckConfig.Host)) throw new ArgumentException("Keycloak.Uri was not specified but health check is enabled!");
+            if (string.IsNullOrEmpty(HealthCheck.Host)) throw new ArgumentException("Keycloak.Uri was not specified but health check is enabled!");
             var httpScheme = (Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
             return Port.HasValue
-                ? new UriBuilder(httpScheme, HealthCheckConfig.Host, HealthCheckConfig.Port.Value).Uri
-                : new UriBuilder(httpScheme, HealthCheckConfig.Host).Uri;
+                ? new UriBuilder(httpScheme, HealthCheck.Host, HealthCheck.Port.Value).Uri
+                : new UriBuilder(httpScheme, HealthCheck.Host).Uri;
         }
 
         public Uri GetAuthority()
@@ -43,7 +43,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
 
     public class HealthCheckConfig
     {
-        public string Host { get; set; } = "example.com";
+        public string Host { get; set; }
         public int? Port { get; set; } = 9000;
         public string Prefix { get; set; } = "/health/ready";
     }
