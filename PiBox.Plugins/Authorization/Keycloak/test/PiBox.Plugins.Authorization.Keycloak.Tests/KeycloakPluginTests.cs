@@ -127,6 +127,47 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
+            uriBuilder.Uri.Should().Be("http://example.com:9000/health/ready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_UseInsecureAsDefaultForHealth()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "example.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheck = new HealthCheckConfig
+                {
+                    Host = "example.com",
+                    Port = 9000,
+                    Prefix = "/health/ready"
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
+            uriBuilder.Uri.Should().Be("http://example.com:9000/health/ready");
+        }
+
+        [Test]
+        public void ConfigureHealthChecks_InsecureFalseForcesHttps()
+        {
+            var config = new KeycloakPluginConfiguration
+            {
+                Enabled = true,
+                Host = "example.com",
+                Insecure = false,
+                Port = 8080,
+                HealthCheck = new HealthCheckConfig
+                {
+                    Host = "example.com",
+                    Port = 9000,
+                    Prefix = "/health/ready",
+                    Insecure = false
+                }
+            };
+            var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
             uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
         }
 
@@ -146,7 +187,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
             };
 
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
-            uriBuilder.Uri.Should().Be("https://example.com:9000/health/ready");
+            uriBuilder.Uri.Should().Be("http://example.com:9000/health/ready");
         }
 
         [Test]
@@ -166,7 +207,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
-            uriBuilder.Uri.Should().Be("https://health.com:9999/something/notready");
+            uriBuilder.Uri.Should().Be("http://health.com:9999/something/notready");
         }
 
         [Test]
@@ -186,7 +227,7 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                 }
             };
             var uriBuilder = new UriBuilder(config.GetHealthCheck()) { Path = config.HealthCheck.Prefix };
-            uriBuilder.Uri.Should().Be("https://example.com:9999/something/notready");
+            uriBuilder.Uri.Should().Be("http://example.com:9999/something/notready");
         }
 
         private static void AssertMiddleware<TMiddleware>(ICall call)
