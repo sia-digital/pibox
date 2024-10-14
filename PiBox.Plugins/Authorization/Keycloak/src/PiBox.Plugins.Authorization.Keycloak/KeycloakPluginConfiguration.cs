@@ -20,7 +20,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
         public Uri GetHealthCheck()
         {
             if (string.IsNullOrEmpty(HealthCheck.Host)) throw new ArgumentException("Keycloak.Uri was not specified but health check is enabled!");
-            var httpScheme = (Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
+            var httpScheme = (HealthCheck.Insecure ? HttpScheme.Http : HttpScheme.Https).ToString();
             return Port.HasValue
                 ? new UriBuilder(httpScheme, HealthCheck.Host, HealthCheck.Port.Value).Uri
                 : new UriBuilder(httpScheme, HealthCheck.Host).Uri;
@@ -43,6 +43,7 @@ namespace PiBox.Plugins.Authorization.Keycloak
 
     public class HealthCheckConfig
     {
+        public bool Insecure { get; set; } = true;
         public string Host { get; set; }
         public int? Port { get; set; } = 9000;
         public string Prefix { get; set; } = "/health/ready";
