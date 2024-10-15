@@ -24,10 +24,7 @@ namespace PiBox.Plugins.Authorization.Abstractions
             {
                 options.AddPolicy(authPolicy.Name!, builder =>
                 {
-                    foreach (var authPolicyRole in authPolicy.Roles!)
-                    {
-                        builder.RequireRole(authPolicyRole);
-                    }
+                    builder.RequireRole(authPolicy.Roles!);
                 });
             }
         }
