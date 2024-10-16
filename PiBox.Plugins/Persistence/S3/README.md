@@ -23,11 +23,12 @@ Configure your appsettings.yml with these properties
 
 ```yaml
 s3:
-  Endpoint: ""
-  AccessKey: ""
-  SecretKey: ""
-  Region: ""
-  UseSsl: true
+  endpoint: ""
+  accessKey: ""
+  secretKey: ""
+  region: ""
+  useSsl: true
+  healthCheckPath: ""
 ```
 
 ## Usage
