@@ -1,15 +1,11 @@
 using Confluent.SchemaRegistry;
 using FluentAssertions;
-using Google.Protobuf;
 using Google.Protobuf.Reflection;
 using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using PiBox.Testing.Assertions;
 using PiBox.Testing.Extensions;
-using UnitTests;
-using UnitTests2;
-using FileOptions = Google.Protobuf.Reflection.FileOptions;
 
 namespace PiBox.Plugins.Messaging.Kafka.Flow.Tests
 {

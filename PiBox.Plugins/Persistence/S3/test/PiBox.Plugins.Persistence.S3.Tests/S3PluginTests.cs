@@ -1,4 +1,5 @@
 using FluentAssertions;
+using HealthChecks.Uris;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Minio;
@@ -6,6 +7,7 @@ using NSubstitute;
 using NUnit.Framework;
 using PiBox.Plugins.Persistence.Abstractions;
 using PiBox.Testing;
+using PiBox.Testing.Extensions;
 
 namespace PiBox.Plugins.Persistence.S3.Tests
 {
@@ -63,8 +65,38 @@ namespace PiBox.Plugins.Persistence.S3.Tests
             var healthChecksBuilder = Substitute.For<IHealthChecksBuilder>();
             healthChecksBuilder.Services.Returns(new ServiceCollection());
             _plugin.ConfigureHealthChecks(healthChecksBuilder);
+            AssertUriHealthCheck(healthChecksBuilder);
+        }
+
+        [Test]
+        public void PluginConfiguresHealthChecksWithPath()
+        {
+            var healthChecksBuilder = Substitute.For<IHealthChecksBuilder>();
+            healthChecksBuilder.Services.Returns(new ServiceCollection());
+            _configuration.HealthCheckPath = "/minio/health/live";
+            _plugin.ConfigureHealthChecks(healthChecksBuilder);
+            AssertUriHealthCheck(healthChecksBuilder);
+        }
+
+        private void AssertUriHealthCheck(IHealthChecksBuilder healthChecksBuilder)
+        {
             healthChecksBuilder.Received(1)
                 .Add(Arg.Is<HealthCheckRegistration>(h => h.Name == "s3"));
+            var registration = healthChecksBuilder.ReceivedCalls().Last().GetArguments()![0] as HealthCheckRegistration;
+            registration.Should().NotBeNull();
+            var sp = new ServiceCollection()
+                .AddSingleton(Substitute.For<IHttpClientFactory>())
+                .BuildServiceProvider();
+            var healthCheck = registration!.Factory.Invoke(sp);
+            var uriHealthCheck = healthCheck.Should().BeOfType<UriHealthCheck>().Subject;
+            uriHealthCheck.Should().NotBeNull();
+            var options = uriHealthCheck.GetInaccessibleValue<UriHealthCheckOptions>("_options");
+            options.Should().NotBeNull();
+            var uriOptions = options.GetInaccessibleValue<List<UriOptions>>("UrisOptions");
+            uriOptions.Should().NotBeNull().And.HaveCount(1);
+            var uriOption = uriOptions.Single();
+            uriOption.Uri.Authority.Should().Be(_configuration.Endpoint);
+            uriOption.Uri.AbsolutePath.Should().Be("/" + _configuration.HealthCheckPath.TrimStart('/'));
         }
     }
 }
