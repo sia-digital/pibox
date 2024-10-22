@@ -6,7 +6,7 @@ on:
   pull_request_target:
     branches: [ "main" ]
 permissions:
-  contents: read
+  contents: write
   issues: read
   checks: write
   pull-requests: write
