@@ -13,6 +13,9 @@
 
     <ItemGroup>
       <PackageReference Include="WireMock.Net" />
+      <PackageReference Include="Google.Protobuf" />
+      <PackageReference Include="Grpc" />
+      <PackageReference Include="Grpc.Tools" />
     </ItemGroup>
 
     <ItemGroup>

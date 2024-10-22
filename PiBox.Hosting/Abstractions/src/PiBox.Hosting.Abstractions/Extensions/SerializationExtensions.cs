@@ -76,14 +76,14 @@ namespace PiBox.Hosting.Abstractions.Extensions
                                                                   attr.GetType().GetGenericTypeDefinition() == typeof(ValueObjectAttribute<>)));
             }
 
-            public object ReadYaml(IParser parser, Type type, ObjectDeserializer rootDeserializer)
+            public object ReadYaml(IParser parser, Type type)
             {
                 var scalar = parser.Consume<Scalar>();
                 var valueType = type.GetProperty("Value")!.PropertyType;
                 return TypeDescriptor.GetConverter(valueType).ConvertFromInvariantString(scalar.Value);
             }
 
-            public void WriteYaml(IEmitter emitter, object value, Type type, ObjectSerializer serializer)
+            public void WriteYaml(IEmitter emitter, object value, Type type)
             {
                 var val = value!.GetType().GetProperty("Value")!.GetGetMethod()!
                     .Invoke(value, [])!

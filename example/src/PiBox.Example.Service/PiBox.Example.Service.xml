@@ -19,186 +19,19 @@
         </member>
         <member name="P:PiBox.Example.Service.EntryId.Value">
             <summary>
-            Gets the underlying <see cref = "T:System.Int32"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
+            Gets the underlying <see cref="T:System.Int32" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Example.Service.EntryId.From(System.Int32)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name = "value">The underlying type.</param>
+            <param name="value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryFrom(System.Int32,PiBox.Example.Service.EntryId@)">
-            <summary>
-            Tries to build an instance from the provided underlying type.
-            If a normalization method is provided, it will be called.
-            If validation is provided, and it fails, false will be returned.
-            </summary>
-            <param name = "value">The underlying type.</param>
-            <param name = "vo">An instance of the value object.</param>
-            <returns>True if the value object can be built, otherwise false.</returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryFrom(System.Int32)">
-            <summary>
-            Tries to build an instance from the provided underlying value.
-            If a normalization method is provided, it will be called.
-            If validation is provided, and it fails, an error will be returned.
-            </summary>
-            <param name = "value">The primitive value.</param>
-            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.ReadOnlySpan{System.Char},PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.String,System.IFormatProvider,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.IFormatProvider,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.TryParse(System.String,PiBox.Example.Service.EntryId@)">
-            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.Int32@)"/>
-            <summary>
-            </summary>
-            <returns>
-            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
-            </returns>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.String)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.String)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.String,System.Globalization.NumberStyles)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.Globalization.NumberStyles)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
-        <member name="M:PiBox.Example.Service.EntryId.Parse(System.String,System.IFormatProvider)">
-            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.IFormatProvider)"/>
-            <summary>
-            </summary>
-            <returns>
-            The value created by calling the Parse method on the primitive.
-            </returns>
-            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
-        </member>
         <member name="M:PiBox.Example.Service.EntryId.ToString">
-            <summary>Returns the string representation of the underlying <see cref = "T:System.Int32"/>.</summary>
-        </member>
-        <member name="T:PiBox.Example.Service.EntryId.EntryIdSystemTextJsonConverter">
-            <summary>
-            Converts a EntryId to or from JSON.
-            </summary>
+            <summary>Returns the string representation of the underlying <see cref="T:System.Int32" />.</summary>
+            <inheritdoc cref="M:System.Int32.ToString" />
         </member>
         <member name="P:PiBox.Example.Service.Entry.Id">
             <summary>
