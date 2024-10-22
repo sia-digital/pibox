@@ -40,6 +40,8 @@ namespace PiBox.Plugins.Persistence.S3
         {
             var urlScheme = _configuration.UseSsl ? "https" : "http";
             var url = $"{urlScheme}://{_configuration.Endpoint}";
+            if (!string.IsNullOrEmpty(_configuration.HealthCheckPath))
+                url += $"/{_configuration.HealthCheckPath.TrimStart('/')}";
             healthChecksBuilder.AddUrlGroup(new Uri(url), "s3", HealthStatus.Unhealthy, new[] { HealthCheckTag.Readiness.Value });
         }
     }

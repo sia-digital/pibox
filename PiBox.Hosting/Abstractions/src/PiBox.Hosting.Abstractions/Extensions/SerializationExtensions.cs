@@ -86,7 +86,7 @@ namespace PiBox.Hosting.Abstractions.Extensions
             public void WriteYaml(IEmitter emitter, object value, Type type)
             {
                 var val = value!.GetType().GetProperty("Value")!.GetGetMethod()!
-                    .Invoke(value, Array.Empty<object>())!
+                    .Invoke(value, [])!
                     .ToString()!;
                 emitter.Emit(new Scalar(null, null, val, ScalarStyle.Plain, true, false));
             }

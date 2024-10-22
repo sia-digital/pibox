@@ -10,5 +10,6 @@ namespace PiBox.Plugins.Persistence.S3
         public string SecretKey { get; set; } = "";
         public string Region { get; set; } = "";
         public bool UseSsl { get; set; }
+        public string HealthCheckPath { get; set; } = "";
     }
 }

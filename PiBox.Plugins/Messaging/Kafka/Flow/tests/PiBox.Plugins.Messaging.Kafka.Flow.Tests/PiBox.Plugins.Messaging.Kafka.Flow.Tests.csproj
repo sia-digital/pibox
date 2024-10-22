@@ -3,7 +3,7 @@
     <PropertyGroup>
         <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-      <IsPackable>false</IsPackable>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
