@@ -2,7 +2,6 @@ using FluentAssertions;
 using Hangfire;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
-using PiBox.Plugins.Jobs.Hangfire.Job;
 using PiBox.Testing;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
@@ -13,8 +12,8 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
         public void CanSetupJobsWithAServiceCollection()
         {
             var sc = TestingDefaults.ServiceCollection();
-            Action<IJobRegister, IServiceProvider> setup = (register, _) =>
-                register.RegisterRecurringAsyncJob<TestJobAsync>(Cron.Daily());
+            Action<IJobManager, IServiceProvider> setup = (register, _) =>
+                register.RegisterRecurring<TestJobTimeoutAsync>(Cron.Daily());
             sc.ConfigureJobs(setup);
             var sp = sc.BuildServiceProvider();
             var options = sp.GetRequiredService<JobOptions>();

@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using PiBox.Hosting.Abstractions.Attributes;
 using PiBox.Hosting.Abstractions.Extensions;
+using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Hosting.Abstractions.Services;
 
 namespace PiBox.Hosting.WebHost.Services
@@ -36,6 +38,36 @@ namespace PiBox.Hosting.WebHost.Services
                 if (type.HasAttribute<ConfigurationAttribute>())
                     return GetConfiguration(type, type.GetAttribute<ConfigurationAttribute>()!.Section);
 
+                var isList = type.GetInterfaces().Any(i => i.IsAssignableTo(typeof(IEnumerable)));
+                var innerType = isList ? type.GetElementType()! : type;
+
+                if (innerType.IsInterface && innerType.IsAssignableTo(typeof(IPluginConfigurator)))
+                {
+                    if (!isList)
+                        throw new NotSupportedException(
+                            $"For plugin configurators you must implement to take in an enumerable of the configurators. Configurator: {innerType.Name}");
+                    var args = _resolvedTypes.Select(x => x.Assembly).Distinct()
+                        .SelectMany(x => x.GetTypes())
+                        .Where(x => x.IsClass && !x.IsAbstract && x.IsAssignableTo(innerType))
+                        .Select(ResolveInstance)
+                        .ToList();
+                    if (!isList)
+                        return args.FirstOrDefault();
+
+                    if (type.IsArray)
+                    {
+                        var array = Array.CreateInstance(innerType, args.Count);
+                        args.ToArray().CopyTo(array, 0);
+                        return array;
+                    }
+
+                    var listType = typeof(List<>).MakeGenericType(innerType);
+                    var list = (IList)Activator.CreateInstance(listType)!;
+                    foreach (var item in args)
+                        list.Add(item);
+                    return list;
+                }
+
                 if (!(type.IsGenericType && _defaultArguments.ContainsKey(type.GetGenericTypeDefinition())))
                 {
                     return null;
@@ -69,9 +101,9 @@ namespace PiBox.Hosting.WebHost.Services
             if (type.HasAttribute<ConfigurationAttribute>())
                 return GetConfiguration(type, type.GetAttribute<ConfigurationAttribute>()!.Section);
             var constructor = type.GetConstructors().FirstOrDefault();
-            var parameters = constructor?.GetParameters() ?? Array.Empty<ParameterInfo>();
+            var parameters = constructor?.GetParameters() ?? [];
             if (constructor is null || parameters.Length == 0)
-                return TrackInstance(Activator.CreateInstance(type, Array.Empty<object>()));
+                return TrackInstance(Activator.CreateInstance(type, []));
             var arguments = parameters.Select(parameter => GetArgument(type, parameter.ParameterType)).ToArray();
             return TrackInstance(constructor.Invoke(arguments));
         }

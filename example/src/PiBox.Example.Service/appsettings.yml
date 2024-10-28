@@ -6,3 +6,9 @@ openapi:
     enabled: false
     tokenUrl: https://keycloak.example/realms/myrealm/protocol/openid-connect/token
     authUrl: https://keycloak.example/realms/myrealm/protocol/openid-connect/auth
+
+hangfire:
+  inMemory: true
+  allowedDashboardHost: localhost
+  queues:
+    - test

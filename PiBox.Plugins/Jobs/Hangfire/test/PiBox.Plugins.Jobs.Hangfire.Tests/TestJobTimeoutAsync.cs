@@ -5,9 +5,10 @@ using PiBox.Plugins.Jobs.Hangfire.Job;
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
 {
     [RecurringJob("0 0 * * *")]
-    public class TestJobAsync : AsyncJob
+    [JobTimeout(50, TimeUnit.Milliseconds)]
+    public class TestJobTimeoutAsync : AsyncJob
     {
-        public TestJobAsync(ILogger logger) : base(logger)
+        public TestJobTimeoutAsync(ILogger logger) : base(logger)
         {
         }
 
@@ -16,6 +17,22 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             const string result = "test";
             Logger.LogInformation("Run");
             await Task.Delay(100, cancellationToken);
+            return result;
+        }
+    }
+
+    [RecurringJob("0 0 * * *")]
+    public class TestJobSuccessAsync : AsyncJob
+    {
+        public TestJobSuccessAsync(ILogger logger) : base(logger)
+        {
+        }
+
+        protected override async Task<object> ExecuteJobAsync(CancellationToken cancellationToken)
+        {
+            const string result = "test";
+            Logger.LogInformation("Run");
+            await Task.Delay(1, cancellationToken);
             return result;
         }
     }

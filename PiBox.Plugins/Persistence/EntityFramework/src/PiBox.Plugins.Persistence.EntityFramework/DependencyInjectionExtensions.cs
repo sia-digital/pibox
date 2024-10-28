@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using PiBox.Hosting.Abstractions;
 
 namespace PiBox.Plugins.Persistence.EntityFramework
@@ -29,14 +30,21 @@ namespace PiBox.Plugins.Persistence.EntityFramework
             where TContext : DbContext
         {
             healthChecksBuilder.AddDbContextCheck<TContext>(typeof(TContext).Name,
-                tags: new[] { HealthCheckTag.Readiness.Value });
+                tags: [HealthCheckTag.Readiness.Value]);
             return healthChecksBuilder;
         }
 
         public static void MigrateEfContexts(this IApplicationBuilder applicationBuilder)
         {
+            var logger = applicationBuilder.ApplicationServices.GetRequiredService<ILogger<EntityFrameworkPlugin>>();
             applicationBuilder.ApplicationServices.GetServices<IDbContext>().ToList()
-                .ForEach(dbContext => dbContext.Migrate());
+                .ForEach(dbContext =>
+                {
+                    var dbContextName = dbContext.GetType().Name;
+                    logger.LogDebug("Migrating '{DbContextName}'", dbContextName);
+                    dbContext.Migrate();
+                    logger.LogDebug("Migrated '{DbContextName}'", dbContextName);
+                });
         }
     }
 }
