@@ -39,7 +39,7 @@ namespace PiBox.Hosting.WebHost.Services
                     return GetConfiguration(type, type.GetAttribute<ConfigurationAttribute>()!.Section);
 
                 var isList = type.GetInterfaces().Any(i => i.IsAssignableTo(typeof(IEnumerable)));
-                var innerType = isList ? type.GetElementType()! : type;
+                var innerType = !isList ? type : type.GetElementType() ?? type.GenericTypeArguments[0]!;
 
                 if (innerType.IsInterface && innerType.IsAssignableTo(typeof(IPluginConfigurator)))
                 {

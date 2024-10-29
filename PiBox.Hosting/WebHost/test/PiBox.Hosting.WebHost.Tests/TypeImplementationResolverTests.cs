@@ -4,6 +4,7 @@ using NSubstitute;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions.Attributes;
 using PiBox.Hosting.Abstractions.Extensions;
+using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Hosting.Abstractions.Services;
 using PiBox.Hosting.WebHost.Services;
 using PiBox.Testing;
@@ -81,6 +82,36 @@ namespace PiBox.Hosting.WebHost.Tests
             var pluginConfig = resolver.ResolveInstance(typeof(UnitTestPluginConfig)) as UnitTestPluginConfig;
             pluginConfig.Should().NotBeNull();
             pluginConfig!.Name.Should().Be(configName);
+        }
+
+        [Test]
+        public void CanResolveConfigurators()
+        {
+            var resolver = new TypeImplementationResolver(_configuration, _resolvedTypes, new Dictionary<Type, object>());
+            var instance = resolver.ResolveInstance(typeof(Configurator)) as Configurator;
+            instance.Should().NotBeNull();
+            instance!.GetMessage().Should().Be("Hello World!");
+
+            var plugin = resolver.ResolveInstance(typeof(ConfiguratorPlugin)) as ConfiguratorPlugin;
+            plugin.Should().NotBeNull();
+            plugin!.Message.Should().Be("Hello World!");
+            plugin!.Message2.Should().Be("Hello World!");
+        }
+
+        internal class Configurator : IConfiguratorPluginConfigurator
+        {
+            public string GetMessage() => "Hello World!";
+        }
+
+        internal interface IConfiguratorPluginConfigurator : IPluginConfigurator
+        {
+            string GetMessage();
+        }
+
+        internal class ConfiguratorPlugin(IConfiguratorPluginConfigurator[] configurators, IList<IConfiguratorPluginConfigurator> configurators2) : IPluginActivateable
+        {
+            public string Message = string.Join(" ", configurators.Select(c => c.GetMessage()));
+            public string Message2 = string.Join(" ", configurators2.Select(c => c.GetMessage()));
         }
 
         [Configuration("sampleConfig")]
