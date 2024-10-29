@@ -8,7 +8,7 @@ namespace PiBox.Plugins.Jobs.Hangfire.Job
         {
         }
 
-        public Task<object> ExecuteAsync(CancellationToken jobCancellationToken)
+        public Task<object> ExecuteAsync(CancellationToken jobCancellationToken = default)
         {
             return InternalExecuteAsync(async () =>
             {

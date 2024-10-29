@@ -96,7 +96,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
             {
                 var recurringJobDetails = job.GetAttribute<RecurringJobAttribute>()!;
                 var genericMethod = registerJobMethod.MakeGenericMethod(job);
-                genericMethod.Invoke(jobRegister, [recurringJobDetails.CronPattern, recurringJobDetails.Queue]);
+                genericMethod.Invoke(jobRegister, [recurringJobDetails.CronPattern, recurringJobDetails.Queue, ""]);
             }
         }
 

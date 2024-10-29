@@ -20,12 +20,14 @@ namespace PiBox.Plugins.Jobs.Hangfire
         IList<EnqueuedJobDto> GetEnqueuedJobs<T>(Predicate<EnqueuedJobDto> predicate = null);
         IList<ProcessingJobDto> GetProcessingJobs<T>(Predicate<ProcessingJobDto> predicate = null);
         IList<FailedJobDto> GetFailedJobs<T>(Predicate<FailedJobDto> predicate = null);
+        IList<JobEntity> GetJobs(Predicate<JobEntity> predicate = null);
+
         string Enqueue<TJob, TJobParams>(TJobParams parameters, string queue = EnqueuedState.DefaultQueue) where TJob : IParameterizedAsyncJob<TJobParams>;
         string Enqueue<TJob>(string queue = EnqueuedState.DefaultQueue) where TJob : IAsyncJob;
         string Schedule<TJob>(TimeSpan schedule, string queue = EnqueuedState.DefaultQueue) where TJob : IAsyncJob;
         string Schedule<TJob, TJobParams>(TJobParams parameters, TimeSpan schedule, string queue = EnqueuedState.DefaultQueue) where TJob : IParameterizedAsyncJob<TJobParams>;
-        void RegisterRecurring<TJob>(string cron, string queue = EnqueuedState.DefaultQueue) where TJob : IAsyncJob;
-        void RegisterRecurring<TJob, TJobParams>(string cron, TJobParams parameters, string queue = EnqueuedState.DefaultQueue) where TJob : IParameterizedAsyncJob<TJobParams>;
+        void RegisterRecurring<TJob>(string cron, string queue = EnqueuedState.DefaultQueue, string jobSuffix = "") where TJob : IAsyncJob;
+        void RegisterRecurring<TJob, TJobParams>(TJobParams parameters, string cron, string queue = EnqueuedState.DefaultQueue, string jobSuffix = "") where TJob : IParameterizedAsyncJob<TJobParams>;
         void DeleteRecurring(string id);
         void Delete(string id);
     }

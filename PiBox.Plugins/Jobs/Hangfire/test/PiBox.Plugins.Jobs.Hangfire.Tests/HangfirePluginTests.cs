@@ -31,12 +31,20 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             PollingIntervalInMs = 1000,
             WorkerCount = 200,
             EnableJobsByFeatureManagementConfig = true,
-            User = "testUser"
+            User = "testUser",
+            Queues = ["default", "test"]
         };
 
-        private readonly IImplementationResolver _implementationResolver = Substitute.For<IImplementationResolver>();
+        private IImplementationResolver _implementationResolver;
+        private IHangfireConfigurator _configurator;
+        private HangFirePlugin GetPlugin() => new(HangfireConfiguration, _implementationResolver, [_configurator]);
 
-        private HangFirePlugin GetPlugin() => new(HangfireConfiguration, _implementationResolver, []);
+        [SetUp]
+        public void Up()
+        {
+            _configurator = Substitute.For<IHangfireConfigurator>();
+            _implementationResolver = Substitute.For<IImplementationResolver>();
+        }
 
         [Test]
         public void ConfigureServiceTest()
@@ -49,13 +57,23 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
 
             var hangfireConfiguration = sp.GetRequiredService<IGlobalConfiguration>();
             hangfireConfiguration.Should().NotBeNull();
+
+            var backgroundJobServerOptions = sp.GetServices<IHostedService>();
+            backgroundJobServerOptions.Should().NotBeNull();
+
+            var jobManager = sp.GetService<IJobManager>();
+            jobManager.Should().NotBeNull();
+            jobManager.Should().BeOfType<JobManager>();
+
+            _configurator.Received(1).Configure(Arg.Any<IGlobalConfiguration>());
+            _configurator.Received(1).ConfigureServer(Arg.Any<BackgroundJobServerOptions>());
         }
 
         [Test]
         public void ConfigureApplicationTest()
         {
             _implementationResolver.FindTypes()
-                .Returns(new List<Type> { typeof(TestJobTimeoutAsync) });
+                .Returns([typeof(TestJobTimeoutAsync)]);
             JobStorage.Current = new MemoryStorage();
             var sc = new ServiceCollection();
             sc.AddSingleton<ILoggerFactory>(NullLoggerFactory.Instance);

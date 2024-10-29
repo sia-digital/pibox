@@ -9,13 +9,23 @@ using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire
 {
+    public enum JobType
+    {
+        Recurring,
+        Processing,
+        Enqueued,
+        Failed,
+        Fetched
+    }
+    public class JobEntity
+    {
+        public JobType Type { get; init; }
+        public global::Hangfire.Common.Job Job { get; init; }
+        public object JobDto { get; init; }
+    }
+
     internal class JobManager : IJobManager
     {
-        private record PageOptions(int Offset, int PageSize)
-        {
-            public PageOptions Next() => this with { Offset = Offset + PageSize };
-        }
-
         private readonly IRecurringJobManager _recurringJobManager;
         private readonly IBackgroundJobClient _backgroundJobClient;
         private readonly bool _hasQueueSupport;
@@ -47,9 +57,10 @@ namespace PiBox.Plugins.Jobs.Hangfire
             return name;
         }
 
+        public IList<string> GetQueues() => MonitoringApi.Queues().Select(x => x.Name).ToList();
+
         public IList<RecurringJobDto> GetRecurringJobs() =>
             Connection.GetRecurringJobs();
-        public IList<string> GetQueues() => MonitoringApi.Queues().Select(x => x.Name).ToList();
 
         public IList<EnqueuedJobDto> GetEnqueuedJobs() =>
             GetQueues()
@@ -58,8 +69,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
                 .ToList();
 
         public IList<ProcessingJobDto> GetProcessingJobs() =>
-            GetQueues()
-                .SelectMany(queue => MonitoringApi.GetCompleteList((api, page) => api.ProcessingJobs(page.Offset, page.PageSize)))
+            MonitoringApi.GetCompleteList((api, page) => api.ProcessingJobs(page.Offset, page.PageSize))
                 .Select(x => x.Value)
                 .ToList();
 
@@ -74,15 +84,20 @@ namespace PiBox.Plugins.Jobs.Hangfire
                 .Select(x => x.Value)
                 .ToList();
 
-        public IList<global::Hangfire.Common.Job> GetJobs()
+        public IList<JobEntity> GetJobs(Predicate<JobEntity> predicate = null)
         {
-            var jobs = GetEnqueuedJobs().Select(x => x.Job).ToList();
-            jobs.AddRange(GetProcessingJobs().Select(x => x.Job));
-            jobs.AddRange(GetFailedJobs().Select(x => x.Job));
-            jobs.AddRange(GetFetchedJobs().Select(x => x.Job));
-            jobs.AddRange(GetRecurringJobs().Select(x => x.Job));
-            return jobs;
+            IEnumerable<JobEntity> all = [
+                .. GetEnqueuedJobs().Select(x => CreateJobEntity(JobType.Enqueued, x.Job, x)),
+                .. GetProcessingJobs().Select(x => CreateJobEntity(JobType.Processing, x.Job, x)),
+                .. GetFailedJobs().Select(x => CreateJobEntity(JobType.Failed, x.Job, x)),
+                .. GetFetchedJobs().Select(x => CreateJobEntity(JobType.Fetched, x.Job, x)),
+                .. GetRecurringJobs().Select(x => CreateJobEntity(JobType.Recurring, x.Job, x))
+            ];
+            return predicate is null ? all.ToList() : all.Where(x => predicate(x)).ToList();
         }
+
+        private static JobEntity CreateJobEntity(JobType jobType, global::Hangfire.Common.Job job, object jobDto)
+            => new() { Job = job, JobDto = jobDto, Type = jobType };
 
         public IList<RecurringJobDto> GetRecurringJobs<T>(Predicate<RecurringJobDto> predicate = null) =>
             GetRecurringJobs().Where(x => x.Job.Type == typeof(T) && (predicate == null || predicate(x))).ToList();
@@ -110,8 +125,8 @@ namespace PiBox.Plugins.Jobs.Hangfire
         public string Enqueue<TJob>(string queue = EnqueuedState.DefaultQueue) where TJob : IAsyncJob
         {
             return _hasQueueSupport
-                ? _backgroundJobClient.Enqueue<TJob>(x => x.ExecuteAsync(CancellationToken.None))
-                : _backgroundJobClient.Enqueue<TJob>(queue, x => x.ExecuteAsync(CancellationToken.None));
+                ? _backgroundJobClient.Enqueue<TJob>(queue, x => x.ExecuteAsync(CancellationToken.None))
+                : _backgroundJobClient.Enqueue<TJob>(x => x.ExecuteAsync(CancellationToken.None));
         }
 
         public string Schedule<TJob>(TimeSpan schedule, string queue = EnqueuedState.DefaultQueue)
@@ -130,22 +145,22 @@ namespace PiBox.Plugins.Jobs.Hangfire
                 : _backgroundJobClient.Schedule<TJob>(x => x.ExecuteAsync(parameters, CancellationToken.None), schedule);
         }
 
-        public void RegisterRecurring<TJob>(string cron, string queue = EnqueuedState.DefaultQueue)
+        public void RegisterRecurring<TJob>(string cron, string queue = EnqueuedState.DefaultQueue, string jobSuffix = "")
             where TJob : IAsyncJob
         {
             if (_hasQueueSupport)
-                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(), queue, x => x.ExecuteAsync(CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
+                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(jobSuffix), queue, x => x.ExecuteAsync(CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
             else
-                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(), x => x.ExecuteAsync(CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
+                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(jobSuffix), x => x.ExecuteAsync(CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
         }
 
-        public void RegisterRecurring<TJob, TJobParams>(string cron, TJobParams parameters,
-            string queue = EnqueuedState.DefaultQueue) where TJob : IParameterizedAsyncJob<TJobParams>
+        public void RegisterRecurring<TJob, TJobParams>(TJobParams parameters, string cron,
+            string queue = EnqueuedState.DefaultQueue, string jobSuffix = "") where TJob : IParameterizedAsyncJob<TJobParams>
         {
             if (_hasQueueSupport)
-                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(), queue, x => x.ExecuteAsync(parameters, CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
+                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(jobSuffix), queue, x => x.ExecuteAsync(parameters, CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
             else
-                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(), x => x.ExecuteAsync(parameters, CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
+                _recurringJobManager.AddOrUpdate<TJob>(GetJobName<TJob>(jobSuffix), x => x.ExecuteAsync(parameters, CancellationToken.None), cron, new RecurringJobOptions { TimeZone = GetTimeZone<TJob>() });
         }
 
         public void DeleteRecurring(string id) => _recurringJobManager.RemoveIfExists(id);
