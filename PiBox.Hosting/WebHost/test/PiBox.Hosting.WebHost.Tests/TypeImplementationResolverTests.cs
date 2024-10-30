@@ -13,7 +13,7 @@ namespace PiBox.Hosting.WebHost.Tests
 {
     public class TypeImplementationResolverTests
     {
-        private readonly Type[] _resolvedTypes = new Type[] { typeof(SampleType), typeof(WithoutCtor), typeof(UnitTestPluginConfig) };
+        private readonly Type[] _resolvedTypes = [typeof(SampleType), typeof(WithoutCtor), typeof(UnitTestPluginConfig)];
         private readonly IConfiguration _configuration = Substitute.For<IConfiguration>();
 
         [Test]
@@ -98,17 +98,17 @@ namespace PiBox.Hosting.WebHost.Tests
             plugin!.Message2.Should().Be("Hello World!");
         }
 
-        internal class Configurator : IConfiguratorPluginConfigurator
+        private class Configurator : IConfiguratorPluginConfigurator
         {
             public string GetMessage() => "Hello World!";
         }
 
-        internal interface IConfiguratorPluginConfigurator : IPluginConfigurator
+        private interface IConfiguratorPluginConfigurator : IPluginConfigurator
         {
             string GetMessage();
         }
 
-        internal class ConfiguratorPlugin(IConfiguratorPluginConfigurator[] configurators, IList<IConfiguratorPluginConfigurator> configurators2) : IPluginActivateable
+        private class ConfiguratorPlugin(IConfiguratorPluginConfigurator[] configurators, IList<IConfiguratorPluginConfigurator> configurators2) : IPluginActivateable
         {
             public string Message = string.Join(" ", configurators.Select(c => c.GetMessage()));
             public string Message2 = string.Join(" ", configurators2.Select(c => c.GetMessage()));
@@ -120,11 +120,10 @@ namespace PiBox.Hosting.WebHost.Tests
             public string Name { get; set; } = null!;
         }
 
-        internal abstract class BaseClass
-        {
-        }
+        private abstract class BaseClass;
+
 #pragma warning disable S3881
-        internal class SampleType : BaseClass, IDisposable
+        private class SampleType : BaseClass, IDisposable
         {
             public static int CreationCount;
             public static int DisposeCount;
@@ -152,7 +151,7 @@ namespace PiBox.Hosting.WebHost.Tests
         }
 #pragma warning restore S3881
 
-        internal class WithoutCtor
+        private class WithoutCtor
         {
             private readonly string Test = "TEST";
             public string GetTest() => Test;

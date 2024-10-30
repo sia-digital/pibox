@@ -51,8 +51,6 @@ namespace PiBox.Hosting.WebHost.Services
                         .Where(x => x.IsClass && !x.IsAbstract && x.IsAssignableTo(innerType))
                         .Select(ResolveInstance)
                         .ToList();
-                    if (!isList)
-                        return args.FirstOrDefault();
 
                     if (type.IsArray)
                     {
