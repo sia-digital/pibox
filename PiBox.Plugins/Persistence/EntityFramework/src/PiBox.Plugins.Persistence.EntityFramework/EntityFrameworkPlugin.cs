@@ -38,7 +38,7 @@ namespace PiBox.Plugins.Persistence.EntityFramework
         public void ConfigureHealthChecks(IHealthChecksBuilder healthChecksBuilder)
         {
             var dbContexts = implementationResolver.FindAssemblies().SelectMany(x => x.GetTypes())
-                .Where(x => x.GetInterfaces().Any(i => i == typeof(IDbContext)))
+                .Where(x => x.IsClass && !x.IsAbstract && x.IsAssignableTo(typeof(IDbContext)))
                 .ToList();
             var registerHc = typeof(DependencyInjectionExtensions).GetMethods(BindingFlags.Static | BindingFlags.Public)
                 .Single(x => x.GetParameters().Length == 1 && x.GetParameters()[0].ParameterType == typeof(IHealthChecksBuilder));

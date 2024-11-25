@@ -67,6 +67,7 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
             _implementationResolver.FindAssemblies().Returns([typeof(EntityFrameworkPluginTests).Assembly]);
             var healthCheckBuilder = Substitute.For<IHealthChecksBuilder>();
             _plugin.ConfigureHealthChecks(healthCheckBuilder);
+            healthCheckBuilder.Received(1).Add(Arg.Any<HealthCheckRegistration>());
             healthCheckBuilder.Received(1).Add(Arg.Is<HealthCheckRegistration>(h => h.Name == nameof(TestContext)));
         }
 
