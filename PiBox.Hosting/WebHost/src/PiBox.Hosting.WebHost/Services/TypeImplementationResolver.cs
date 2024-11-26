@@ -24,7 +24,7 @@ namespace PiBox.Hosting.WebHost.Services
 
         private object TrackInstance(object instance)
         {
-            if (instance is null) return instance;
+            if (instance is null) return null;
             _instances.Add(instance);
             return instance;
         }
@@ -56,9 +56,7 @@ namespace PiBox.Hosting.WebHost.Services
 
         private object GetConfiguration(Type type, string section)
         {
-            var configurationInstance = Activator.CreateInstance(type);
-            _configuration.Bind(section, configurationInstance);
-            return configurationInstance;
+            return _configuration.GetSection(section, type);
         }
 
         public object ResolveInstance(Type type)

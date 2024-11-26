@@ -43,5 +43,43 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
             obj.Should().BeOfType<Sample>();
             (obj as Sample).Should().BeEquivalentTo(sample);
         }
+
+        [Test]
+        public void CanSerializeAndDeserializeObjectsWithKindSpecifiers()
+        {
+            var sample = new SampleWithKindSpecifiers
+            {
+                Samples = [new SampleConf { Name = "one" }, new Sample2Conf { Name = "two" }]
+            };
+            var serialized = sample.Serialize();
+            var deserialized = serialized.Deserialize<SampleWithKindSpecifiers>();
+            deserialized.Samples.Should().HaveCount(2);
+            deserialized.Samples[0].Name.Should().Be("one");
+            deserialized.Samples[0].Kind.Should().Be("one");
+            deserialized.Samples[1].Kind.Should().Be("two");
+            deserialized.Samples[1].Kind.Should().Be("two");
+        }
+
+        private interface ISample : IKindSpecifier
+        {
+            string Name { get; }
+        }
+
+        private class SampleConf : ISample
+        {
+            public string Kind => "one";
+            public string Name { get; set; }
+        }
+
+        private class Sample2Conf : ISample
+        {
+            public string Kind => "two";
+            public string Name { get; set; }
+        }
+
+        private class SampleWithKindSpecifiers
+        {
+            public IList<ISample> Samples { get; set; }
+        }
     }
 }
