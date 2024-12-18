@@ -1,3 +1,4 @@
+using Hangfire.States;
 using PiBox.Hosting.Abstractions.Attributes;
 
 namespace PiBox.Plugins.Jobs.Hangfire
@@ -15,6 +16,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
         public bool EnableJobsByFeatureManagementConfig { get; set; }
         public int? PollingIntervalInMs { get; set; }
         public int? WorkerCount { get; set; }
+        public string[] Queues { get; set; } = [EnqueuedState.DefaultQueue];
         public string ConnectionString => $"Host={Host};Port={Port};Database={Database};Username={User};Password={Password};";
     }
 }

@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Logging;
 using NSubstitute;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions;
+using PiBox.Testing.Assertions;
 
 namespace PiBox.Plugins.Persistence.EntityFramework.Tests
 {
@@ -56,6 +58,7 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
             var sp = Substitute.For<IServiceProvider>();
             var dbContext = Substitute.For<IDbContext>();
             sp.GetService(typeof(IEnumerable<IDbContext>)).Returns(new List<IDbContext> { dbContext });
+            sp.GetService(typeof(ILogger<EntityFrameworkPlugin>)).Returns(new FakeLogger<EntityFrameworkPlugin>());
             var appBuilder = Substitute.For<IApplicationBuilder>();
             appBuilder.ApplicationServices.Returns(sp);
             appBuilder.MigrateEfContexts();

@@ -8,20 +8,18 @@ namespace PiBox.Plugins.Jobs.Hangfire.Job
         {
         }
 
-        public Task<object> ExecuteAsync(T value, CancellationToken jobCancellationToken)
+        public Task<object> ExecuteAsync(T value, CancellationToken jobCancellationToken = default)
         {
             return InternalExecuteAsync(async () =>
             {
-                var timeout = JobOptionsCollection
-                    ?.FirstOrDefault(x => x.JobType == GetType() && Equals(x.JobParameter, value))?.Timeout;
-                if (timeout == null)
+                if (Timeout == null)
                 {
                     return await ExecuteJobAsync(value, jobCancellationToken);
                 }
 
                 using var cts =
                     CancellationTokenSource.CreateLinkedTokenSource(jobCancellationToken);
-                cts.CancelAfter(timeout.Value);
+                cts.CancelAfter(Timeout.Value);
                 return await ExecuteJobAsync(value, cts.Token);
             });
         }
