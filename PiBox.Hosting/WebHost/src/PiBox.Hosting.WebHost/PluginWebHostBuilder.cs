@@ -75,7 +75,7 @@ namespace PiBox.Hosting.WebHost
                         .First(x => x.Name == nameof(LoggerFactoryExtensions.CreateLogger) &&
                                     x.IsGenericMethodDefinition)
                         .MakeGenericMethod(t)
-                        .Invoke(null, new object[] { loggerFactory })!)
+                        .Invoke(null, [loggerFactory])!)
                 },
                 { typeof(ILoggerFactory), loggerFactory }
             };

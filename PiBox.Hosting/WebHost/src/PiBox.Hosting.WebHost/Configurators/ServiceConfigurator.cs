@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.IO.Compression;
 using System.Reflection;
-using System.Text.Json.Serialization;
+using System.Text.Json;
 using AspNetCoreRateLimit;
 using Chronos;
 using Chronos.Abstractions;
@@ -61,7 +61,7 @@ namespace PiBox.Hosting.WebHost.Configurators
             ConfigurePlugins();
         }
 
-        internal void ConfigurePlugins()
+        private void ConfigurePlugins()
         {
             _implementationResolver
                 .FindPlugins<IPluginServiceConfiguration>()
@@ -73,7 +73,7 @@ namespace PiBox.Hosting.WebHost.Configurators
                 });
         }
 
-        internal void ConfigureHealthChecks()
+        private void ConfigureHealthChecks()
         {
             var healthChecksBuilder = _serviceCollection.AddHealthChecks();
 
@@ -106,7 +106,7 @@ namespace PiBox.Hosting.WebHost.Configurators
                 });
         }
 
-        internal void ConfigureMetrics()
+        private void ConfigureMetrics()
         {
             // add metrics
             _serviceCollection.AddOpenTelemetry().WithMetrics(
@@ -170,7 +170,7 @@ namespace PiBox.Hosting.WebHost.Configurators
             ActivitySource.AddActivityListener(activityListener);
         }
 
-        internal void ConfigureWebServices()
+        private void ConfigureWebServices()
         {
             _serviceCollection.AddSingleton<GlobalStatusCodeOptions>();
             _serviceCollection.AddHttpContextAccessor();
@@ -179,24 +179,35 @@ namespace PiBox.Hosting.WebHost.Configurators
             corsPolicy.SetSanityDefaults();
             _serviceCollection.AddCors(opts => opts.AddPolicy(PiBoxWebHostDefaults.CorsPolicyName, corsPolicy));
 
-            _serviceCollection.AddResponseCompression(options =>
+            _serviceCollection.AddResponseCompression(opts =>
             {
-                options.EnableForHttps = true;
-                options.Providers.Add<GzipCompressionProvider>();
-                options.MimeTypes = new[] { "application/json" };
+                opts.EnableForHttps = true;
+                opts.Providers.Clear();
+                opts.Providers.Add<BrotliCompressionProvider>();
+                opts.Providers.Add<GzipCompressionProvider>();
+                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat([
+                    "image/svg+xml",
+                    "image/x-icon",
+                    "image/bmp",
+                    "image/tiff",
+                    "application/graphql-response+json"
+                ]);
             });
-            _serviceCollection.Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Fastest; });
-            var mcvBuilder = _serviceCollection.AddControllers(options =>
+            _serviceCollection.Configure<BrotliCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.Fastest;
+            });
+            _serviceCollection.Configure<GzipCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.Fastest;
+            });
+            var mvcBuilder = _serviceCollection.AddControllers(options =>
                 {
                     options.InputFormatters.Add(new YamlInputFormatter());
                     options.OutputFormatters.Add(new YamlOutputFormatter());
                     options.FormatterMappings.SetMediaTypeMappingForFormat("yaml", CustomMediaTypes.ApplicationYaml);
                 })
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-                })
+                .AddJsonOptions(options => ConfigureJsonOptions(options.JsonSerializerOptions))
                 .ConfigureApiBehaviorOptions(options =>
                 {
                     options.InvalidModelStateResponseFactory = WriteValidationErrorResponse;
@@ -206,12 +217,12 @@ namespace PiBox.Hosting.WebHost.Configurators
                 {
                     _logger.LogDebug("Configured controller {PluginServices} order {Order}", pluginKeyPair.Value.GetType().Name,
                         pluginKeyPair.Key);
-                    pluginKeyPair.Value.ConfigureControllers(mcvBuilder);
+                    pluginKeyPair.Value.ConfigureControllers(mvcBuilder);
                 });
             _serviceCollection.Configure<ForwardedHeadersOptions>(options => options.ForwardedHeaders = ForwardedHeaders.All);
         }
 
-        internal void ConfigureDefaultServices()
+        private void ConfigureDefaultServices()
         {
             var logLevel = _configuration.GetValue<LogEventLevel?>("serilog:minimumLevel") ?? LogEventLevel.Information;
             _serviceCollection.WithLogLevelSwitch(logLevel);
@@ -231,12 +242,42 @@ namespace PiBox.Hosting.WebHost.Configurators
             _serviceCollection.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
             _serviceCollection.Configure<JsonOptions>(options =>
-                options.SerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+                ConfigureJsonOptions(options.SerializerOptions));
 
             foreach (var configuration in _implementationResolver.FindAndResolve(f => f.HasAttribute<ConfigurationAttribute>()))
             {
                 _serviceCollection.AddSingleton(configuration!.GetType(), configuration!);
             }
+        }
+
+        private static void ConfigureJsonOptions(JsonSerializerOptions options)
+        {
+            var defaultOpts = SerializationExtensions.DefaultOptions;
+            options.AllowTrailingCommas = defaultOpts.AllowTrailingCommas;
+            options.DefaultBufferSize = defaultOpts.DefaultBufferSize;
+            options.IgnoreReadOnlyFields = defaultOpts.IgnoreReadOnlyFields;
+            options.IgnoreReadOnlyProperties = defaultOpts.IgnoreReadOnlyProperties;
+            options.DefaultIgnoreCondition = defaultOpts.DefaultIgnoreCondition;
+            options.DictionaryKeyPolicy = defaultOpts.DictionaryKeyPolicy;
+            options.Encoder = defaultOpts.Encoder;
+            options.IncludeFields = defaultOpts.IncludeFields;
+            options.MaxDepth = defaultOpts.MaxDepth;
+            options.NumberHandling = defaultOpts.NumberHandling;
+            options.PreferredObjectCreationHandling = defaultOpts.PreferredObjectCreationHandling;
+            options.PropertyNameCaseInsensitive = defaultOpts.PropertyNameCaseInsensitive;
+            options.PropertyNamingPolicy = defaultOpts.PropertyNamingPolicy;
+            options.ReadCommentHandling = defaultOpts.ReadCommentHandling;
+            options.ReferenceHandler = defaultOpts.ReferenceHandler;
+            options.TypeInfoResolver = defaultOpts.TypeInfoResolver;
+            options.UnknownTypeHandling = defaultOpts.UnknownTypeHandling;
+            options.UnmappedMemberHandling = defaultOpts.UnmappedMemberHandling;
+            options.WriteIndented = defaultOpts.WriteIndented;
+            options.TypeInfoResolverChain.Clear();
+            options.Converters.Clear();
+            foreach (var converter in defaultOpts.Converters)
+                options.Converters.Add(converter);
+            foreach (var typeInfoResolver in defaultOpts.TypeInfoResolverChain)
+                options.TypeInfoResolverChain.Add(typeInfoResolver);
         }
 
         internal static IActionResult WriteValidationErrorResponse(ActionContext actionContext)
