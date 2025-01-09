@@ -1,5 +1,6 @@
 using System.Security.Claims;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace PiBox.Plugins.Authorization.Keycloak.Scheme
 {
@@ -13,29 +14,60 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
 
         public static IEnumerable<Claim> GetRoleClaims(this ClaimsPrincipal principal)
         {
-            var roles = ParseRealmAccess(principal.GetClaim(KeycloakDefaults.RealmAccessClaim)).ToList();
+            var roles = ParseRealmAccess(principal.GetClaim(KeycloakDefaults.RealmAccessClaim));
             var authenticatedClientId = principal.GetClaim(KeycloakDefaults.ClientClaim);
+
             if (authenticatedClientId is not null)
-                roles.AddRange(ParseResourceAccess(authenticatedClientId, principal.GetClaim(KeycloakDefaults.ResourceAccessClaim)));
-            return roles.Select(x => new Claim(ClaimTypes.Role, x)).ToList();
+                roles = roles.Concat(
+                    ParseResourceAccess(
+                        authenticatedClientId,
+                        principal.GetClaim(KeycloakDefaults.ResourceAccessClaim)));
+
+            return roles.Select(x => new Claim(ClaimTypes.Role, x));
         }
 
         private static IEnumerable<string> ParseResourceAccess(string clientId, string jsonContent)
         {
-            if (string.IsNullOrWhiteSpace(jsonContent)) return Array.Empty<string>();
-            var jObj = JObject.Parse(jsonContent);
-            if (!jObj.ContainsKey(clientId)) return Array.Empty<string>();
-            var roles = jObj[clientId]?["roles"]?.ToObject<string[]>();
-            return ParseRoles(roles ?? Array.Empty<string>());
+            if (string.IsNullOrWhiteSpace(jsonContent))
+                return Array.Empty<string>();
+
+            var jObj = JsonNode.Parse(jsonContent);
+
+            if (jObj == null || jObj.GetValueKind() != JsonValueKind.Object)
+                return Array.Empty<string>();
+
+            if (!jObj.AsObject().TryGetPropertyValue(clientId, out var jsonClientId))
+                return Array.Empty<string>();
+
+            if (jsonClientId == null
+                || !jsonClientId.AsObject().TryGetPropertyValue("roles", out var jsonRoles)
+                || jsonRoles == null
+                || jsonRoles.GetValueKind() != JsonValueKind.Array)
+                return Array.Empty<string>();
+
+            var roles = jsonRoles.AsArray()
+                .Select(node => node.GetValueKind() == JsonValueKind.String ? node.GetValue<string>() : string.Empty);
+            return ParseRoles(roles);
         }
 
         private static IEnumerable<string> ParseRealmAccess(string jsonContent)
         {
-            if (string.IsNullOrWhiteSpace(jsonContent)) return Array.Empty<string>();
-            var jObj = JObject.Parse(jsonContent);
-            if (!jObj.ContainsKey("roles")) return Array.Empty<string>();
-            var roles = jObj["roles"]!.ToObject<string[]>();
-            return ParseRoles(roles ?? Array.Empty<string>());
+            if (string.IsNullOrWhiteSpace(jsonContent))
+                return Array.Empty<string>();
+
+            var jObj = JsonNode.Parse(jsonContent);
+
+            if (jObj == null || jObj.GetValueKind() != JsonValueKind.Object)
+                return Array.Empty<string>();
+
+            if (!jObj.AsObject().TryGetPropertyValue("roles", out var jsonRoles)
+                || jsonRoles == null
+                || jsonRoles.GetValueKind() != JsonValueKind.Array)
+                return Array.Empty<string>();
+
+            var roles = jsonRoles.AsArray()
+                .Select(node => node.GetValueKind() == JsonValueKind.String ? node.GetValue<string>() : string.Empty);
+            return ParseRoles(roles);
         }
 
         private static IEnumerable<string> ParseRoles(IEnumerable<string> roles) =>

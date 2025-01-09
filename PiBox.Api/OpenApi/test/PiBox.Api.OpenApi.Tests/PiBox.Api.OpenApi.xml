@@ -16,1064 +16,2234 @@
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Int32" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Int32"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryFrom(System.Int32,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryFrom(System.Int32)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Byte},System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.ReadOnlySpan{System.Char},System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.String,System.IFormatProvider,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.IFormatProvider,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt@)">
-            <inheritdoc cref="M:System.Int32.TryParse(System.String,System.Int32@)"/>
+            <inheritdoc cref = "M:System.Int32.TryParse(System.String,System.Int32@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.From(System.Int32)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.String)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Int32.ToString" />
+            <inheritdoc cref = "M:System.Int32.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int32.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.ToString(System.String)">
+            <inheritdoc cref = "M:System.Int32.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDefaultIsInt.ValueObjectDefaultIsIntSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDefaultIsInt to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.Value">
             <summary>
-            Gets the underlying <see cref="T:System.String" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.String"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.From(System.String)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.TryFrom(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.TryFrom(System.String)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString@)">
+            <summary>
+            </summary>
+            <returns>
+            True if the value passes any validation (after running any optional normalization).
+            </returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            </summary>
+            <returns>
+            The value created via the <see cref = "M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.From(System.String)"/> method.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.String.ToString" />
+            <inheritdoc cref = "M:System.String.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.String.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectString.ValueObjectStringSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectString to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Boolean" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Boolean"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.From(System.Boolean)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.TryFrom(System.Boolean,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.TryFrom(System.Boolean)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean@)">
-            <inheritdoc cref="M:System.Boolean.TryParse(System.ReadOnlySpan{System.Char},System.Boolean@)"/>
+            <inheritdoc cref = "M:System.Boolean.TryParse(System.ReadOnlySpan{System.Char},System.Boolean@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.From(System.Boolean)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean@)">
-            <inheritdoc cref="M:System.Boolean.TryParse(System.String,System.Boolean@)"/>
+            <inheritdoc cref = "M:System.Boolean.TryParse(System.String,System.Boolean@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.From(System.Boolean)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.Parse(System.ReadOnlySpan{System.Char})">
+            <inheritdoc cref = "M:System.Boolean.Parse(System.ReadOnlySpan{System.Char})"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.Parse(System.String)">
+            <inheritdoc cref = "M:System.Boolean.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Boolean.ToString" />
+            <inheritdoc cref = "M:System.Boolean.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Boolean.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectBoolean.ValueObjectBooleanSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectBoolean to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Int16" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Int16"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryFrom(System.Int16,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryFrom(System.Int16)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Byte},System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.ReadOnlySpan{System.Char},System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.String,System.IFormatProvider,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.String,System.IFormatProvider,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort@)">
-            <inheritdoc cref="M:System.Int16.TryParse(System.String,System.Int16@)"/>
+            <inheritdoc cref = "M:System.Int16.TryParse(System.String,System.Int16@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.From(System.Int16)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.String)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Int16.ToString" />
+            <inheritdoc cref = "M:System.Int16.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int16.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.ToString(System.String)">
+            <inheritdoc cref = "M:System.Int16.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectShort.ValueObjectShortSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectShort to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Int64" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Int64"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryFrom(System.Int64,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryFrom(System.Int64)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Byte},System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.ReadOnlySpan{System.Char},System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.String,System.IFormatProvider,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.String,System.IFormatProvider,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong@)">
-            <inheritdoc cref="M:System.Int64.TryParse(System.String,System.Int64@)"/>
+            <inheritdoc cref = "M:System.Int64.TryParse(System.String,System.Int64@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.From(System.Int64)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.String)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Int64.ToString" />
+            <inheritdoc cref = "M:System.Int64.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Int64.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.ToString(System.String)">
+            <inheritdoc cref = "M:System.Int64.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectLong.ValueObjectLongSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectLong to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Byte" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Byte"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryFrom(System.Byte,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryFrom(System.Byte)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.String,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.String,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte@)">
-            <inheritdoc cref="M:System.Byte.TryParse(System.String,System.IFormatProvider,System.Byte@)"/>
+            <inheritdoc cref = "M:System.Byte.TryParse(System.String,System.IFormatProvider,System.Byte@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.From(System.Byte)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.String)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Byte.ToString" />
+            <inheritdoc cref = "M:System.Byte.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Byte.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.ToString(System.String)">
+            <inheritdoc cref = "M:System.Byte.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectByte.ValueObjectByteSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectByte to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Single" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Single"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryFrom(System.Single,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryFrom(System.Single)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Byte},System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.ReadOnlySpan{System.Char},System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.String,System.IFormatProvider,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.String,System.IFormatProvider,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat@)">
-            <inheritdoc cref="M:System.Single.TryParse(System.String,System.Single@)"/>
+            <inheritdoc cref = "M:System.Single.TryParse(System.String,System.Single@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.From(System.Single)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.String)">
+            <inheritdoc cref = "M:System.Single.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Single.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Single.ToString" />
+            <inheritdoc cref = "M:System.Single.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Single.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.ToString(System.String)">
+            <inheritdoc cref = "M:System.Single.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectFloat.ValueObjectFloatSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectFloat to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Decimal" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Decimal"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryFrom(System.Decimal,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryFrom(System.Decimal)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.String,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.String,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal@)">
-            <inheritdoc cref="M:System.Decimal.TryParse(System.String,System.IFormatProvider,System.Decimal@)"/>
+            <inheritdoc cref = "M:System.Decimal.TryParse(System.String,System.IFormatProvider,System.Decimal@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.From(System.Decimal)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.String)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Decimal.ToString" />
+            <inheritdoc cref = "M:System.Decimal.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Decimal.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.ToString(System.String)">
+            <inheritdoc cref = "M:System.Decimal.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDecimal.ValueObjectDecimalSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDecimal to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Double" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Double"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryFrom(System.Double,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryFrom(System.Double)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Byte},System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.String,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.String,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble@)">
-            <inheritdoc cref="M:System.Double.TryParse(System.String,System.IFormatProvider,System.Double@)"/>
+            <inheritdoc cref = "M:System.Double.TryParse(System.String,System.IFormatProvider,System.Double@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.From(System.Double)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.ReadOnlySpan{System.Byte},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.ReadOnlySpan{System.Byte},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.ReadOnlySpan{System.Char},System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.String)">
+            <inheritdoc cref = "M:System.Double.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.String,System.Globalization.NumberStyles)">
+            <inheritdoc cref = "M:System.Double.Parse(System.String,System.Globalization.NumberStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Double.ToString" />
+            <inheritdoc cref = "M:System.Double.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Double.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.ToString(System.String)">
+            <inheritdoc cref = "M:System.Double.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDouble.ValueObjectDoubleSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDouble to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Value">
             <summary>
-            Gets the underlying <see cref="T:System.DateTime" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.DateTime"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryFrom(System.DateTime,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryFrom(System.DateTime)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.String,System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.String,System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.String,System.IFormatProvider,System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.String,System.IFormatProvider,System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime@)">
-            <inheritdoc cref="M:System.DateTime.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)"/>
+            <inheritdoc cref = "M:System.DateTime.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTime@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.From(System.DateTime)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateTime.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Parse(System.String)">
+            <inheritdoc cref = "M:System.DateTime.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateTime.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.DateTime.ToString" />
+            <inheritdoc cref = "M:System.DateTime.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTime.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ToString(System.String)">
+            <inheritdoc cref = "M:System.DateTime.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ValueObjectDateTimeSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDateTime to or from JSON.
+            </summary>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTime.ValueObjectDateTimeSystemTextJsonConverter.ReadAsPropertyName(System.Text.Json.Utf8JsonReader@,System.Type,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Converts a ValueObjectDateTime to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Value">
             <summary>
-            Gets the underlying <see cref="T:System.DateOnly" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.DateOnly"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryFrom(System.DateOnly,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryFrom(System.DateOnly)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.String,System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.String,System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly@)">
-            <inheritdoc cref="M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)"/>
+            <inheritdoc cref = "M:System.DateOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.From(System.DateOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Parse(System.String)">
+            <inheritdoc cref = "M:System.DateOnly.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.DateOnly.ToString" />
+            <inheritdoc cref = "M:System.DateOnly.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateOnly.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.ToString(System.String)">
+            <inheritdoc cref = "M:System.DateOnly.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateOnly.ValueObjectDateOnlySystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDateOnly to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Value">
             <summary>
-            Gets the underlying <see cref="T:System.TimeOnly" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.TimeOnly"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryFrom(System.TimeOnly,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryFrom(System.TimeOnly)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.ReadOnlySpan{System.Char},System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.String,System.IFormatProvider,System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly@)">
-            <inheritdoc cref="M:System.TimeOnly.TryParse(System.String,System.TimeOnly@)"/>
+            <inheritdoc cref = "M:System.TimeOnly.TryParse(System.String,System.TimeOnly@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.From(System.TimeOnly)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.TimeOnly.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Parse(System.String)">
+            <inheritdoc cref = "M:System.TimeOnly.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.TimeOnly.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.TimeOnly.ToString" />
+            <inheritdoc cref = "M:System.TimeOnly.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.TimeOnly.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.ToString(System.String)">
+            <inheritdoc cref = "M:System.TimeOnly.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectTimeOnly.ValueObjectTimeOnlySystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectTimeOnly to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Value">
             <summary>
-            Gets the underlying <see cref="T:System.DateTimeOffset" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.DateTimeOffset"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryFrom(System.DateTimeOffset,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryFrom(System.DateTimeOffset)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.String,System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.String,System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.String,System.IFormatProvider,System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.String,System.IFormatProvider,System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset@)">
-            <inheritdoc cref="M:System.DateTimeOffset.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTimeOffset@)"/>
+            <inheritdoc cref = "M:System.DateTimeOffset.TryParse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles,System.DateTimeOffset@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.From(System.DateTimeOffset)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateTimeOffset.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Parse(System.String)">
+            <inheritdoc cref = "M:System.DateTimeOffset.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)">
+            <inheritdoc cref = "M:System.DateTimeOffset.Parse(System.String,System.IFormatProvider,System.Globalization.DateTimeStyles)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.DateTimeOffset.ToString" />
+            <inheritdoc cref = "M:System.DateTimeOffset.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.ToString(System.IFormatProvider)">
+            <inheritdoc cref = "M:System.DateTimeOffset.ToString(System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.ToString(System.String)">
+            <inheritdoc cref = "M:System.DateTimeOffset.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectDateTimeOffset.ValueObjectDateTimeOffsetSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectDateTimeOffset to or from JSON.
+            </summary>
         </member>
         <member name="P:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.Value">
             <summary>
-            Gets the underlying <see cref="T:System.Guid" /> value if set, otherwise a <see cref="T:Vogen.ValueObjectValidationException" /> is thrown.
+            Gets the underlying <see cref = "T:System.Guid"/> value if set, otherwise a <see cref = "T:Vogen.ValueObjectValidationException"/> is thrown.
             </summary>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.From(System.Guid)">
             <summary>
             Builds an instance from the provided underlying type.
             </summary>
-            <param name="value">The underlying type.</param>
+            <param name = "value">The underlying type.</param>
             <returns>An instance of this type.</returns>
         </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryFrom(System.Guid,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid@)">
+            <summary>
+            Tries to build an instance from the provided underlying type.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, false will be returned.
+            </summary>
+            <param name = "value">The underlying type.</param>
+            <param name = "vo">An instance of the value object.</param>
+            <returns>True if the value object can be built, otherwise false.</returns>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryFrom(System.Guid)">
+            <summary>
+            Tries to build an instance from the provided underlying value.
+            If a normalization method is provided, it will be called.
+            If validation is provided, and it fails, an error will be returned.
+            </summary>
+            <param name = "value">The primitive value.</param>
+            <returns>A <see cref = "T:Vogen.ValueObjectOrError`1"/> containing either the value object, or an error.</returns>
+        </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryParse(System.ReadOnlySpan{System.Char},PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid@)">
-            <inheritdoc cref="M:System.Guid.TryParse(System.ReadOnlySpan{System.Char},System.Guid@)"/>
+            <inheritdoc cref = "M:System.Guid.TryParse(System.ReadOnlySpan{System.Char},System.Guid@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.From(System.Guid)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid@)">
-            <inheritdoc cref="M:System.Guid.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Guid@)"/>
+            <inheritdoc cref = "M:System.Guid.TryParse(System.ReadOnlySpan{System.Char},System.IFormatProvider,System.Guid@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.From(System.Guid)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryParse(System.String,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid@)">
-            <inheritdoc cref="M:System.Guid.TryParse(System.String,System.Guid@)"/>
+            <inheritdoc cref = "M:System.Guid.TryParse(System.String,System.Guid@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.From(System.Guid)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.TryParse(System.String,System.IFormatProvider,PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid@)">
-            <inheritdoc cref="M:System.Guid.TryParse(System.String,System.IFormatProvider,System.Guid@)"/>
+            <inheritdoc cref = "M:System.Guid.TryParse(System.String,System.IFormatProvider,System.Guid@)"/>
             <summary>
             </summary>
             <returns>
-            The value created via the <see cref="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.From(System.Guid)"/> method.
+            True if the value could a) be parsed by the underlying type, and b) passes any validation (after running any optional normalization).
             </returns>
-            <exception cref="T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.Parse(System.ReadOnlySpan{System.Char})">
+            <inheritdoc cref = "M:System.Guid.Parse(System.ReadOnlySpan{System.Char})"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Guid.Parse(System.ReadOnlySpan{System.Char},System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.Parse(System.String)">
+            <inheritdoc cref = "M:System.Guid.Parse(System.String)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.Parse(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Guid.Parse(System.String,System.IFormatProvider)"/>
+            <summary>
+            </summary>
+            <returns>
+            The value created by calling the Parse method on the primitive.
+            </returns>
+            <exception cref = "T:Vogen.ValueObjectValidationException">Thrown when the value can be parsed, but is not valid.</exception>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc cref = "M:System.Guid.ToString(System.String,System.IFormatProvider)"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.System#ISpanFormattable#TryFormat(System.Span{System.Char},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "T:System.ISpanFormattable"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.System#IUtf8SpanFormattable#TryFormat(System.Span{System.Byte},System.Int32@,System.ReadOnlySpan{System.Char},System.IFormatProvider)">
+            <inheritdoc cref = "T:System.IUtf8SpanFormattable"/>
         </member>
         <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.ToString">
-            <summary>Returns the string representation of the underlying type</summary>
-            <inheritdoc cref="M:System.Guid.ToString" />
+            <inheritdoc cref = "M:System.Guid.ToString"/>
+        </member>
+        <member name="M:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.ToString(System.String)">
+            <inheritdoc cref = "M:System.Guid.ToString(System.String)"/>
+        </member>
+        <member name="T:PiBox.Api.OpenApi.Tests.Filters.Schema.ValueObjectGuid.ValueObjectGuidSystemTextJsonConverter">
+            <summary>
+            Converts a ValueObjectGuid to or from JSON.
+            </summary>
         </member>
     </members>
 </doc>
