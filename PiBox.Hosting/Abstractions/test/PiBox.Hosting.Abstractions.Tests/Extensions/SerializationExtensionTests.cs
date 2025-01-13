@@ -56,7 +56,7 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
             deserialized.Samples.Should().HaveCount(2);
             deserialized.Samples[0].Name.Should().Be("one");
             deserialized.Samples[0].Kind.Should().Be("one");
-            deserialized.Samples[1].Kind.Should().Be("two");
+            deserialized.Samples[1].Name.Should().Be("two");
             deserialized.Samples[1].Kind.Should().Be("two");
 
             serialized = sample.Serialize(SerializationMethod.Yaml);
@@ -64,7 +64,7 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
             deserialized.Samples.Should().HaveCount(2);
             deserialized.Samples[0].Name.Should().Be("one");
             deserialized.Samples[0].Kind.Should().Be("one");
-            deserialized.Samples[1].Kind.Should().Be("two");
+            deserialized.Samples[1].Name.Should().Be("two");
             deserialized.Samples[1].Kind.Should().Be("two");
         }
 
