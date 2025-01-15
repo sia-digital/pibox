@@ -17,6 +17,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
         public int? PollingIntervalInMs { get; set; }
         public int? WorkerCount { get; set; }
         public string[] Queues { get; set; } = [EnqueuedState.DefaultQueue];
+        public int InvisibilityTimeoutInMinutes { get; set; } = 30;
         public string ConnectionString => $"Host={Host};Port={Port};Database={Database};Username={User};Password={Password};";
     }
 }
