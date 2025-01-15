@@ -43,9 +43,9 @@ namespace PiBox.Plugins.Jobs.Hangfire
                         conf.UseMemoryStorage();
                     else
                         conf.UsePostgreSqlStorage(opts => opts.UseNpgsqlConnection(_hangfireConfig.ConnectionString), new PostgreSqlStorageOptions
-                                                      {
-                                                          InvisibilityTimeout = TimeSpan.FromMinutes(_hangfireConfig.InvisibilityTimeoutInMinutes)
-                                                      });
+                        {
+                            InvisibilityTimeout = TimeSpan.FromMinutes(_hangfireConfig.InvisibilityTimeoutInMinutes)
+                        });
                     conf.UseSimpleAssemblyNameTypeSerializer();
                     _configurators.ForEach(x => x.Configure(conf));
                 }
