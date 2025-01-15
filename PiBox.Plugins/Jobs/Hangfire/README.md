@@ -34,6 +34,7 @@ hangfire:
   InMemory: true
   enableJobsByFeatureManagementConfig: false
   allowedDashboardHost: localhost # you need to set this configuration to be able to access the dashboard from the specified host
+  invisibilityTimeoutInMinutes: 30
 
 featureManagement: # we can conveniently can use the microsoft feature management system to enable jobs based on configuration
   hangfireTestJob: true # if you have enabled the 'enableJobsByFeatureManagementConfig: true' then you can configure here if your jobs should run on execution or not, useful for multiple environments etc.
@@ -55,6 +56,7 @@ public class HangfireConfiguration
     public bool EnableJobsByFeatureManagementConfig { get; set; }
     public int? PollingIntervalInMs { get; set; }
     public int? WorkerCount { get; set; }
+    public int InvisibilityTimeoutInMinutes { get; set; } = 30;
     public string ConnectionString => $"Host={Host};Port={Port};Database={Database};Username={User};Password={Password};";
 }
 ```
