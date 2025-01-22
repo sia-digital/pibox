@@ -18,8 +18,8 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
 
             var filter = new JobCleanupExpirationTimeAttribute(9999);
 
-            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
-                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var job = new global::Hangfire.Common.Job(typeof(TestJobTimeoutAsync),
+                typeof(TestJobTimeoutAsync).GetMethod(nameof(TestJobTimeoutAsync.ExecuteAsync)), CancellationToken.None);
 
             var writeOnlyTransaction = Substitute.For<IWriteOnlyTransaction>();
             var context = new ApplyStateContext(

@@ -18,6 +18,7 @@
     <ProjectReference Include="..\..\..\PiBox.Api\OpenApi\src\PiBox.Api.OpenApi\PiBox.Api.OpenApi.csproj" />
     <ProjectReference Include="..\..\..\PiBox.Hosting\Generator\src\PiBox.Hosting.Generator\PiBox.Hosting.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\..\..\PiBox.Hosting\WebHost\src\PiBox.Hosting.WebHost\PiBox.Hosting.WebHost.csproj" />
+    <ProjectReference Include="..\..\..\PiBox.Plugins\Jobs\Hangfire\src\PiBox.Plugins.Jobs.Hangfire\PiBox.Plugins.Jobs.Hangfire.csproj" />
   </ItemGroup>
 
   <ItemGroup>

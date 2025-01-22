@@ -10,18 +10,15 @@ namespace PiBox.Plugins.Jobs.Hangfire.Job
 
         protected async Task<object> InternalExecuteAsync(Func<Task<object>> action)
         {
-            object result;
             try
             {
-                result = await action().ConfigureAwait(false);
+                return await action().ConfigureAwait(false);
             }
             catch (Exception exception)
             {
                 Logger.LogError(exception, "Job failed");
                 throw;
             }
-
-            return result;
         }
     }
 }

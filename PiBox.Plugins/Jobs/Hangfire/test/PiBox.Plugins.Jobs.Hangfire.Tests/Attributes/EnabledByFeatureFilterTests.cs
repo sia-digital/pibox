@@ -20,12 +20,12 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
         {
             JobStorage.Current = new MemoryStorage();
             var loggerFactory = Substitute.For<ILoggerFactory>();
-            var fakeLogger = new FakeLogger<TestJobAsync>();
+            var fakeLogger = new FakeLogger<TestJobTimeoutAsync>();
             loggerFactory.CreateLogger(default!).ReturnsForAnyArgs(fakeLogger);
             var filter = new LogJobExecutionFilter(loggerFactory);
 
-            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
-                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var job = new global::Hangfire.Common.Job(typeof(TestJobTimeoutAsync),
+                typeof(TestJobTimeoutAsync).GetMethod(nameof(TestJobTimeoutAsync.ExecuteAsync)), CancellationToken.None);
             var performContext = new PerformContext(JobStorage.Current,
                 Substitute.For<IStorageConnection>(),
                 new BackgroundJob("id1", job, DateTime.Now),
@@ -53,12 +53,12 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
         {
             JobStorage.Current = new MemoryStorage();
             var featureManager = Substitute.For<IFeatureManager>();
-            featureManager.IsEnabledAsync(Arg.Is<string>(x => x == nameof(TestJobAsync))).Returns(true);
+            featureManager.IsEnabledAsync(Arg.Is<string>(x => x == nameof(TestJobTimeoutAsync))).Returns(true);
             var filter = new EnabledByFeatureFilter(featureManager,
                 new FakeLogger<EnabledByFeatureFilter>());
 
-            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
-                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var job = new global::Hangfire.Common.Job(typeof(TestJobTimeoutAsync),
+                typeof(TestJobTimeoutAsync).GetMethod(nameof(TestJobTimeoutAsync.ExecuteAsync)), CancellationToken.None);
             var context = new PerformingContext(
                 new PerformContext(JobStorage.Current,
                     Substitute.For<IStorageConnection>(),
@@ -78,12 +78,12 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
         {
             JobStorage.Current = new MemoryStorage();
             var featureManager = Substitute.For<IFeatureManager>();
-            featureManager.IsEnabledAsync(Arg.Is<string>(x => x == nameof(TestJobAsync))).Returns(false);
+            featureManager.IsEnabledAsync(Arg.Is<string>(x => x == nameof(TestJobTimeoutAsync))).Returns(false);
             var filter = new EnabledByFeatureFilter(featureManager,
                 new FakeLogger<EnabledByFeatureFilter>());
 
-            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
-                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var job = new global::Hangfire.Common.Job(typeof(TestJobTimeoutAsync),
+                typeof(TestJobTimeoutAsync).GetMethod(nameof(TestJobTimeoutAsync.ExecuteAsync)), CancellationToken.None);
             var context = new PerformingContext(
                 new PerformContext(JobStorage.Current,
                     Substitute.For<IStorageConnection>(),
@@ -107,8 +107,8 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests.Attributes
             var filter = new EnabledByFeatureFilter(featureManager,
                 new FakeLogger<EnabledByFeatureFilter>());
 
-            var job = new global::Hangfire.Common.Job(typeof(TestJobAsync),
-                typeof(TestJobAsync).GetMethod(nameof(TestJobAsync.ExecuteAsync)), CancellationToken.None);
+            var job = new global::Hangfire.Common.Job(typeof(TestJobTimeoutAsync),
+                typeof(TestJobTimeoutAsync).GetMethod(nameof(TestJobTimeoutAsync.ExecuteAsync)), CancellationToken.None);
             var performContext = new PerformContext(JobStorage.Current,
                 Substitute.For<IStorageConnection>(),
                 new BackgroundJob("id1", job, DateTime.Now),

@@ -4,6 +4,7 @@ using NSubstitute;
 using NUnit.Framework;
 using PiBox.Hosting.Abstractions.Attributes;
 using PiBox.Hosting.Abstractions.Extensions;
+using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Hosting.Abstractions.Services;
 using PiBox.Hosting.WebHost.Services;
 using PiBox.Testing;
@@ -12,7 +13,7 @@ namespace PiBox.Hosting.WebHost.Tests
 {
     public class TypeImplementationResolverTests
     {
-        private readonly Type[] _resolvedTypes = new Type[] { typeof(SampleType), typeof(WithoutCtor), typeof(UnitTestPluginConfig) };
+        private readonly Type[] _resolvedTypes = [typeof(SampleType), typeof(WithoutCtor), typeof(UnitTestPluginConfig)];
         private readonly IConfiguration _configuration = Substitute.For<IConfiguration>();
 
         [Test]
@@ -83,17 +84,46 @@ namespace PiBox.Hosting.WebHost.Tests
             pluginConfig!.Name.Should().Be(configName);
         }
 
+        [Test]
+        public void CanResolveConfigurators()
+        {
+            var resolver = new TypeImplementationResolver(_configuration, _resolvedTypes, new Dictionary<Type, object>());
+            var instance = resolver.ResolveInstance(typeof(Configurator)) as Configurator;
+            instance.Should().NotBeNull();
+            instance!.GetMessage().Should().Be("Hello World!");
+
+            var plugin = resolver.ResolveInstance(typeof(ConfiguratorPlugin)) as ConfiguratorPlugin;
+            plugin.Should().NotBeNull();
+            plugin!.Message.Should().Be("Hello World!");
+            plugin!.Message2.Should().Be("Hello World!");
+        }
+
+        private class Configurator : IConfiguratorPluginConfigurator
+        {
+            public string GetMessage() => "Hello World!";
+        }
+
+        private interface IConfiguratorPluginConfigurator : IPluginConfigurator
+        {
+            string GetMessage();
+        }
+
+        private class ConfiguratorPlugin(IConfiguratorPluginConfigurator[] configurators, IList<IConfiguratorPluginConfigurator> configurators2) : IPluginActivateable
+        {
+            public string Message = string.Join(" ", configurators.Select(c => c.GetMessage()));
+            public string Message2 = string.Join(" ", configurators2.Select(c => c.GetMessage()));
+        }
+
         [Configuration("sampleConfig")]
         internal class UnitTestPluginConfig
         {
             public string Name { get; set; } = null!;
         }
 
-        internal abstract class BaseClass
-        {
-        }
+        private abstract class BaseClass;
+
 #pragma warning disable S3881
-        internal class SampleType : BaseClass, IDisposable
+        private class SampleType : BaseClass, IDisposable
         {
             public static int CreationCount;
             public static int DisposeCount;
@@ -121,7 +151,7 @@ namespace PiBox.Hosting.WebHost.Tests
         }
 #pragma warning restore S3881
 
-        internal class WithoutCtor
+        private class WithoutCtor
         {
             private readonly string Test = "TEST";
             public string GetTest() => Test;

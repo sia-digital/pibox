@@ -6,9 +6,11 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using NSubstitute;
 using NUnit.Framework;
 using OpenTelemetry.Instrumentation.EntityFrameworkCore;
+using PiBox.Hosting.Abstractions.Services;
 using PiBox.Plugins.Persistence.Abstractions;
 using PiBox.Testing.Extensions;
 
@@ -16,7 +18,15 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
 {
     public class EntityFrameworkPluginTests
     {
-        private readonly EntityFrameworkPlugin _plugin = new();
+        private IImplementationResolver _implementationResolver;
+        private EntityFrameworkPlugin _plugin;
+
+        [SetUp]
+        public void Up()
+        {
+            _implementationResolver = Substitute.For<IImplementationResolver>();
+            _plugin = new EntityFrameworkPlugin(_implementationResolver);
+        }
 
         [Test]
         public void ConfigureServicesWorks()
@@ -52,6 +62,16 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
         }
 
         [Test]
+        public void ConfiguresHealthChecks()
+        {
+            _implementationResolver.FindAssemblies().Returns([typeof(EntityFrameworkPluginTests).Assembly]);
+            var healthCheckBuilder = Substitute.For<IHealthChecksBuilder>();
+            _plugin.ConfigureHealthChecks(healthCheckBuilder);
+            healthCheckBuilder.Received(1).Add(Arg.Any<HealthCheckRegistration>());
+            healthCheckBuilder.Received(1).Add(Arg.Is<HealthCheckRegistration>(h => h.Name == nameof(TestContext)));
+        }
+
+        [Test]
         public void EnrichEfCoreWithActivitySetsOptions()
         {
             var opts = new EntityFrameworkInstrumentationOptions();
@@ -59,7 +79,7 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
             opts.EnrichWithIDbCommand.Should().NotBeNull();
             using var activity = new Activity("unit-test");
             var command = Substitute.For<IDbCommand>();
-            opts.EnrichWithIDbCommand(activity, command);
+            opts.EnrichWithIDbCommand!(activity, command);
 
             var dbNameTag = activity.Tags.Single(x => x.Key == "db.name");
             dbNameTag.Should().NotBeNull();
