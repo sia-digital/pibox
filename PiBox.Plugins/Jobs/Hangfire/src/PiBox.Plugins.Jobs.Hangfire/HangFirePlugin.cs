@@ -17,7 +17,7 @@ using BindingFlags = System.Reflection.BindingFlags;
 
 namespace PiBox.Plugins.Jobs.Hangfire
 {
-    public class HangFirePlugin(HangfireConfiguration configuration, IImplementationResolver implementationResolver, IHangfireConfigurator[] configurators)
+    public class HangFirePlugin(HangfireConfiguration hangfireConfiguration, IImplementationResolver implementationResolver, IHangfireConfigurator[] configurators)
         : IPluginServiceConfiguration, IPluginApplicationConfiguration, IPluginHealthChecksConfiguration
     {
         public void ConfigureServices(IServiceCollection serviceCollection)
@@ -32,13 +32,13 @@ namespace PiBox.Plugins.Jobs.Hangfire
             );
             serviceCollection.AddHangfireServer(options =>
             {
-                options.Queues = configuration.Queues.Union([EnqueuedState.DefaultQueue]).Distinct().ToArray();
-                if (configuration.PollingIntervalInMs.HasValue)
+                options.Queues = hangfireConfiguration.Queues.Union([EnqueuedState.DefaultQueue]).Distinct().ToArray();
+                if (hangfireConfiguration.PollingIntervalInMs.HasValue)
                     options.SchedulePollingInterval =
-                        TimeSpan.FromMilliseconds(configuration.PollingIntervalInMs.Value);
+                        TimeSpan.FromMilliseconds(hangfireConfiguration.PollingIntervalInMs.Value);
 
-                if (configuration.WorkerCount.HasValue)
-                    options.WorkerCount = configuration.WorkerCount.Value;
+                if (hangfireConfiguration.WorkerCount.HasValue)
+                    options.WorkerCount = hangfireConfiguration.WorkerCount.Value;
                 configurators.ForEach(x => x.ConfigureServer(options));
             });
             serviceCollection.AddSingleton<IJobManager>(sp =>
@@ -57,14 +57,14 @@ namespace PiBox.Plugins.Jobs.Hangfire
         {
             GlobalJobFilters.Filters.Add(
                 new LogJobExecutionFilter(applicationBuilder.ApplicationServices.GetRequiredService<ILoggerFactory>()));
-            if (configuration.EnableJobsByFeatureManagementConfig)
+            if (hangfireConfiguration.EnableJobsByFeatureManagementConfig)
             {
                 GlobalJobFilters.Filters.Add(new EnabledByFeatureFilter(
                     applicationBuilder.ApplicationServices.GetRequiredService<IFeatureManager>(),
                     applicationBuilder.ApplicationServices.GetRequiredService<ILogger<EnabledByFeatureFilter>>()));
             }
 
-            var urlAuthFilter = new HostAuthorizationFilter(configuration.AllowedDashboardHost);
+            var urlAuthFilter = new HostAuthorizationFilter(hangfireConfiguration.AllowedDashboardHost);
             applicationBuilder.UseHangfireDashboard(options: new()
             {
                 Authorization = new List<IDashboardAuthorizationFilter> { urlAuthFilter }
