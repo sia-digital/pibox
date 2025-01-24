@@ -1,7 +1,5 @@
 using Hangfire;
 using Hangfire.Dashboard;
-using Hangfire.MemoryStorage;
-using Hangfire.PostgreSql;
 using Hangfire.States;
 using Hangfire.Storage;
 using Microsoft.AspNetCore.Builder;
@@ -19,47 +17,29 @@ using BindingFlags = System.Reflection.BindingFlags;
 
 namespace PiBox.Plugins.Jobs.Hangfire
 {
-    public class HangFirePlugin : IPluginServiceConfiguration, IPluginApplicationConfiguration,
-        IPluginHealthChecksConfiguration
+    public class HangFirePlugin(HangfireConfiguration hangfireConfiguration, IImplementationResolver implementationResolver, IHangfireConfigurator[] configurators)
+        : IPluginServiceConfiguration, IPluginApplicationConfiguration, IPluginHealthChecksConfiguration
     {
-        private readonly IImplementationResolver _implementationResolver;
-        private readonly IHangfireConfigurator[] _configurators;
-        private readonly HangfireConfiguration _hangfireConfig;
-
-        public HangFirePlugin(HangfireConfiguration configuration, IImplementationResolver implementationResolver, IHangfireConfigurator[] configurators)
-        {
-            _implementationResolver = implementationResolver;
-            _configurators = configurators;
-            _hangfireConfig = configuration;
-        }
-
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.AddFeatureManagement();
             serviceCollection.AddHangfire(conf =>
                 {
                     conf.UseSerializerSettings(new JsonSerializerSettings());
-                    if (_hangfireConfig.InMemory)
-                        conf.UseMemoryStorage();
-                    else
-                        conf.UsePostgreSqlStorage(opts => opts.UseNpgsqlConnection(_hangfireConfig.ConnectionString), new PostgreSqlStorageOptions
-                        {
-                            InvisibilityTimeout = TimeSpan.FromMinutes(_hangfireConfig.InvisibilityTimeoutInMinutes)
-                        });
                     conf.UseSimpleAssemblyNameTypeSerializer();
-                    _configurators.ForEach(x => x.Configure(conf));
+                    configurators.ForEach(x => x.Configure(conf));
                 }
             );
             serviceCollection.AddHangfireServer(options =>
             {
-                options.Queues = _hangfireConfig.Queues.Union([EnqueuedState.DefaultQueue]).Distinct().ToArray();
-                if (_hangfireConfig.PollingIntervalInMs.HasValue)
+                options.Queues = hangfireConfiguration.Queues.Union([EnqueuedState.DefaultQueue]).Distinct().ToArray();
+                if (hangfireConfiguration.PollingIntervalInMs.HasValue)
                     options.SchedulePollingInterval =
-                        TimeSpan.FromMilliseconds(_hangfireConfig.PollingIntervalInMs.Value);
+                        TimeSpan.FromMilliseconds(hangfireConfiguration.PollingIntervalInMs.Value);
 
-                if (_hangfireConfig.WorkerCount.HasValue)
-                    options.WorkerCount = _hangfireConfig.WorkerCount.Value;
-                _configurators.ForEach(x => x.ConfigureServer(options));
+                if (hangfireConfiguration.WorkerCount.HasValue)
+                    options.WorkerCount = hangfireConfiguration.WorkerCount.Value;
+                configurators.ForEach(x => x.ConfigureServer(options));
             });
             serviceCollection.AddSingleton<IJobManager>(sp =>
             {
@@ -77,14 +57,14 @@ namespace PiBox.Plugins.Jobs.Hangfire
         {
             GlobalJobFilters.Filters.Add(
                 new LogJobExecutionFilter(applicationBuilder.ApplicationServices.GetRequiredService<ILoggerFactory>()));
-            if (_hangfireConfig.EnableJobsByFeatureManagementConfig)
+            if (hangfireConfiguration.EnableJobsByFeatureManagementConfig)
             {
                 GlobalJobFilters.Filters.Add(new EnabledByFeatureFilter(
                     applicationBuilder.ApplicationServices.GetRequiredService<IFeatureManager>(),
                     applicationBuilder.ApplicationServices.GetRequiredService<ILogger<EnabledByFeatureFilter>>()));
             }
 
-            var urlAuthFilter = new HostAuthorizationFilter(_hangfireConfig.AllowedDashboardHost);
+            var urlAuthFilter = new HostAuthorizationFilter(hangfireConfiguration.AllowedDashboardHost);
             applicationBuilder.UseHangfireDashboard(options: new()
             {
                 Authorization = new List<IDashboardAuthorizationFilter> { urlAuthFilter }
@@ -94,7 +74,7 @@ namespace PiBox.Plugins.Jobs.Hangfire
             jobOptions?.ConfigureJobs.Invoke(jobRegister, applicationBuilder.ApplicationServices);
             var registerJobMethod = jobRegister.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public)
                 .Single(x => x.Name == nameof(IJobManager.RegisterRecurring) && x.GetGenericArguments().Length == 1);
-            foreach (var job in _implementationResolver.FindTypes(f =>
+            foreach (var job in implementationResolver.FindTypes(f =>
                          f.HasAttribute<RecurringJobAttribute>() && f.Implements<IAsyncJob>()))
             {
                 var recurringJobDetails = job.GetAttribute<RecurringJobAttribute>()!;

@@ -1,5 +1,4 @@
 using Hangfire;
-using Hangfire.MemoryStorage;
 using PiBox.Plugins.Jobs.Hangfire;
 using PiBox.Plugins.Jobs.Hangfire.Attributes;
 using PiBox.Plugins.Jobs.Hangfire.Job;
@@ -8,12 +7,8 @@ namespace PiBox.Example.Service
 {
     public class TestHangfire : IHangfireConfigurator
     {
-        public bool IncludesStorage => false;
-
         public void Configure(IGlobalConfiguration config)
-        {
-            config.UseMemoryStorage();
-        }
+        { }
 
         public void ConfigureServer(BackgroundJobServerOptions options)
         {

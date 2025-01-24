@@ -26,15 +26,8 @@ For example
 
 ```yaml
 hangfire:
-  Host: localhost
-  Port: 5432
-  Database: postgres
-  User: postgres
-  Password: postgres
-  InMemory: true
   enableJobsByFeatureManagementConfig: false
   allowedDashboardHost: localhost # you need to set this configuration to be able to access the dashboard from the specified host
-  invisibilityTimeoutInMinutes: 30
 
 featureManagement: # we can conveniently can use the microsoft feature management system to enable jobs based on configuration
   hangfireTestJob: true # if you have enabled the 'enableJobsByFeatureManagementConfig: true' then you can configure here if your jobs should run on execution or not, useful for multiple environments etc.
@@ -46,18 +39,10 @@ HangfireConfiguration.cs
 [Configuration("hangfire")]
 public class HangfireConfiguration
 {
-    public string? Host { get; set; }
-    public int Port { get; set; }
-    public string? Database { get; set; }
-    public string? User { get; set; }
-    public string? Password { get; set; }
-    public bool InMemory { get; set; }
     public string AllowedDashboardHost { get; set; }
     public bool EnableJobsByFeatureManagementConfig { get; set; }
     public int? PollingIntervalInMs { get; set; }
     public int? WorkerCount { get; set; }
-    public int InvisibilityTimeoutInMinutes { get; set; } = 30;
-    public string ConnectionString => $"Host={Host};Port={Port};Database={Database};Username={User};Password={Password};";
 }
 ```
 
@@ -74,6 +59,49 @@ public class SamplePluginHost : IPluginServiceConfiguration
                 jobRegister.RegisterParameterizedRecurringAsyncJob<HangfireParameterizedTestJob, int>(Cron.Daily(), 1); // every day at 0:00 UTC
                 jobRegister.RegisterRecurringAsyncJob<HangfireTestJob>(Cron.Hourly(15)); // every hour to minute 15 UTC
             });
+    }
+}
+```
+
+### Configuring Job Storage for Hangfire
+
+The Hangfire plugin does not automatically register a storage for jobs. This is done on the implementing service's side by using the HangfireConfigurator logic that allows configuring Hangfire with a custom Configurator class in the implementing project.
+
+```csharp
+public class TestHangfireConfigurator : IHangfireConfigurator
+{
+    public void Configure(IGlobalConfiguration config)
+    {
+        var connectionString = "testConnection";
+        config.UsePostgreSqlStorage(opts => opts.UseNpgsqlConnection(connectionString),
+            new PostgreSqlStorageOptions
+            {
+                InvisibilityTimeout = TimeSpan.FromMinutes(180) // controls the timeout until a second job is started when an existing job
+                                                                // is running for longer than the specified minutes
+                                                                // option not necessary for sql server storage
+            });
+    }
+
+    public void ConfigureServer(BackgroundJobServerOptions options) {}
+}
+```
+
+This is then applied with the following logic in the HangfirePlugin:
+
+```csharp
+public class HangFirePlugin(HangfireConfiguration configuration, IImplementationResolver implementationResolver, IHangfireConfigurator[] configurators)
+        : IPluginServiceConfiguration, IPluginApplicationConfiguration, IPluginHealthChecksConfiguration
+{
+    public void ConfigureServices(IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddFeatureManagement();
+        serviceCollection.AddHangfire(conf =>
+            {
+                conf.UseSerializerSettings(new JsonSerializerSettings());
+                conf.UseSimpleAssemblyNameTypeSerializer();
+                configurators.ForEach(x => x.Configure(conf));
+            }
+        );
     }
 }
 ```

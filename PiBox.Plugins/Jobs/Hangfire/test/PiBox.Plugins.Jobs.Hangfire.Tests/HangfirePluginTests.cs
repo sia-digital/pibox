@@ -22,16 +22,10 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
     {
         internal static readonly HangfireConfiguration HangfireConfiguration = new()
         {
-            Database = "testDatabase",
-            Host = "testHost",
-            Port = 9999,
-            Password = "testPassword",
             AllowedDashboardHost = "localhost",
-            InMemory = true,
             PollingIntervalInMs = 1000,
             WorkerCount = 200,
             EnableJobsByFeatureManagementConfig = true,
-            User = "testUser",
             Queues = ["default", "test"]
         };
 
@@ -116,7 +110,6 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             options.Should().NotBeNull();
             options.SchedulePollingInterval.Should().Be(TimeSpan.FromMilliseconds(HangfireConfiguration.PollingIntervalInMs!.Value));
             options.WorkerCount.Should().Be(HangfireConfiguration.WorkerCount!.Value);
-
         }
     }
 }
