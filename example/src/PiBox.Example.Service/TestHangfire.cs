@@ -7,8 +7,6 @@ namespace PiBox.Example.Service
 {
     public class TestHangfire : IHangfireConfigurator
     {
-        public bool IncludesStorage => false;
-
         public void Configure(IGlobalConfiguration config)
         { }
 

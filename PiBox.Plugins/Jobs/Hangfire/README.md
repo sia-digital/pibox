@@ -83,8 +83,6 @@ public class TestHangfireConfigurator : IHangfireConfigurator
     }
 
     public void ConfigureServer(BackgroundJobServerOptions options) {}
-
-    public bool IncludesStorage { get; }
 }
 ```
 
