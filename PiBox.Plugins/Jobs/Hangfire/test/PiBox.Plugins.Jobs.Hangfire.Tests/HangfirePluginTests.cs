@@ -22,16 +22,10 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
     {
         internal static readonly HangfireConfiguration HangfireConfiguration = new()
         {
-            Database = "testDatabase",
-            Host = "testHost",
-            Port = 9999,
-            Password = "testPassword",
             AllowedDashboardHost = "localhost",
-            InMemory = true,
             PollingIntervalInMs = 1000,
             WorkerCount = 200,
             EnableJobsByFeatureManagementConfig = true,
-            User = "testUser",
             Queues = ["default", "test"]
         };
 
