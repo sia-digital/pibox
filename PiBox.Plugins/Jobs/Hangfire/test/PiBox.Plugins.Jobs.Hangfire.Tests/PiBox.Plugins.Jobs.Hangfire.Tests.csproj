@@ -11,4 +11,8 @@
       <ProjectReference Include="..\..\src\PiBox.Plugins.Jobs.Hangfire\PiBox.Plugins.Jobs.Hangfire.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Hangfire.MemoryStorage" />
+    </ItemGroup>
+
 </Project>

@@ -110,7 +110,6 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
             options.Should().NotBeNull();
             options.SchedulePollingInterval.Should().Be(TimeSpan.FromMilliseconds(HangfireConfiguration.PollingIntervalInMs!.Value));
             options.WorkerCount.Should().Be(HangfireConfiguration.WorkerCount!.Value);
-
         }
     }
 }
