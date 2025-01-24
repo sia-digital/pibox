@@ -1,7 +1,5 @@
 using Hangfire;
 using Hangfire.Dashboard;
-using Hangfire.MemoryStorage;
-using Hangfire.PostgreSql;
 using Hangfire.States;
 using Hangfire.Storage;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.FeatureManagement;
 using Newtonsoft.Json;
 using PiBox.Hosting.Abstractions;
-using PiBox.Hosting.Abstractions.Exceptions;
 using PiBox.Hosting.Abstractions.Extensions;
 using PiBox.Hosting.Abstractions.Plugins;
 using PiBox.Hosting.Abstractions.Services;
