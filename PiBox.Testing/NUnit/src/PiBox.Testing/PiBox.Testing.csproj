@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoBogus" />
     <PackageReference Include="Bogus" />
     <PackageReference Include="FluentAssertions" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
@@ -21,7 +20,7 @@
     </PackageReference>
     <PackageReference Include="NaughtyStrings.Bogus" />
     <PackageReference Include="NUnit" />
-    <PackageReference Include="NUnit.Allure" />
+    <PackageReference Include="Allure.NUnit" />
     <PackageReference Include="Chronos.Net" />
   </ItemGroup>
 

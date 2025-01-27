@@ -37,6 +37,7 @@ namespace PiBox.Api.OpenApi.Tests
             swaggerUiOptions.Value.Returns(new SwaggerUIOptions());
             services.AddSingleton(swaggerOptions);
             services.AddSingleton(swaggerUiOptions);
+            services.AddRouting();
             var serviceProvider = services.BuildServiceProvider();
             applicationBuilder.ApplicationServices.Returns(serviceProvider);
             var plugin = GetPlugin(configuration);
@@ -60,6 +61,7 @@ namespace PiBox.Api.OpenApi.Tests
             swaggerUiOptions.Value.Returns(new SwaggerUIOptions());
             services.AddSingleton(swaggerOptions);
             services.AddSingleton(swaggerUiOptions);
+            services.AddRouting();
             var serviceProvider = services.BuildServiceProvider();
             applicationBuilder.ApplicationServices.Returns(serviceProvider);
             var plugin = GetPlugin(configuration);

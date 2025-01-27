@@ -4,8 +4,6 @@ using System.Text.Json.Serialization;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Security;
 
 namespace PiBox.Plugins.Authorization.Keycloak.Scheme
 {
@@ -51,12 +49,9 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
         private static RsaSecurityKey GetRsaSecurityKey(RealmDetails realmDetails)
         {
             var publicKey = Convert.FromBase64String(realmDetails.PublicKey);
-            var rsaKeyParameters = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKey);
-            var rsaParameters = new RSAParameters
-            {
-                Modulus = rsaKeyParameters.Modulus.ToByteArrayUnsigned(),
-                Exponent = rsaKeyParameters.Exponent.ToByteArrayUnsigned()
-            };
+            using var rsaProvider = new RSACryptoServiceProvider();
+            rsaProvider.ImportSubjectPublicKeyInfo(publicKey.AsSpan(), out _);
+            var rsaParameters = rsaProvider.ExportParameters(false);
             return new RsaSecurityKey(rsaParameters);
         }
 

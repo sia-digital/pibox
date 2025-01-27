@@ -35,7 +35,12 @@ namespace PiBox.Plugins.Persistence.MongoDb
             {
                 settings.Credential = MongoCredential.CreateCredential(_configuration.AuthDatabase ?? _configuration.Database, _configuration.User, _configuration.Password);
             }
-            healthChecksBuilder.AddMongoDb(settings, _configuration.Database, "mongo", tags: new[] { HealthCheckTag.Readiness.Value });
+
+            healthChecksBuilder.AddMongoDb(
+                _ => new MongoClient(settings),
+                _ => _configuration.Database,
+                name: "mongo",
+                tags: [HealthCheckTag.Readiness.Value]);
         }
     }
 }

@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        
         <Nullable>disable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
@@ -13,10 +12,8 @@
 
     <ItemGroup>
       <PackageReference Include="AspNetCore.HealthChecks.Uris" />
-      <PackageReference Include="BouncyCastle.NetCore" />
       <PackageReference Include="Microsoft.IdentityModel.Tokens" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" />
-      <PackageReference Include="Newtonsoft.Json" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
     </ItemGroup>
 

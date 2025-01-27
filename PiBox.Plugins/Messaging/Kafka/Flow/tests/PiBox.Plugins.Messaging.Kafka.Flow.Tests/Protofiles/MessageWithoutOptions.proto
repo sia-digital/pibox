@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package UnitTests;
-
-message MessageWithoutOptions {
-  string Message = 1;
-}
