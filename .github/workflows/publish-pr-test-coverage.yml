@@ -1,0 +1,45 @@
+name: publish-pr-test-coverage
+
+on:
+  workflow_run:
+    workflows: [ dotnet-pr, dotnet-main ]
+    types: [ completed ]
+
+permissions:
+  contents: read
+  issues: read
+  checks: write
+  pull-requests: write
+  actions: read
+
+env:
+  WORKFLOW_RUN_IS_PR: ${{ github.event.workflow_run.workflow_id == 'dotnet-pr' }}
+
+jobs:
+  add-coverage:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: Coverage Report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a status check for the code coverage results
+        id: dotnet-coverage-check
+        #You may also reference just the major or major.minor version
+        uses: im-open/process-code-coverage-summary@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          summary-file: './coverage-results/Summary.md'
+          report-name: '.NET Code Coverage'      # Default: Code Coverage Results
+          check-name: 'dotnet code coverage'            # Default: code coverage
+          create-status-check: ${{ env.WORKFLOW_RUN_IS_PR }}                     # Default: true
+          create-pr-comment:  ${{ env.WORKFLOW_RUN_IS_PR }}                     # Default: true
+          update-comment-if-one-exists:  ${{ env.WORKFLOW_RUN_IS_PR }}            # Default: true
+          update-comment-key: 'dotnet'                  # Default: N/A, used to further identify a comment to update if this action is used more than once in a workflow
+          ignore-threshold-failures: false              # Default: false
+          line-threshold: 80                            # Default: 0, which means thresholds are not applied
+          branch-threshold: 0                         # Default: 0, which means thresholds are not applied

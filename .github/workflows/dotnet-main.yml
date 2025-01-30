@@ -1,94 +1,73 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 name: dotnet-main
+
 on:
-  workflow_dispatch:
   push:
     branches: [ "main" ]
-permissions:
-  contents: write
-  issues: read
-  checks: write
-  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
-    - name: setup
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '8.0.x'
+      - name: setup
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
 
-    - name: retrieve version
-      uses: dotnet/nbgv@master
-      id: nbgv
+      - name: retrieve version
+        uses: dotnet/nbgv@master
+        id: nbgv
 
-    - name: install
-      run: dotnet restore
+      - name: install
+        run: dotnet restore
 
-    - name: format
-      run: dotnet format --verify-no-changes --no-restore
+      - name: format
+        run: dotnet format --verify-no-changes --no-restore
 
-    - name: build
-      run: dotnet build -c Release
+      - name: build
+        run: dotnet build -c Release
 
-    - name: test & cover
-      run: dotnet test --collect "Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory "./test-results" --no-restore --nologo -c Release --logger trx
+      - name: test & cover
+        run: dotnet test --collect "Code Coverage;Format=Xml;CoverageFileName=coverage.xml" --results-directory "./test-results" --no-restore --nologo -c Release --logger trx
 
-    - name: publish test results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      with:
-        files: |
-          test-results/**/*.trx
+      - name: publish test results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: |
+            test-results/**/*.trx
 
-    - name: publish coverage results
-      uses: im-open/code-coverage-report-generator@4
-      with:
-        reports: '*/**/coverage.xml'
-        targetdir: './coverage-results'
-        title: dotnet code coverage
-        reporttypes: 'MarkdownSummary;'
-        assemblyfilters: +PiBox*
+      - name: publish coverage results
+        uses: im-open/code-coverage-report-generator@4
+        with:
+          reports: '*/**/coverage.xml'
+          targetdir: './coverage-results'
+          title: dotnet code coverage
+          reporttypes: 'MarkdownSummary;'
+          assemblyfilters: +PiBox*
 
-    - name: Create a status check for the code coverage results
-      id: dotnet-coverage-check
-      #You may also reference just the major or major.minor version
-      uses: im-open/process-code-coverage-summary@v2.2.3
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        summary-file: './coverage-results/Summary.md'
-        report-name: '.NET Code Coverage'      # Default: Code Coverage Results
-        check-name: 'dotnet code coverage'            # Default: code coverage
-        create-status-check: false                     # Default: true
-        create-pr-comment: false                     # Default: true
-        update-comment-if-one-exists: false            # Default: true
-        update-comment-key: 'dotnet'                  # Default: N/A, used to further identify a comment to update if this action is used more than once in a workflow
-        ignore-threshold-failures: false              # Default: false
-        line-threshold: 80                            # Default: 0, which means thresholds are not applied
-        branch-threshold: 0                         # Default: 0, which means thresholds are not applied
+      - name: Upload coverage report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Coverage Report
+          path: coverage-results/**
 
-    - name: Upload coverage report artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: Coverage Report
-        path: coverage-results/**
+      - name: Write to Job Summary
+        run: cat ./coverage-results/Summary.md >> $GITHUB_STEP_SUMMARY
 
-    - name: Write to Job Summary
-      run: cat ./coverage-results/Summary.md >> $GITHUB_STEP_SUMMARY
+      - name: Create package
+        run: dotnet pack --no-restore --nologo --no-build -p:PackageOutputPath='./publish' -c Release -p:PackageVersion=${NBGV_NuGetPackageVersion} -p:PublicRelease=true -p:SymbolPackageFormat=snupkg --include-symbols --include-source
 
-    - name: Create package
-      run: dotnet pack --no-restore --nologo --no-build -p:PackageOutputPath='./publish' -c Release -p:PackageVersion=${NBGV_NuGetPackageVersion} -p:PublicRelease=true -p:SymbolPackageFormat=snupkg --include-symbols --include-source
+      - name: Publish nuget packages
+        run: dotnet nuget push "**/publish/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
 
-    - name: Publish nuget packages
-      run: dotnet nuget push "**/publish/*.nupkg" -s 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
-
-    - name: tag and release
-      uses: ncipollo/release-action@v1
-      with:
-        commit: main
-        tag: 'v${{ steps.nbgv.outputs.NuGetPackageVersion }}'
-        generateReleaseNotes: true
+      - name: tag and release
+        uses: ncipollo/release-action@v1
+        with:
+          commit: main
+          tag: 'v${{ steps.nbgv.outputs.NuGetPackageVersion }}'
+          generateReleaseNotes: true
