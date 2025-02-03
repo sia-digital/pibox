@@ -215,7 +215,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\dotnet-main.yml = .github\workflows\dotnet-main.yml
 		.github\workflows\dotnet-pr.yml = .github\workflows\dotnet-pr.yml
 		.github\workflows\codeql.yml = .github\workflows\codeql.yml
-		.github\workflows\publish-pr-coverage.yml = .github\workflows\publish-pr-coverage.yml
+		.github\workflows\publish-pr-test-coverage.yml = .github\workflows\publish-pr-test-coverage.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smb", "Smb", "{8FBF8F87-502E-4B78-A952-C6505795E9B9}"
