@@ -1,15 +1,11 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 name: dotnet-pr
+
 on:
-  workflow_dispatch:
-  pull_request_target:
+  pull_request:
     branches: [ "main" ]
-permissions:
-  contents: read
-  issues: read
-  checks: write
-  pull-requests: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -50,25 +46,8 @@ jobs:
           reporttypes: 'MarkdownSummary;'
           assemblyfilters: +PiBox*
 
-      - name: Create a status check for the code coverage results
-        id: dotnet-coverage-check
-        #You may also reference just the major or major.minor version
-        uses: im-open/process-code-coverage-summary@v2.2.3
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          summary-file: './coverage-results/Summary.md'
-          report-name: '.NET Code Coverage'      # Default: Code Coverage Results
-          check-name: 'dotnet code coverage'            # Default: code coverage
-          create-status-check: true                     # Default: true
-          create-pr-comment: true                     # Default: true
-          update-comment-if-one-exists: true            # Default: true
-          update-comment-key: 'dotnet'                  # Default: N/A, used to further identify a comment to update if this action is used more than once in a workflow
-          ignore-threshold-failures: false              # Default: false
-          line-threshold: 80                            # Default: 0, which means thresholds are not applied
-          branch-threshold: 0                         # Default: 0, which means thresholds are not applied
-
       - name: Upload coverage report artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Coverage Report
           path: coverage-results/**
