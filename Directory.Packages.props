@@ -73,12 +73,12 @@
     <PackageVersion Version="1.6.4" Include="Restease" />
     <PackageVersion Version="2.4.1" Include="NaughtyStrings.Bogus" />
     <PackageVersion Version="35.4.0" Include="Bogus" />
-    <PackageVersion Version="7.1.0" Include="FluentAssertions" />
     <PackageVersion Version="17.12.0" Include="Microsoft.NET.Test.Sdk" />
     <PackageVersion Version="4.6.0" Include="NUnit3TestAdapter" />
     <PackageVersion Version="5.3.0" Include="NSubstitute" />
     <PackageVersion Version="1.0.17" Include="NSubstitute.Analyzers.CSharp" />
-    <PackageVersion Version="3.14.0" Include="NUnit" />
+    <PackageVersion Version="4.3.2" Include="NUnit" />
+    <PackageVersion Version="4.6.0" Include="NUnit.Analyzers" />
     <PackageVersion Version="2.12.1" Include="Allure.NUnit" />
     <PackageVersion Version="4.1.15" Include="Unleash.Client" />
     <PackageVersion Version="6.0.0" Include="Vogen" />

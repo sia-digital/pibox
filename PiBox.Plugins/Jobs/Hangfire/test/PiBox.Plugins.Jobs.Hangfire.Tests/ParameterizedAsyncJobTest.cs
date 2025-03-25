@@ -3,18 +3,8 @@ using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
 {
-    public class ParameterizedAsyncJobTest : ParameterizedAsyncJob<string>
+    public class ParameterizedAsyncJobTest(ILogger logger) : ParameterizedAsyncJob<string>(logger)
     {
-        public ParameterizedAsyncJobTest(ILogger logger) : base(logger)
-        {
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            Console.WriteLine();
-            base.Dispose(disposing);
-        }
-
         protected override Task<object> ExecuteJobAsync(string value, CancellationToken cancellationToken)
         {
             Logger.LogInformation("Run {Value}", value);

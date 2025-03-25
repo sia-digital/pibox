@@ -124,12 +124,10 @@ namespace PiBox.Plugins.Persistence.Abstractions.Tests
         {
             var queryOptions = new QueryOptions<BaseTestEntity>();
             queryOptions.Invoking(x => x.WithFilter("NotExistingProp eq 123"))
-                .Should().Throw<QueryOptionsException>()
-                .WithMessage("Unable to perform operation 'NotExistingProp'");
+                .Should().Throw<QueryOptionsException>("Unable to perform operation 'NotExistingProp'");
 
             queryOptions.Invoking(x => x.WithOrderBy("NotExistingProp asc"))
-                .Should().Throw<QueryOptionsException>()
-                .WithMessage("Instance property 'NotExistingProp' is not defined for type 'PiBox.Testing.Models.BaseTestEntity' (Parameter 'propertyName')");
+                .Should().Throw<QueryOptionsException>("Instance property 'NotExistingProp' is not defined for type 'PiBox.Testing.Models.BaseTestEntity' (Parameter 'propertyName')");
         }
     }
 }

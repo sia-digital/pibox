@@ -52,7 +52,7 @@ namespace PiBox.Plugins.Management.Unleash.Tests
             var settings = unleash.GetInaccessibleValue<UnleashSettings>("settings");
             settings.Should().NotBeNull();
             settings.AppName.Should().Be(GetUnleashConfiguration.AppName);
-            settings.UnleashApi.Should().Be(GetUnleashConfiguration.ApiUri);
+            settings.UnleashApi.Should().Be(new Uri(GetUnleashConfiguration.ApiUri));
             settings.CustomHttpHeaders.Should().ContainValue(GetUnleashConfiguration.ApiToken);
             settings.ProjectId.Should().Be(GetUnleashConfiguration.ProjectId);
             settings.InstanceTag.Should().Be(GetUnleashConfiguration.InstanceTag);

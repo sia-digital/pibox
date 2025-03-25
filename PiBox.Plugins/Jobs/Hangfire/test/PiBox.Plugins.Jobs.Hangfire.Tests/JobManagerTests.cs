@@ -1,4 +1,4 @@
-using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using Hangfire;
 using Hangfire.Common;
@@ -13,6 +13,7 @@ using PiBox.Plugins.Jobs.Hangfire.Job;
 
 namespace PiBox.Plugins.Jobs.Hangfire.Tests
 {
+    [SuppressMessage("Structure", "NUnit1032:An IDisposable field/property should be Disposed in a TearDown method")]
     public class JobManagerTests
     {
         private static readonly global::Hangfire.Common.Job _testJob = new(typeof(TestJob), typeof(TestJob).GetMethod("ExecuteAsync"), new List<object> { CancellationToken.None });
@@ -37,7 +38,8 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
         {
             _monitoringApi.Queues().Returns([new QueueWithTopEnqueuedJobsDto { Name = "test" }]);
             var result = GetJobManager().GetQueues();
-            result.Should().HaveCount(1).And.Contain("test");
+            result.Should().HaveCount(1);
+            result.Should().Contain("test");
         }
 
         [Test]
@@ -52,12 +54,15 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
                     { "Job", new { t = TypeHelper.CurrentTypeSerializer(typeof(TestJob)), m = nameof(TestJob.ExecuteAsync), p = new List<string> {TypeHelper.CurrentTypeSerializer(typeof(CancellationToken))}, a = new string[] {null} }.Serialize() }
                 });
             var result = GetJobManager().GetRecurringJobs();
-            result.Should().HaveCount(1).And.Contain(x => x.Id == "test");
+            result.Should().HaveCount(1);
+            result.Should().Contain(x => x.Id == "test");
 
             result = GetJobManager().GetRecurringJobs<TestJob>();
-            result.Should().HaveCount(1).And.Contain(x => x.Id == "test");
+            result.Should().HaveCount(1);
+            result.Should().Contain(x => x.Id == "test");
             result = GetJobManager().GetRecurringJobs<TestJob>(x => x.Id == "test");
-            result.Should().HaveCount(1).And.Contain(x => x.Id == "test");
+            result.Should().HaveCount(1);
+            result.Should().Contain(x => x.Id == "test");
             result = GetJobManager().GetRecurringJobs<TestJob>(x => x.Id != "test");
             result.Should().HaveCount(0);
         }
@@ -72,13 +77,16 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
                     new("test1", dto)
                 }));
             var result = GetJobManager().GetEnqueuedJobs();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetEnqueuedJobs<TestJob>();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetEnqueuedJobs<TestJob>(x => x.Job.Method.Name == "ExecuteAsync");
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetEnqueuedJobs<TestJob>(x => x.Job.Method.Name == "Run");
             result.Should().HaveCount(0);
@@ -94,13 +102,16 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
                     new("test1", dto)
                 }));
             var result = GetJobManager().GetProcessingJobs();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetProcessingJobs<TestJob>();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetProcessingJobs<TestJob>(x => x.Job.Method.Name == "ExecuteAsync");
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetProcessingJobs<TestJob>(x => x.Job.Method.Name == "Run");
             result.Should().HaveCount(0);
@@ -116,13 +127,16 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
                     new("test1", dto)
                 }));
             var result = GetJobManager().GetFailedJobs();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFailedJobs<TestJob>();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFailedJobs<TestJob>(x => x.Job.Method.Name == "ExecuteAsync");
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFailedJobs<TestJob>(x => x.Job.Method.Name == "Run");
             result.Should().HaveCount(0);
@@ -139,13 +153,16 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
                     new("test1", dto)
                 }));
             var result = GetJobManager().GetFetchedJobs();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFetchedJobs<TestJob>();
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFetchedJobs<TestJob>(x => x.Job.Method.Name == "ExecuteAsync");
-            result.Should().HaveCount(1).And.Contain(dto);
+            result.Should().HaveCount(1);
+            result.Should().Contain(dto);
 
             result = GetJobManager().GetFetchedJobs<TestJob>(x => x.Job.Method.Name == "Run");
             result.Should().HaveCount(0);

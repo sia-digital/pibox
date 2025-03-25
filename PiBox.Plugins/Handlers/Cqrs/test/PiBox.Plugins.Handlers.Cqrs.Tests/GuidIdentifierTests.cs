@@ -15,7 +15,7 @@ namespace PiBox.Plugins.Handlers.Cqrs.Tests
         [Test]
         public void GuidIdentifierParseShouldBeWorking()
         {
-            GuidIdentifier.Parse("05a82a17-5a7f-4f28-8ff9-37f35c2cfb5f").Id.Should().Be("05a82a17-5a7f-4f28-8ff9-37f35c2cfb5f");
+            GuidIdentifier.Parse("05a82a17-5a7f-4f28-8ff9-37f35c2cfb5f").Id.Should().Be(Guid.Parse("05a82a17-5a7f-4f28-8ff9-37f35c2cfb5f"));
         }
 
         [Test]

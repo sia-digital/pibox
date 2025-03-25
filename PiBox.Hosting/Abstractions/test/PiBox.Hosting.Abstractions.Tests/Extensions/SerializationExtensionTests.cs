@@ -6,11 +6,19 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
 {
     public class SerializationExtensionTests
     {
-        private class Sample
+        private class Sample : IEquatable<Sample>
         {
             // vogen type...
             public HealthCheckTag HealthCheckTag { get; set; }
             public string Name { get; set; }
+
+            // IEquatable
+            public bool Equals(Sample other)
+            {
+                if (other is null) return false;
+                if (ReferenceEquals(this, other)) return true;
+                return HealthCheckTag.Equals(other.HealthCheckTag) && Name == other.Name;
+            }
         }
 
         [Test]
@@ -20,11 +28,11 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
             var serialized = sample.Serialize();
             var deserialized = serialized.Deserialize<Sample>();
 
-            deserialized.Should().BeEquivalentTo(sample);
+            Assert.That(deserialized, Is.EqualTo(sample));
 
             var obj = serialized.Deserialize(typeof(Sample));
             obj.Should().BeOfType<Sample>();
-            (obj as Sample).Should().BeEquivalentTo(sample);
+            Assert.That((obj as Sample), Is.EqualTo(sample));
         }
 
         [Test]
@@ -36,12 +44,12 @@ namespace PiBox.Hosting.Abstractions.Tests.Extensions
             var deserialized = serialized.Deserialize<Sample>(SerializationMethod.Yaml);
             var deserializedWithSchema = withSchema.Deserialize<Sample>(SerializationMethod.Yaml);
 
-            deserialized.Should().BeEquivalentTo(sample);
-            deserializedWithSchema.Should().BeEquivalentTo(sample);
+            Assert.That(deserialized, Is.EqualTo(sample));
+            Assert.That(deserializedWithSchema, Is.EqualTo(sample));
 
             var obj = serialized.Deserialize(typeof(Sample), SerializationMethod.Yaml);
             obj.Should().BeOfType<Sample>();
-            (obj as Sample).Should().BeEquivalentTo(sample);
+            Assert.That(obj as Sample, Is.EqualTo(sample));
         }
     }
 }
