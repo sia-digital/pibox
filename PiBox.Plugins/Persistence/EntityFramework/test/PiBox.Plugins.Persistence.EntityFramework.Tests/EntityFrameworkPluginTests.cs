@@ -82,7 +82,6 @@ namespace PiBox.Plugins.Persistence.EntityFramework.Tests
             opts.EnrichWithIDbCommand!(activity, command);
 
             var dbNameTag = activity.Tags.Single(x => x.Key == "db.name");
-            dbNameTag.Should().NotBeNull();
             dbNameTag.Value.Should().Be(command.CommandType + " main");
             activity.DisplayName.Should().Be(command.CommandType + " main");
         }

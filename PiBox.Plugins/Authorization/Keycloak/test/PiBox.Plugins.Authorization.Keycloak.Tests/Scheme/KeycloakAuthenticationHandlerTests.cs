@@ -37,6 +37,12 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests.Scheme
             ActivityTestBootstrapper.Setup();
         }
 
+        [OneTimeTearDown]
+        public void Teardown()
+        {
+            _privateKey.Dispose();
+        }
+
         private async Task<KeycloakAuthenticationHandler> GetHandler(HttpContext context)
         {
             _authSchemeOptions.Get(KeycloakDefaults.Scheme).Returns(new AuthenticationSchemeOptions());

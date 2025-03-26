@@ -93,7 +93,8 @@ namespace PiBox.Plugins.Persistence.S3.Tests
             var options = uriHealthCheck.GetInaccessibleValue<UriHealthCheckOptions>("_options");
             options.Should().NotBeNull();
             var uriOptions = options.GetInaccessibleValue<List<UriOptions>>("UrisOptions");
-            uriOptions.Should().NotBeNull().And.HaveCount(1);
+            uriOptions.Should().NotBeNull();
+            uriOptions.Should().HaveCount(1);
             var uriOption = uriOptions.Single();
             uriOption.Uri.Authority.Should().Be(_configuration.Endpoint);
             uriOption.Uri.AbsolutePath.Should().Be("/" + _configuration.HealthCheckPath.TrimStart('/'));

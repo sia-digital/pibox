@@ -73,7 +73,6 @@ We are using these frameworks for unit testing
 
 * AutoBogus
 * Bogus
-* FluentAssertions
 * Microsoft.NET.Test.Sdk
 * NaughtyStrings.Bogus
 * NSubstitute

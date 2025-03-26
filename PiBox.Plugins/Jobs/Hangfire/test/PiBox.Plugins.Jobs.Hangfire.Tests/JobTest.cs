@@ -21,16 +21,14 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
         public void AsyncJobWillBeCancelledAfterTimeout()
         {
             var job = new TestJobTimeoutAsync(_logger);
-            job.Invoking(async x => await x.ExecuteAsync(new CancellationToken(true))).Should()
-                .ThrowAsync<OperationCanceledException>();
+            Assert.CatchAsync<OperationCanceledException>(async () => await job.ExecuteAsync(new CancellationToken(true)));
         }
 
         [Test]
         public void AsyncJobThrowsException()
         {
             var job = new JobFailsJob(_logger);
-            job.Invoking(async x => await x.ExecuteAsync(new CancellationToken(true))).Should()
-                .ThrowAsync<NotSupportedException>();
+            Assert.ThrowsAsync<NotSupportedException>(async () => await job.ExecuteAsync(new CancellationToken(true)));
         }
 
         [Test]
@@ -47,8 +45,7 @@ namespace PiBox.Plugins.Jobs.Hangfire.Tests
         {
             var param = "Test";
             var job = new ParameterizedAsyncJobTest(_logger);
-            job.Invoking(async x => await x.ExecuteAsync(param, new CancellationToken(true))).Should()
-                .ThrowAsync<OperationCanceledException>();
+            Assert.DoesNotThrowAsync(async () => await job.ExecuteAsync(param, new CancellationToken(true)));
         }
     }
 }

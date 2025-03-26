@@ -120,7 +120,7 @@ namespace PiBox.Testing.Assertions
             {
                 var dict = expected[i];
                 var seedData = list[i];
-                dict.Should().BeEquivalentTo(seedData, $"{typeof(T).Name} has an invalid data entry");
+                dict.Should().BeEquivalentTo(seedData, new KvpStringObjectComparer(), $"{typeof(T).Name} has an invalid data entry");
             }
         }
     }

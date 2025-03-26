@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Security.Cryptography;
 using FluentAssertions;
@@ -13,6 +14,7 @@ using RichardSzalay.MockHttp;
 
 namespace PiBox.Plugins.Authorization.Keycloak.Tests.Scheme
 {
+    [SuppressMessage("Structure", "NUnit1032:An IDisposable field/property should be Disposed in a TearDown method")]
     public class PublicKeyServiceTests
     {
         private readonly IMemoryCache _cache = Substitute.For<IMemoryCache>();
