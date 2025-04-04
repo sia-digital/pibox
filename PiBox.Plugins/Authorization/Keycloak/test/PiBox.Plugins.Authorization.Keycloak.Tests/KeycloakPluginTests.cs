@@ -103,12 +103,6 @@ namespace PiBox.Plugins.Authorization.Keycloak.Tests
                     h.Name == "keycloak" && h.Tags.Contains(HealthCheckTag.Readiness.Value)));
         }
 
-        [TestCase("http://localhost:5300/signin-oidc", "http://localhost:5300/signin-oidc")]
-        public void TestRedirectUriHttpToHttpsReplace(string uri, string expected)
-        {
-            KeycloakDefaults.BuildCorrectRedirectUri(uri).Should().Be(expected);
-        }
-
         [Test]
         public void ConfigureHealthChecks_Use9000ForHealth()
         {

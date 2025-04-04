@@ -72,7 +72,8 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
         private async Task<ClaimsPrincipal> GetPrincipalByJwtToken(JwtSecurityToken token,
             CancellationToken cancellationToken)
         {
-            var rsaKey = await GetRsaKey(token, cancellationToken);
+            var realm = GetRealm(token.Issuer);
+            var rsaKey = await _publicKeyService.GetSecurityKey(realm, cancellationToken);
             if (rsaKey is null) return null;
             var tokenValidationParameters = new TokenValidationParameters
             {
@@ -86,7 +87,11 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
             {
                 var principal = _securityTokenHandler.ValidateToken(token.RawData, tokenValidationParameters, out _);
                 if (principal?.Identity is ClaimsIdentity identity)
+                {
                     identity.AddClaims(principal.GetRoleClaims());
+                    identity.AddClaim(new Claim(KeycloakDefaults.ClaimTypeRealm, realm));
+                }
+
                 return principal?.Identity is not null
                     ? new ClaimsPrincipal(principal.Identity)
                     : principal;
@@ -98,13 +103,10 @@ namespace PiBox.Plugins.Authorization.Keycloak.Scheme
             }
         }
 
-        private async Task<RsaSecurityKey> GetRsaKey(SecurityToken jwtToken, CancellationToken cancellationToken)
+        private static string GetRealm(string issuerUri)
         {
-            var issuer = jwtToken.Issuer.TrimEnd('/');
-            var issuerParts = issuer.Split("/realms/");
-            if (issuerParts.Length != 2) return null;
-            var realm = issuerParts[1];
-            return await _publicKeyService.GetSecurityKey(realm, cancellationToken);
+            var issuerParts = issuerUri.TrimEnd('/').Split("/realms/");
+            return issuerParts.Length != 2 ? null : issuerParts[1];
         }
 
         private JwtSecurityToken GetJwtToken(string token)
